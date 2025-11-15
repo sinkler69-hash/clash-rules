@@ -128,5 +128,21 @@ rules:
   - DOMAIN-SUFFIX,vdsina.com,Proxy
   - DOMAIN-KEYWORD,vdsina,Proxy
 
+  # --- LinkedIn ---
+- DOMAIN-SUFFIX,linkedin.com,Proxy
+- DOMAIN-SUFFIX,licdn.com,Proxy
+- DOMAIN-KEYWORD,linkedin,Proxy
+
+# --- Twitter / X ---
+- DOMAIN-SUFFIX,twitter.com,Proxy
+- DOMAIN-SUFFIX,x.com,Proxy
+- DOMAIN-SUFFIX,t.co,Proxy
+- DOMAIN-SUFFIX,twimg.com,Proxy
+- DOMAIN-SUFFIX,abs.twimg.com,Proxy
+- DOMAIN-SUFFIX,pbs.twimg.com,Proxy
+- DOMAIN-SUFFIX,video.twimg.com,Proxy
+- DOMAIN-KEYWORD,twitter,Proxy
+- DOMAIN-KEYWORD,twimg,Proxy
+
   # --- Всё остальное напрямую ---
   - MATCH,DIRECT
