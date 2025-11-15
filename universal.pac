@@ -1,136 +1,110 @@
 function FindProxyForURL(url, host) {
+  host = host.toLowerCase();
+  url = url.toLowerCase();
 
-    // --- Helper: send to WireGuard ---
-    function PROXY() {
-        return "PROXY 192.168.50.135:7897"; // твой Clash listen
-    }
+  function PROXY() { return "PROXY 192.168.50.135:7897"; }
+  function DIRECT_CONN() { return "DIRECT"; }
 
-    // --- Helper: direct ---
-    function DIRECT_CONN() {
-        return "DIRECT";
-    }
-
-    host = host.toLowerCase();
-    url = url.toLowerCase();
-
-    // ===========
-    //  CHATGPT / OPENAI
-    // ===========
-    if (dnsDomainIs(host, "openai.com") ||
-        dnsDomainIs(host, "chatgpt.com") ||
-        dnsDomainIs(host, "ai.com") ||
-        dnsDomainIs(host, "oaiusercontent.com") ||
-        dnsDomainIs(host, "cdn.openai.com") ||
-        shExpMatch(host, "*.openai.com") ||
-        shExpMatch(host, "*.chatgpt.com")) {
-        return PROXY();
-    }
-
-    // ===========
-    //  META / INSTAGRAM / FACEBOOK / OCULUS
-    // ===========
-    if (
-        shExpMatch(host, "*.instagram.com") ||
-        shExpMatch(host, "*.cdninstagram.com") ||
-        shExpMatch(host, "*.fbcdn.net") ||
-        shExpMatch(host, "*.facebook.com") ||
-        shExpMatch(host, "*.facebook.net") ||
-        shExpMatch(host, "*.fb.com") ||
-        shExpMatch(host, "*.tfbnw.net") ||
-        shExpMatch(host, "*.c10r.facebook.com") ||
-        shExpMatch(host, "*.scontent.xx.fbcdn.net") ||
-        shExpMatch(host, "*.edge-chat.facebook.com") ||
-        shExpMatch(host, "*.i.instagram.com") ||
-        shExpMatch(host, "*.graph.instagram.com")
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    //  DISCORD (iOS)
-    // ===========
-    if (
-        shExpMatch(host, "*.discord.com") ||
-        shExpMatch(host, "*.discord.gg") ||
-        shExpMatch(host, "*.discordapp.com") ||
-        shExpMatch(host, "*.discord-media.com") ||
-        shExpMatch(host, "*.discordcdn.com")
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    //  PROTON
-    // ===========
-    if (
-        shExpMatch(host, "*.proton.me") ||
-        shExpMatch(host, "*.protonmail.com") ||
-        shExpMatch(host, "*.protonvpn.com")
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    //  ADULT BLOCKED SITES
-    // ===========
-    if (
-        shExpMatch(host, "*.hanime.tv") ||
-        shExpMatch(host, "*.hentaihaven.xxx") ||
-        shExpMatch(host, "*.pornhub.com") ||
-        shExpMatch(host, "*.phncdn.com") ||
-        shExpMatch(host, "*.xvideos.com") ||
-        shExpMatch(host, "*.xnxx.com") ||
-        shExpMatch(host, "*.eporner.com") ||
-        shExpMatch(host, "*.redtube.com") ||
-        url.indexOf("hentai") !== -1 ||
-        url.indexOf("porn") !== -1
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    //  TORRENTS
-    // ===========
-    if (
-        url.indexOf("torrent") !== -1 ||
-        url.indexOf("magnet:") !== -1 ||
-        shExpMatch(host, "*.rutracker.org") ||
-        shExpMatch(host, "*.1337x.to") ||
-        shExpMatch(host, "*.tfile.me") ||
-        shExpMatch(host, "*.rarbg.to") ||
-        shExpMatch(host, "*.torrentgalaxy.to") ||
-        shExpMatch(host, "*.nyaa.si")
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    //  RADARR / SONARR
-    // ===========
-    if (
-        shExpMatch(host, "*.radarr.video") ||
-        shExpMatch(host, "*.sonarr.tv") ||
-        shExpMatch(host, "*.lidarr.audio") ||
-        shExpMatch(host, "*.jackett.dev") ||
-        shExpMatch(host, "*.flaresolverr") ||
-        shExpMatch(host, "*.themoviedb.org") ||
-        shExpMatch(host, "*.tvdb.com")
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    // VDSINA
-    // ===========
-    if (
-        shExpMatch(host, "*.vdsina.ru") ||
-        shExpMatch(host, "*.vdsina.com")
-    ) {
-        return PROXY();
-    }
-
-    // ===========
-    // DEFAULT RULE (everything else goes direct)
-    // ===========
-    return DIRECT_CONN();
+  if (dnsDomainIs(host, "discord.com")) return PROXY();
+  if (dnsDomainIs(host, "discord.gg")) return PROXY();
+  if (dnsDomainIs(host, "discordapp.com")) return PROXY();
+  if (dnsDomainIs(host, "discordapp.net")) return PROXY();
+  if (url.indexOf("discord") !== -1) return PROXY();
+  if (dnsDomainIs(host, "openai.com")) return PROXY();
+  if (dnsDomainIs(host, "chatgpt.com")) return PROXY();
+  if (dnsDomainIs(host, "ai.com")) return PROXY();
+  if (dnsDomainIs(host, "auth0.openai.com")) return PROXY();
+  if (dnsDomainIs(host, "chat.openai.com")) return PROXY();
+  if (dnsDomainIs(host, "cdn.openai.com")) return PROXY();
+  if (dnsDomainIs(host, "oaiusercontent.com")) return PROXY();
+  if (dnsDomainIs(host, "openaicom.imgix.net")) return PROXY();
+  if (dnsDomainIs(host, "openaicom-api.akamaized.net")) return PROXY();
+  if (dnsDomainIs(host, "instagram.com")) return PROXY();
+  if (dnsDomainIs(host, "i.instagram.com")) return PROXY();
+  if (dnsDomainIs(host, "api.instagram.com")) return PROXY();
+  if (dnsDomainIs(host, "graph.instagram.com")) return PROXY();
+  if (dnsDomainIs(host, "b-graph.instagram.com")) return PROXY();
+  if (dnsDomainIs(host, "cdninstagram.com")) return PROXY();
+  if (dnsDomainIs(host, "static.cdninstagram.com")) return PROXY();
+  if (dnsDomainIs(host, "scontent.cdninstagram.com")) return PROXY();
+  if (dnsDomainIs(host, "igcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "facebook.net")) return PROXY();
+  if (dnsDomainIs(host, "fb.com")) return PROXY();
+  if (dnsDomainIs(host, "fbcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "xx.fbcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "tfbnw.net")) return PROXY();
+  if (dnsDomainIs(host, "connect.facebook.net")) return PROXY();
+  if (dnsDomainIs(host, "edge-chat.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "edge-mqtt.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "star.c10r.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "star-mini.c10r.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "graph.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "video.xx.fbcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "scontent.xx.fbcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "static.xx.fbcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "instagram.c10r.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "whatsapp.com")) return PROXY();
+  if (dnsDomainIs(host, "whatsapp.net")) return PROXY();
+  if (url.indexOf("instagram") !== -1) return PROXY();
+  if (url.indexOf("fbcdn") !== -1) return PROXY();
+  if (url.indexOf("facebook") !== -1) return PROXY();
+  if (url.indexOf("scontent") !== -1) return PROXY();
+  if (url.indexOf("metaverse") !== -1) return PROXY();
+  if (url.indexOf("lifehacker") !== -1) return PROXY();
+  if (dnsDomainIs(host, "notion.so")) return PROXY();
+  if (dnsDomainIs(host, "notion.site")) return PROXY();
+  if (dnsDomainIs(host, "notion-static.com")) return PROXY();
+  if (dnsDomainIs(host, "proton.me")) return PROXY();
+  if (dnsDomainIs(host, "protonmail.com")) return PROXY();
+  if (dnsDomainIs(host, "protonvpn.com")) return PROXY();
+  if (url.indexOf("proton") !== -1) return PROXY();
+  if (dnsDomainIs(host, "dirtyship.com")) return PROXY();
+  if (dnsDomainIs(host, "hanime.tv")) return PROXY();
+  if (dnsDomainIs(host, "hentaihaven.xxx")) return PROXY();
+  if (url.indexOf("hentaihaven") !== -1) return PROXY();
+  if (url.indexOf("hentai") !== -1) return PROXY();
+  if (url.indexOf("pornhub") !== -1) return PROXY();
+  if (url.indexOf("phncdn") !== -1) return PROXY();
+  if (url.indexOf("pornolab") !== -1) return PROXY();
+  if (url.indexOf("eporner") !== -1) return PROXY();
+  if (url.indexOf("xvideos") !== -1) return PROXY();
+  if (url.indexOf("xnxx") !== -1) return PROXY();
+  if (url.indexOf("youporn") !== -1) return PROXY();
+  if (url.indexOf("redtube") !== -1) return PROXY();
+  if (url.indexOf("rutracker") !== -1) return PROXY();
+  if (url.indexOf("tfile") !== -1) return PROXY();
+  if (url.indexOf("nnmclub") !== -1) return PROXY();
+  if (url.indexOf("torrent") !== -1) return PROXY();
+  if (url.indexOf("1337x") !== -1) return PROXY();
+  if (url.indexOf("torlock") !== -1) return PROXY();
+  if (url.indexOf("rarbg") !== -1) return PROXY();
+  if (url.indexOf("torrentgalaxy") !== -1) return PROXY();
+  if (url.indexOf("limetorrents") !== -1) return PROXY();
+  if (url.indexOf("piratebay") !== -1) return PROXY();
+  if (url.indexOf("seedpeer") !== -1) return PROXY();
+  if (url.indexOf("bitsearch") !== -1) return PROXY();
+  if (url.indexOf("magnetdl") !== -1) return PROXY();
+  if (url.indexOf("torrends") !== -1) return PROXY();
+  if (url.indexOf("glotorrents") !== -1) return PROXY();
+  if (url.indexOf("ettv") !== -1) return PROXY();
+  if (url.indexOf("yts") !== -1) return PROXY();
+  if (url.indexOf("nyaa") !== -1) return PROXY();
+  if (url.indexOf("animetosho") !== -1) return PROXY();
+  if (dnsDomainIs(host, "radarr.video")) return PROXY();
+  if (dnsDomainIs(host, "api.radarr.video")) return PROXY();
+  if (dnsDomainIs(host, "sonarr.tv")) return PROXY();
+  if (dnsDomainIs(host, "lidarr.audio")) return PROXY();
+  if (dnsDomainIs(host, "jackett.dev")) return PROXY();
+  if (url.indexOf("jackett") !== -1) return PROXY();
+  if (dnsDomainIs(host, "flaresolverr")) return PROXY();
+  if (dnsDomainIs(host, "tmdb.org")) return PROXY();
+  if (dnsDomainIs(host, "themoviedb.org")) return PROXY();
+  if (dnsDomainIs(host, "api.themoviedb.org")) return PROXY();
+  if (dnsDomainIs(host, "tvdb.com")) return PROXY();
+  if (dnsDomainIs(host, "api.tvdb.com")) return PROXY();
+  if (dnsDomainIs(host, "vdsina.ru")) return PROXY();
+  if (dnsDomainIs(host, "vdsina.com")) return PROXY();
+  if (url.indexOf("vdsina") !== -1) return PROXY();
+  return DIRECT_CONN();
 }
