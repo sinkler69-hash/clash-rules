@@ -61,6 +61,7 @@ rules:
 
   # --- Lifehacker ---
   - DOMAIN-KEYWORD,lifehacker,Proxy
+  - DOMAIN-KEYWORD,linkedin,Proxy
 
   # --- Notion ---
   - DOMAIN-SUFFIX,notion.so,Proxy
