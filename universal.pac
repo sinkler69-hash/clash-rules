@@ -9,7 +9,17 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "discord.gg")) return PROXY();
   if (dnsDomainIs(host, "discordapp.com")) return PROXY();
   if (dnsDomainIs(host, "discordapp.net")) return PROXY();
-  if (url.indexOf("discord") !== -1) return PROXY();
+  if (dnsDomainIs(host, "cdn.discordapp.com")) return PROXY();
+  if (dnsDomainIs(host, "media.discordapp.net")) return PROXY();
+  if (dnsDomainIs(host, "images.discordapp.net")) return PROXY();
+  if (dnsDomainIs(host, "discordstatus.com")) return PROXY();
+  if (dnsDomainIs(host, "gateway.discord.gg")) return PROXY();
+  if (dnsDomainIs(host, "voice.discord.gg")) return PROXY();
+  if (url.indexOf("rtc") !== -1) return PROXY();
+  if (url.indexOf("discord-media") !== -1) return PROXY();
+  if (url.indexOf("discord-gateway") !== -1) return PROXY();
+  if (dnsDomainIs(host, "discordcdn.com")) return PROXY();
+  if (dnsDomainIs(host, "discordmetrics.com")) return PROXY();
   if (dnsDomainIs(host, "openai.com")) return PROXY();
   if (dnsDomainIs(host, "chatgpt.com")) return PROXY();
   if (dnsDomainIs(host, "ai.com")) return PROXY();
