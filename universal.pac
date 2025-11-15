@@ -106,5 +106,17 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "vdsina.ru")) return PROXY();
   if (dnsDomainIs(host, "vdsina.com")) return PROXY();
   if (url.indexOf("vdsina") !== -1) return PROXY();
+  if (dnsDomainIs(host, "linkedin.com")) return PROXY();
+  if (dnsDomainIs(host, "licdn.com")) return PROXY();
+  if (url.indexOf("linkedin") !== -1) return PROXY();
+  if (dnsDomainIs(host, "twitter.com")) return PROXY();
+  if (dnsDomainIs(host, "x.com")) return PROXY();
+  if (dnsDomainIs(host, "t.co")) return PROXY();
+  if (dnsDomainIs(host, "twimg.com")) return PROXY();
+  if (dnsDomainIs(host, "abs.twimg.com")) return PROXY();
+  if (dnsDomainIs(host, "pbs.twimg.com")) return PROXY();
+  if (dnsDomainIs(host, "video.twimg.com")) return PROXY();
+  if (url.indexOf("twitter") !== -1) return PROXY();
+  if (url.indexOf("twimg") !== -1) return PROXY();
   return DIRECT_CONN();
 }
