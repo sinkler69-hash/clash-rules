@@ -17,7 +17,7 @@ rules:
   - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
   - DOMAIN-SUFFIX,openaicom-api.akamaized.net,Proxy
 
-  # --- Instagram / Meta ---
+  # --- Instagram / Meta (веб + приложение) ---
   - DOMAIN-SUFFIX,instagram.com,Proxy
   - DOMAIN-SUFFIX,i.instagram.com,Proxy
   - DOMAIN-SUFFIX,api.instagram.com,Proxy
@@ -67,7 +67,7 @@ rules:
   - DOMAIN-SUFFIX,notion.site,Proxy
   - DOMAIN-SUFFIX,notion-static.com,Proxy
 
-  # --- Proton ---
+  # --- ProtonMail / ProtonVPN ---
   - DOMAIN-SUFFIX,proton.me,Proxy
   - DOMAIN-SUFFIX,protonmail.com,Proxy
   - DOMAIN-SUFFIX,protonvpn.com,Proxy
@@ -88,7 +88,7 @@ rules:
   - DOMAIN-KEYWORD,youporn,Proxy
   - DOMAIN-KEYWORD,redtube,Proxy
 
-  # --- Torrent ---
+  # --- Торрент-трекеры ---
   - DOMAIN-KEYWORD,rutracker,Proxy
   - DOMAIN-KEYWORD,tfile,Proxy
   - DOMAIN-KEYWORD,nnmclub,Proxy
@@ -109,7 +109,7 @@ rules:
   - DOMAIN-KEYWORD,nyaa,Proxy
   - DOMAIN-KEYWORD,animetosho,Proxy
 
-  # --- Radarr/Sonarr/Lidarr ---
+  # --- Radarr / Sonarr / Lidarr / Jackett / FlareSolverr ---
   - DOMAIN-SUFFIX,radarr.video,Proxy
   - DOMAIN-SUFFIX,api.radarr.video,Proxy
   - DOMAIN-SUFFIX,sonarr.tv,Proxy
