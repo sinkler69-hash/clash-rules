@@ -23,14 +23,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
 
-      - name: Generate PAC
+      - name: Generate PAC and Clash ruleset
         run: |
           python generator.py
 
-      - name: Commit PAC
+      - name: Commit outputs
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          git add universal.pac
-          git commit -m "Auto update PAC" || echo "No changes"
+          git add universal.pac clash-ruleset.yaml
+          git commit -m "Auto update PAC and Clash ruleset" || echo "No changes"
           git push
