@@ -1,36 +1,47 @@
-name: Generate PAC
+name: Generate Clash ruleset and PAC
 
 on:
   push:
     paths:
-      - "rules.yaml"
+      - rules.yaml
+      - generator.py
   workflow_dispatch:
+
+permissions:
+  contents: write   # разрешаем GitHub Actions пушить в репозиторий
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.x'
 
-      - name: Install PyYAML
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install pyyaml
 
-      - name: Generate PAC and Clash ruleset
+      - name: Run generator
         run: |
           python generator.py
 
-      - name: Commit outputs
+      - name: Commit and push generated files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.email "action@github.com"
-          git config user.name "GitHub Action"
-          git add universal.pac clash-ruleset.yaml
-          git commit -m "Auto update PAC and Clash ruleset" || echo "No changes"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add clash-ruleset.yaml universal.pac || true
+
+          # если изменений нет, коммит не нужен
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          git commit -m "Auto-update clash-ruleset and universal.pac"
           git push
