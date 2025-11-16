@@ -1,26 +1,30 @@
 rules:
-  # --- Discord (Mobile + Desktop + Voice) ---
+  # --- Discord (Mobile + Desktop + Voice + CDN) ---
+  # Основные домены
   - DOMAIN-SUFFIX,discord.com,Proxy
   - DOMAIN-SUFFIX,discord.gg,Proxy
   - DOMAIN-SUFFIX,discordapp.com,Proxy
   - DOMAIN-SUFFIX,discordapp.net,Proxy
+
+  # CDN и загрузка медиа
+  - DOMAIN-SUFFIX,discordcdn.com,Proxy
   - DOMAIN-SUFFIX,cdn.discordapp.com,Proxy
   - DOMAIN-SUFFIX,media.discordapp.net,Proxy
-  - DOMAIN-SUFFIX,images.discordapp.net,Proxy
+  - DOMAIN-SUFFIX,images-ext-1.discordapp.net,Proxy
+  - DOMAIN-SUFFIX,images-ext-2.discordapp.net,Proxy
   - DOMAIN-SUFFIX,discordstatus.com,Proxy
 
-  # WebSocket + Gateway
+  # Websocket + Gateway (обязательно)
   - DOMAIN-SUFFIX,gateway.discord.gg,Proxy
   - DOMAIN-SUFFIX,voice.discord.gg,Proxy
 
-  # Voice/media servers (очень важно для iOS)
-  - DOMAIN-KEYWORD,rtc,Proxy
+  # Серверы iOS (отдельные keyword’ы)
+  - DOMAIN-KEYWORD,rpc,Proxy
   - DOMAIN-KEYWORD,discord-media,Proxy
   - DOMAIN-KEYWORD,discord-gateway,Proxy
 
-  # CDN Edge
-  - DOMAIN-SUFFIX,discordcdn.com,Proxy
-  - DOMAIN-SUFFIX,discordmetrics.com,Proxy
+  # Подстраховка на все случаи
+  - DOMAIN-KEYWORD,discord,Proxy 
 
   # --- ChatGPT / OpenAI ---
   - DOMAIN-SUFFIX,openai.com,Proxy
