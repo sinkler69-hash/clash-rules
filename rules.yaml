@@ -12,11 +12,19 @@ rules:
   - DOMAIN-SUFFIX,media.discordapp.net,Proxy
   - DOMAIN-SUFFIX,images-ext-1.discordapp.net,Proxy
   - DOMAIN-SUFFIX,images-ext-2.discordapp.net,Proxy
-  - DOMAIN-SUFFIX,discordstatus.com,Proxy
+  # Было discordstatus.com (такого домена у Discord нет), поправил на реальный:
+  - DOMAIN-SUFFIX,status.discord.com,Proxy
+  # Дополнительно: общий медиа-домен (часто светится на мобильных клиентах)
+  - DOMAIN-SUFFIX,discord.media,Proxy
 
   # Websocket + Gateway (обязательно)
   - DOMAIN-SUFFIX,gateway.discord.gg,Proxy
   - DOMAIN-SUFFIX,voice.discord.gg,Proxy
+  # iOS/desktop доп. сервисы
+  - DOMAIN-SUFFIX,clientconfig.discord.com,Proxy
+
+  # Загрузка вложений через Google Cloud Storage (часто используется на iOS)
+  - DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com,Proxy
 
   # Серверы iOS (отдельные keyword’ы)
   - DOMAIN-KEYWORD,rpc,Proxy
@@ -56,6 +64,8 @@ rules:
   - DOMAIN-SUFFIX,connect.facebook.net,Proxy
   - DOMAIN-SUFFIX,edge-chat.facebook.com,Proxy
   - DOMAIN-SUFFIX,edge-mqtt.facebook.com,Proxy
+  # Добавил MQTT-mini — часто используется мобилками Meta
+  - DOMAIN-SUFFIX,mqtt-mini.facebook.com,Proxy
   - DOMAIN-SUFFIX,star.c10r.facebook.com,Proxy
   - DOMAIN-SUFFIX,star-mini.c10r.facebook.com,Proxy
   - DOMAIN-SUFFIX,graph.facebook.com,Proxy
@@ -138,31 +148,4 @@ rules:
   - DOMAIN-KEYWORD,jackett,Proxy
   - DOMAIN-SUFFIX,flaresolverr,Proxy
   - DOMAIN-SUFFIX,tmdb.org,Proxy
-  - DOMAIN-SUFFIX,themoviedb.org,Proxy
-  - DOMAIN-SUFFIX,api.themoviedb.org,Proxy
-  - DOMAIN-SUFFIX,tvdb.com,Proxy
-  - DOMAIN-SUFFIX,api.tvdb.com,Proxy
-
-  # --- VDSina ---
-  - DOMAIN-SUFFIX,vdsina.ru,Proxy
-  - DOMAIN-SUFFIX,vdsina.com,Proxy
-  - DOMAIN-KEYWORD,vdsina,Proxy
-
-  # --- LinkedIn ---
-  - DOMAIN-SUFFIX,linkedin.com,Proxy
-  - DOMAIN-SUFFIX,licdn.com,Proxy
-  - DOMAIN-KEYWORD,linkedin,Proxy
-
-  # --- Twitter / X ---
-  - DOMAIN-SUFFIX,twitter.com,Proxy
-  - DOMAIN-SUFFIX,x.com,Proxy
-  - DOMAIN-SUFFIX,t.co,Proxy
-  - DOMAIN-SUFFIX,twimg.com,Proxy
-  - DOMAIN-SUFFIX,abs.twimg.com,Proxy
-  - DOMAIN-SUFFIX,pbs.twimg.com,Proxy
-  - DOMAIN-SUFFIX,video.twimg.com,Proxy
-  - DOMAIN-KEYWORD,twitter,Proxy
-  - DOMAIN-KEYWORD,twimg,Proxy
-
-  # --- Всё остальное напрямую ---
-  - MATCH,DIRECT
+  - DOMAIN-SUFFIX,themo
