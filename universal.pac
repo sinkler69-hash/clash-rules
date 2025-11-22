@@ -14,9 +14,12 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "media.discordapp.net")) return PROXY();
   if (dnsDomainIs(host, "images-ext-1.discordapp.net")) return PROXY();
   if (dnsDomainIs(host, "images-ext-2.discordapp.net")) return PROXY();
-  if (dnsDomainIs(host, "discordstatus.com")) return PROXY();
+  if (dnsDomainIs(host, "status.discord.com")) return PROXY();
+  if (dnsDomainIs(host, "discord.media")) return PROXY();
   if (dnsDomainIs(host, "gateway.discord.gg")) return PROXY();
   if (dnsDomainIs(host, "voice.discord.gg")) return PROXY();
+  if (dnsDomainIs(host, "clientconfig.discord.com")) return PROXY();
+  if (dnsDomainIs(host, "discord-attachments-uploads-prd.storage.googleapis.com")) return PROXY();
   if (url.indexOf("rpc") !== -1) return PROXY();
   if (url.indexOf("discord-media") !== -1) return PROXY();
   if (url.indexOf("discord-gateway") !== -1) return PROXY();
@@ -48,6 +51,7 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "connect.facebook.net")) return PROXY();
   if (dnsDomainIs(host, "edge-chat.facebook.com")) return PROXY();
   if (dnsDomainIs(host, "edge-mqtt.facebook.com")) return PROXY();
+  if (dnsDomainIs(host, "mqtt-mini.facebook.com")) return PROXY();
   if (dnsDomainIs(host, "star.c10r.facebook.com")) return PROXY();
   if (dnsDomainIs(host, "star-mini.c10r.facebook.com")) return PROXY();
   if (dnsDomainIs(host, "graph.facebook.com")) return PROXY();
@@ -110,24 +114,6 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("jackett") !== -1) return PROXY();
   if (dnsDomainIs(host, "flaresolverr")) return PROXY();
   if (dnsDomainIs(host, "tmdb.org")) return PROXY();
-  if (dnsDomainIs(host, "themoviedb.org")) return PROXY();
-  if (dnsDomainIs(host, "api.themoviedb.org")) return PROXY();
-  if (dnsDomainIs(host, "tvdb.com")) return PROXY();
-  if (dnsDomainIs(host, "api.tvdb.com")) return PROXY();
-  if (dnsDomainIs(host, "vdsina.ru")) return PROXY();
-  if (dnsDomainIs(host, "vdsina.com")) return PROXY();
-  if (url.indexOf("vdsina") !== -1) return PROXY();
-  if (dnsDomainIs(host, "linkedin.com")) return PROXY();
-  if (dnsDomainIs(host, "licdn.com")) return PROXY();
-  if (url.indexOf("linkedin") !== -1) return PROXY();
-  if (dnsDomainIs(host, "twitter.com")) return PROXY();
-  if (dnsDomainIs(host, "x.com")) return PROXY();
-  if (dnsDomainIs(host, "t.co")) return PROXY();
-  if (dnsDomainIs(host, "twimg.com")) return PROXY();
-  if (dnsDomainIs(host, "abs.twimg.com")) return PROXY();
-  if (dnsDomainIs(host, "pbs.twimg.com")) return PROXY();
-  if (dnsDomainIs(host, "video.twimg.com")) return PROXY();
-  if (url.indexOf("twitter") !== -1) return PROXY();
-  if (url.indexOf("twimg") !== -1) return PROXY();
+  if (dnsDomainIs(host, "themo")) return PROXY();
   return DIRECT_CONN();
 }
