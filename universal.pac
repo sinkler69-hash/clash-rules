@@ -74,9 +74,6 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "protonmail.com")) return PROXY();
   if (dnsDomainIs(host, "protonvpn.com")) return PROXY();
   if (url.indexOf("proton") !== -1) return PROXY();
-  if (dnsDomainIs(host, "dirtyship.com")) return PROXY();
-  if (dnsDomainIs(host, "hanime.tv")) return PROXY();
-  if (dnsDomainIs(host, "hentaihaven.xxx")) return PROXY();
   if (url.indexOf("hentaihaven") !== -1) return PROXY();
   if (url.indexOf("hentai") !== -1) return PROXY();
   if (url.indexOf("pornhub") !== -1) return PROXY();
@@ -110,10 +107,22 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "api.radarr.video")) return PROXY();
   if (dnsDomainIs(host, "sonarr.tv")) return PROXY();
   if (dnsDomainIs(host, "lidarr.audio")) return PROXY();
+  if (dnsDomainIs(host, "api.lidarr.audio")) return PROXY();
   if (dnsDomainIs(host, "jackett.dev")) return PROXY();
   if (url.indexOf("jackett") !== -1) return PROXY();
   if (dnsDomainIs(host, "flaresolverr")) return PROXY();
   if (dnsDomainIs(host, "tmdb.org")) return PROXY();
-  if (dnsDomainIs(host, "themo")) return PROXY();
+  if (dnsDomainIs(host, "themoviedb.org")) return PROXY();
+  if (dnsDomainIs(host, "musicbrainz.org")) return PROXY();
+  if (dnsDomainIs(host, "metabrainz.org")) return PROXY();
+  if (dnsDomainIs(host, "coverartarchive.org")) return PROXY();
+  if (dnsDomainIs(host, "fanart.tv")) return PROXY();
+  if (dnsDomainIs(host, "theaudiodb.com")) return PROXY();
+  if (dnsDomainIs(host, "last.fm")) return PROXY();
+  if (dnsDomainIs(host, "discogs.com")) return PROXY();
+  if (dnsDomainIs(host, "acoustid.org")) return PROXY();
+  if (dnsDomainIs(host, "acousticbrainz.org")) return PROXY();
+  if (dnsDomainIs(host, "brainz.org")) return PROXY();
+  if (dnsDomainIs(host, "musicbrainzpicard.live")) return PROXY();
   return DIRECT_CONN();
 }
