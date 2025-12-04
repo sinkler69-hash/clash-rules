@@ -84,6 +84,14 @@ payload:
 - DOMAIN-KEYWORD,xnxx,Proxy
 - DOMAIN-KEYWORD,youporn,Proxy
 - DOMAIN-KEYWORD,redtube,Proxy
+- DOMAIN-SUFFIX,hanime.tv,Proxy
+- DOMAIN-SUFFIX,hhcdn.net,Proxy
+- DOMAIN-SUFFIX,hentaicdn.com,Proxy
+- DOMAIN-SUFFIX,hanime1.me,Proxy
+- DOMAIN-SUFFIX,dirtyship.com,Proxy
+- DOMAIN-SUFFIX,ds-cdn.com,Proxy
+- DOMAIN-SUFFIX,ds1cdn.com,Proxy
+- DOMAIN-SUFFIX,cloudflarestream.com,Proxy
 - DOMAIN-KEYWORD,rutracker,Proxy
 - DOMAIN-KEYWORD,tfile,Proxy
 - DOMAIN-KEYWORD,nnmclub,Proxy

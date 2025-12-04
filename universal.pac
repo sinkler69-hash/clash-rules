@@ -84,6 +84,14 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("xnxx") !== -1) return PROXY();
   if (url.indexOf("youporn") !== -1) return PROXY();
   if (url.indexOf("redtube") !== -1) return PROXY();
+  if (dnsDomainIs(host, "hanime.tv")) return PROXY();
+  if (dnsDomainIs(host, "hhcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "hentaicdn.com")) return PROXY();
+  if (dnsDomainIs(host, "hanime1.me")) return PROXY();
+  if (dnsDomainIs(host, "dirtyship.com")) return PROXY();
+  if (dnsDomainIs(host, "ds-cdn.com")) return PROXY();
+  if (dnsDomainIs(host, "ds1cdn.com")) return PROXY();
+  if (dnsDomainIs(host, "cloudflarestream.com")) return PROXY();
   if (url.indexOf("rutracker") !== -1) return PROXY();
   if (url.indexOf("tfile") !== -1) return PROXY();
   if (url.indexOf("nnmclub") !== -1) return PROXY();
