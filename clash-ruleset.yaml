@@ -1,4 +1,5 @@
 payload:
+- PROCESS-NAME,brave.exe,BRAVE_ONLY
 - DOMAIN-SUFFIX,discord.com,Proxy
 - DOMAIN-SUFFIX,discord.gg,Proxy
 - DOMAIN-SUFFIX,discordapp.com,Proxy
