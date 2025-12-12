@@ -1,5 +1,13 @@
 rules:
-  # --- Discord (Mobile + Desktop + Voice + CDN) ---
+  # =====================================================
+  # Brave Browser — FULL VPN + KILL SWITCH
+  # =====================================================
+  - PROCESS-NAME,brave.exe,BRAVE_ONLY
+
+
+  # =====================================================
+  # Discord (Mobile + Desktop + Voice + CDN)
+  # =====================================================
   - DOMAIN-SUFFIX,discord.com,Proxy
   - DOMAIN-SUFFIX,discord.gg,Proxy
   - DOMAIN-SUFFIX,discordapp.com,Proxy
@@ -23,7 +31,10 @@ rules:
   - DOMAIN-KEYWORD,discord-gateway,Proxy
   - DOMAIN-KEYWORD,discord,Proxy
 
-  # --- ChatGPT / OpenAI ---
+
+  # =====================================================
+  # ChatGPT / OpenAI
+  # =====================================================
   - DOMAIN-SUFFIX,openai.com,Proxy
   - DOMAIN-SUFFIX,chatgpt.com,Proxy
   - DOMAIN-SUFFIX,ai.com,Proxy
@@ -34,7 +45,10 @@ rules:
   - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
   - DOMAIN-SUFFIX,openaicom-api.akamaized.net,Proxy
 
-  # --- Instagram / Meta ---
+
+  # =====================================================
+  # Instagram / Meta
+  # =====================================================
   - DOMAIN-SUFFIX,instagram.com,Proxy
   - DOMAIN-SUFFIX,i.instagram.com,Proxy
   - DOMAIN-SUFFIX,api.instagram.com,Proxy
@@ -70,7 +84,10 @@ rules:
   - DOMAIN-KEYWORD,scontent,Proxy
   - DOMAIN-KEYWORD,metaverse,Proxy
 
-  # --- IP-пулы Meta ---
+
+  # =====================================================
+  # Meta IP ranges
+  # =====================================================
   - IP-CIDR,31.13.0.0/16,Proxy,no-resolve
   - IP-CIDR,157.240.0.0/16,Proxy,no-resolve
   - IP-CIDR,173.252.64.0/18,Proxy,no-resolve
@@ -78,21 +95,33 @@ rules:
   - IP-CIDR,185.60.216.0/22,Proxy,no-resolve
   - IP-CIDR,204.15.20.0/22,Proxy,no-resolve
 
-  # --- Lifehacker ---
+
+  # =====================================================
+  # Lifehacker
+  # =====================================================
   - DOMAIN-KEYWORD,lifehacker,Proxy
 
-  # --- Notion ---
+
+  # =====================================================
+  # Notion
+  # =====================================================
   - DOMAIN-SUFFIX,notion.so,Proxy
   - DOMAIN-SUFFIX,notion.site,Proxy
   - DOMAIN-SUFFIX,notion-static.com,Proxy
 
-  # --- ProtonMail / ProtonVPN ---
+
+  # =====================================================
+  # Proton
+  # =====================================================
   - DOMAIN-SUFFIX,proton.me,Proxy
   - DOMAIN-SUFFIX,protonmail.com,Proxy
   - DOMAIN-SUFFIX,protonvpn.com,Proxy
   - DOMAIN-KEYWORD,proton,Proxy
 
-  # --- Adult ---
+
+  # =====================================================
+  # Adult
+  # =====================================================
   - DOMAIN-KEYWORD,hentaihaven,Proxy
   - DOMAIN-KEYWORD,hentai,Proxy
   - DOMAIN-KEYWORD,pornhub,Proxy
@@ -104,15 +133,18 @@ rules:
   - DOMAIN-KEYWORD,youporn,Proxy
   - DOMAIN-KEYWORD,redtube,Proxy
   - DOMAIN-SUFFIX,hanime.tv,Proxy
-  - DOMAIN-SUFFIX,hhcdn.net,Proxy    
-  - DOMAIN-SUFFIX,hentaicdn.com,Proxy  
-  - DOMAIN-SUFFIX,hanime1.me,Proxy    
+  - DOMAIN-SUFFIX,hhcdn.net,Proxy
+  - DOMAIN-SUFFIX,hentaicdn.com,Proxy
+  - DOMAIN-SUFFIX,hanime1.me,Proxy
   - DOMAIN-SUFFIX,dirtyship.com,Proxy
-  - DOMAIN-SUFFIX,ds-cdn.com,Proxy     
+  - DOMAIN-SUFFIX,ds-cdn.com,Proxy
   - DOMAIN-SUFFIX,ds1cdn.com,Proxy
-  - DOMAIN-SUFFIX,cloudflarestream.com,Proxy 
-  
-  # --- Торрент-трекеры ---
+  - DOMAIN-SUFFIX,cloudflarestream.com,Proxy
+
+
+  # =====================================================
+  # Torrents
+  # =====================================================
   - DOMAIN-KEYWORD,rutracker,Proxy
   - DOMAIN-KEYWORD,tfile,Proxy
   - DOMAIN-KEYWORD,nnmclub,Proxy
@@ -133,21 +165,25 @@ rules:
   - DOMAIN-KEYWORD,nyaa,Proxy
   - DOMAIN-KEYWORD,animetosho,Proxy
 
-  # --- Radarr / Sonarr / Lidarr / Jackett / FlareSolverr ---
+
+  # =====================================================
+  # Radarr / Sonarr / Lidarr / Jackett
+  # =====================================================
   - DOMAIN-SUFFIX,radarr.video,Proxy
   - DOMAIN-SUFFIX,api.radarr.video,Proxy
   - DOMAIN-SUFFIX,sonarr.tv,Proxy
   - DOMAIN-SUFFIX,lidarr.audio,Proxy
   - DOMAIN-SUFFIX,api.lidarr.audio,Proxy
-
   - DOMAIN-SUFFIX,jackett.dev,Proxy
   - DOMAIN-KEYWORD,jackett,Proxy
   - DOMAIN-SUFFIX,flaresolverr,Proxy
-
   - DOMAIN-SUFFIX,tmdb.org,Proxy
   - DOMAIN-SUFFIX,themoviedb.org,Proxy
 
-  # --- Lidarr metadata sources (MusicBrainz / Fanart / Covers / AcoustID etc.) ---
+
+  # =====================================================
+  # Lidarr metadata
+  # =====================================================
   - DOMAIN-SUFFIX,musicbrainz.org,Proxy
   - DOMAIN-SUFFIX,metabrainz.org,Proxy
   - DOMAIN-SUFFIX,coverartarchive.org,Proxy
@@ -159,3 +195,9 @@ rules:
   - DOMAIN-SUFFIX,acousticbrainz.org,Proxy
   - DOMAIN-SUFFIX,brainz.org,Proxy
   - DOMAIN-SUFFIX,musicbrainzpicard.live,Proxy
+
+
+  # =====================================================
+  # Default
+  # =====================================================
+  - MATCH,DIRECT
