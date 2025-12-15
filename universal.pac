@@ -5,6 +5,19 @@ function FindProxyForURL(url, host) {
   function PROXY() { return "PROXY 192.168.50.135:7897"; }
   function DIRECT_CONN() { return "DIRECT"; }
 
+  if (dnsDomainIs(host, "youtube.com")) return PROXY();
+  if (dnsDomainIs(host, "www.youtube.com")) return PROXY();
+  if (dnsDomainIs(host, "m.youtube.com")) return PROXY();
+  if (dnsDomainIs(host, "youtu.be")) return PROXY();
+  if (dnsDomainIs(host, "googlevideo.com")) return PROXY();
+  if (dnsDomainIs(host, "ytimg.com")) return PROXY();
+  if (dnsDomainIs(host, "s.ytimg.com")) return PROXY();
+  if (dnsDomainIs(host, "i.ytimg.com")) return PROXY();
+  if (dnsDomainIs(host, "youtube.googleapis.com")) return PROXY();
+  if (dnsDomainIs(host, "youtubei.googleapis.com")) return PROXY();
+  if (url.indexOf("youtube") !== -1) return PROXY();
+  if (url.indexOf("googlevideo") !== -1) return PROXY();
+  if (url.indexOf("ytimg") !== -1) return PROXY();
   if (dnsDomainIs(host, "discord.com")) return PROXY();
   if (dnsDomainIs(host, "discord.gg")) return PROXY();
   if (dnsDomainIs(host, "discordapp.com")) return PROXY();
