@@ -11,8 +11,6 @@ payload:
 - DOMAIN-SUFFIX,ytimg.com,Proxy
 - DOMAIN-SUFFIX,s.ytimg.com,Proxy
 - DOMAIN-SUFFIX,i.ytimg.com,Proxy
-- DOMAIN-SUFFIX,ggpht.com,Proxy
-- DOMAIN-SUFFIX,googleusercontent.com,Proxy
 - DOMAIN-KEYWORD,youtube,Proxy
 - DOMAIN-KEYWORD,googlevideo,Proxy
 - DOMAIN-KEYWORD,ytimg,Proxy
