@@ -4,7 +4,6 @@ rules:
   # =====================================================
   - PROCESS-NAME,brave.exe,BRAVE_ONLY
 
-
   # =====================================================
   # YouTube (Web + Mobile + Shorts + CDN)
   # =====================================================
@@ -22,10 +21,14 @@ rules:
   - DOMAIN-SUFFIX,s.ytimg.com,Proxy
   - DOMAIN-SUFFIX,i.ytimg.com,Proxy
 
+  - DOMAIN-SUFFIX,ggpht.com,Proxy
+  - DOMAIN-SUFFIX,googleusercontent.com,Proxy
+
   - DOMAIN-KEYWORD,youtube,Proxy
   - DOMAIN-KEYWORD,googlevideo,Proxy
   - DOMAIN-KEYWORD,ytimg,Proxy
   - DOMAIN-KEYWORD,ggpht,Proxy
+
 
   # =====================================================
   # Discord (Mobile + Desktop + Voice + CDN)
