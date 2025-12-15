@@ -16,6 +16,8 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "ytimg.com")) return PROXY();
   if (dnsDomainIs(host, "s.ytimg.com")) return PROXY();
   if (dnsDomainIs(host, "i.ytimg.com")) return PROXY();
+  if (dnsDomainIs(host, "ggpht.com")) return PROXY();
+  if (dnsDomainIs(host, "googleusercontent.com")) return PROXY();
   if (url.indexOf("youtube") !== -1) return PROXY();
   if (url.indexOf("googlevideo") !== -1) return PROXY();
   if (url.indexOf("ytimg") !== -1) return PROXY();
