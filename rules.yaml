@@ -6,6 +6,27 @@ rules:
 
 
   # =====================================================
+  # YouTube (Web + Mobile App + CDN)
+  # =====================================================
+  - DOMAIN-SUFFIX,youtube.com,Proxy
+  - DOMAIN-SUFFIX,www.youtube.com,Proxy
+  - DOMAIN-SUFFIX,m.youtube.com,Proxy
+  - DOMAIN-SUFFIX,youtu.be,Proxy
+
+  - DOMAIN-SUFFIX,googlevideo.com,Proxy
+  - DOMAIN-SUFFIX,ytimg.com,Proxy
+  - DOMAIN-SUFFIX,s.ytimg.com,Proxy
+  - DOMAIN-SUFFIX,i.ytimg.com,Proxy
+
+  - DOMAIN-SUFFIX,youtube.googleapis.com,Proxy
+  - DOMAIN-SUFFIX,youtubei.googleapis.com,Proxy
+
+  - DOMAIN-KEYWORD,youtube,Proxy
+  - DOMAIN-KEYWORD,googlevideo,Proxy
+  - DOMAIN-KEYWORD,ytimg,Proxy
+
+
+  # =====================================================
   # Discord (Mobile + Desktop + Voice + CDN)
   # =====================================================
   - DOMAIN-SUFFIX,discord.com,Proxy
