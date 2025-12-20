@@ -41,6 +41,8 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("discord-media") !== -1) return PROXY();
   if (url.indexOf("discord-gateway") !== -1) return PROXY();
   if (url.indexOf("discord") !== -1) return PROXY();
+  if (dnsDomainIs(host, "garlandtools.org")) return PROXY();
+  if (dnsDomainIs(host, "universalis.app")) return PROXY();
   if (dnsDomainIs(host, "openai.com")) return PROXY();
   if (dnsDomainIs(host, "chatgpt.com")) return PROXY();
   if (dnsDomainIs(host, "ai.com")) return PROXY();
