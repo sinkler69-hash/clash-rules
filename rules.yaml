@@ -63,7 +63,11 @@ rules:
   - DOMAIN-KEYWORD,discord-gateway,Proxy
   - DOMAIN-KEYWORD,discord,Proxy
 
-
+  # FFXIV tools
+  # =====================================================
+  - DOMAIN-SUFFIX,garlandtools.org,Proxy
+  - DOMAIN-SUFFIX,universalis.app,Proxy
+  
   # =====================================================
   # ChatGPT / OpenAI
   # =====================================================
