@@ -104,6 +104,7 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("youporn") !== -1) return PROXY();
   if (url.indexOf("redtube") !== -1) return PROXY();
   if (dnsDomainIs(host, "hanime.tv")) return PROXY();
+  if (dnsDomainIs(host, "hanime-cdn.com")) return PROXY();
   if (dnsDomainIs(host, "hhcdn.net")) return PROXY();
   if (dnsDomainIs(host, "hentaicdn.com")) return PROXY();
   if (dnsDomainIs(host, "hanime1.me")) return PROXY();

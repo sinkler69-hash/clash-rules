@@ -108,6 +108,7 @@ payload:
 - DOMAIN-KEYWORD,youporn,Proxy
 - DOMAIN-KEYWORD,redtube,Proxy
 - DOMAIN-SUFFIX,hanime.tv,Proxy
+- DOMAIN-SUFFIX,hanime-cdn.com,Proxy
 - DOMAIN-SUFFIX,hhcdn.net,Proxy
 - DOMAIN-SUFFIX,hentaicdn.com,Proxy
 - DOMAIN-SUFFIX,hanime1.me,Proxy
