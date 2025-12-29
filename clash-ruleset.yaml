@@ -39,6 +39,14 @@ payload:
 - DOMAIN-KEYWORD,discord-media,Proxy
 - DOMAIN-KEYWORD,discord-gateway,Proxy
 - DOMAIN-KEYWORD,discord,Proxy
+- DOMAIN-SUFFIX,reddit.com,Proxy
+- DOMAIN-SUFFIX,redd.it,Proxy
+- DOMAIN-SUFFIX,redditstatic.com,Proxy
+- DOMAIN-SUFFIX,redditmedia.com,Proxy
+- DOMAIN-SUFFIX,reddituploads.com,Proxy
+- DOMAIN-SUFFIX,i.redd.it,Proxy
+- DOMAIN-SUFFIX,preview.redd.it,Proxy
+- DOMAIN-SUFFIX,v.redd.it,Proxy
 - DOMAIN-SUFFIX,garlandtools.org,Proxy
 - DOMAIN-SUFFIX,universalis.app,Proxy
 - DOMAIN-SUFFIX,openai.com,Proxy

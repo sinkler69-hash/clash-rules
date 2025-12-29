@@ -41,6 +41,14 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("discord-media") !== -1) return PROXY();
   if (url.indexOf("discord-gateway") !== -1) return PROXY();
   if (url.indexOf("discord") !== -1) return PROXY();
+  if (dnsDomainIs(host, "reddit.com")) return PROXY();
+  if (dnsDomainIs(host, "redd.it")) return PROXY();
+  if (dnsDomainIs(host, "redditstatic.com")) return PROXY();
+  if (dnsDomainIs(host, "redditmedia.com")) return PROXY();
+  if (dnsDomainIs(host, "reddituploads.com")) return PROXY();
+  if (dnsDomainIs(host, "i.redd.it")) return PROXY();
+  if (dnsDomainIs(host, "preview.redd.it")) return PROXY();
+  if (dnsDomainIs(host, "v.redd.it")) return PROXY();
   if (dnsDomainIs(host, "garlandtools.org")) return PROXY();
   if (dnsDomainIs(host, "universalis.app")) return PROXY();
   if (dnsDomainIs(host, "openai.com")) return PROXY();
