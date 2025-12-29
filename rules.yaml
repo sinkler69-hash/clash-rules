@@ -64,18 +64,22 @@ rules:
   - DOMAIN-KEYWORD,discord,Proxy
 
   # =====================================================
-  # Reddit (Web + Media + CDN)
+  # Reddit (Web + API + Media) — FIXED
   # =====================================================
-  - DOMAIN-SUFFIX,reddit.com,Proxy
+  - DOMAIN,reddit.com,Proxy
+  - DOMAIN,www.reddit.com,Proxy
+  - DOMAIN,oauth.reddit.com,Proxy
+  - DOMAIN,gateway.reddit.com,Proxy
+  - DOMAIN,events.reddit.com,Proxy
+
   - DOMAIN-SUFFIX,redd.it,Proxy
   - DOMAIN-SUFFIX,redditstatic.com,Proxy
   - DOMAIN-SUFFIX,redditmedia.com,Proxy
   - DOMAIN-SUFFIX,reddituploads.com,Proxy
 
-  # Images / video
-  - DOMAIN-SUFFIX,i.redd.it,Proxy
-  - DOMAIN-SUFFIX,preview.redd.it,Proxy
-  - DOMAIN-SUFFIX,v.redd.it,Proxy
+  - DOMAIN,i.redd.it,Proxy
+  - DOMAIN,preview.redd.it,Proxy
+  - DOMAIN,v.redd.it,Proxy
 
   # FFXIV tools
   # =====================================================
