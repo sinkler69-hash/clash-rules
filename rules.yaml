@@ -63,6 +63,20 @@ rules:
   - DOMAIN-KEYWORD,discord-gateway,Proxy
   - DOMAIN-KEYWORD,discord,Proxy
 
+  # =====================================================
+  # Reddit (Web + Media + CDN)
+  # =====================================================
+  - DOMAIN-SUFFIX,reddit.com,Proxy
+  - DOMAIN-SUFFIX,redd.it,Proxy
+  - DOMAIN-SUFFIX,redditstatic.com,Proxy
+  - DOMAIN-SUFFIX,redditmedia.com,Proxy
+  - DOMAIN-SUFFIX,reddituploads.com,Proxy
+
+  # Images / video
+  - DOMAIN-SUFFIX,i.redd.it,Proxy
+  - DOMAIN-SUFFIX,preview.redd.it,Proxy
+  - DOMAIN-SUFFIX,v.redd.it,Proxy
+
   # FFXIV tools
   # =====================================================
   - DOMAIN-SUFFIX,garlandtools.org,Proxy
