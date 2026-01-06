@@ -105,6 +105,11 @@ payload:
 - DOMAIN-SUFFIX,notion.so,Proxy
 - DOMAIN-SUFFIX,notion.site,Proxy
 - DOMAIN-SUFFIX,notion-static.com,Proxy
+- DOMAIN-SUFFIX,xivgear.app,Proxy
+- DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
+- DOMAIN-SUFFIX,ffxiv.com,Proxy
+- DOMAIN-SUFFIX,square-enix.com,Proxy
+- DOMAIN-SUFFIX,sqexcdn.com,Proxy
 - DOMAIN-SUFFIX,proton.me,Proxy
 - DOMAIN-SUFFIX,protonmail.com,Proxy
 - DOMAIN-SUFFIX,protonvpn.com,Proxy
