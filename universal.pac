@@ -55,6 +55,12 @@ function FindProxyForURL(url, host) {
   if (host === "v.redd.it") return PROXY();
   if (dnsDomainIs(host, "garlandtools.org")) return PROXY();
   if (dnsDomainIs(host, "universalis.app")) return PROXY();
+  if (dnsDomainIs(host, "xivgear.app")) return PROXY();
+  if (dnsDomainIs(host, "raidplan.io")) return PROXY();
+  if (dnsDomainIs(host, "finalfantasyxiv.com")) return PROXY();
+  if (dnsDomainIs(host, "ffxiv.com")) return PROXY();
+  if (dnsDomainIs(host, "square-enix.com")) return PROXY();
+  if (dnsDomainIs(host, "sqexcdn.com")) return PROXY();
   if (dnsDomainIs(host, "openai.com")) return PROXY();
   if (dnsDomainIs(host, "chatgpt.com")) return PROXY();
   if (dnsDomainIs(host, "ai.com")) return PROXY();
@@ -101,11 +107,6 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "notion.so")) return PROXY();
   if (dnsDomainIs(host, "notion.site")) return PROXY();
   if (dnsDomainIs(host, "notion-static.com")) return PROXY();
-  if (dnsDomainIs(host, "xivgear.app")) return PROXY();
-  if (dnsDomainIs(host, "finalfantasyxiv.com")) return PROXY();
-  if (dnsDomainIs(host, "ffxiv.com")) return PROXY();
-  if (dnsDomainIs(host, "square-enix.com")) return PROXY();
-  if (dnsDomainIs(host, "sqexcdn.com")) return PROXY();
   if (dnsDomainIs(host, "proton.me")) return PROXY();
   if (dnsDomainIs(host, "protonmail.com")) return PROXY();
   if (dnsDomainIs(host, "protonvpn.com")) return PROXY();
