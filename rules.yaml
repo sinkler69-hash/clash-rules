@@ -85,6 +85,14 @@ rules:
   # =====================================================
   - DOMAIN-SUFFIX,garlandtools.org,Proxy
   - DOMAIN-SUFFIX,universalis.app,Proxy
+  - DOMAIN-SUFFIX,xivgear.app,Proxy
+  - DOMAIN-SUFFIX,raidplan.io,Proxy
+  
+  - DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
+  - DOMAIN-SUFFIX,ffxiv.com,Proxy
+  - DOMAIN-SUFFIX,square-enix.com,Proxy
+  - DOMAIN-SUFFIX,sqexcdn.com,Proxy
+
   
   # =====================================================
   # ChatGPT / OpenAI
@@ -162,16 +170,6 @@ rules:
   - DOMAIN-SUFFIX,notion.so,Proxy
   - DOMAIN-SUFFIX,notion.site,Proxy
   - DOMAIN-SUFFIX,notion-static.com,Proxy
-
-  # =====================================================
-  # FFXIV Tools & Lodestone
-  # =====================================================
-  - DOMAIN-SUFFIX,xivgear.app,Proxy
-
-  - DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
-  - DOMAIN-SUFFIX,ffxiv.com,Proxy
-  - DOMAIN-SUFFIX,square-enix.com,Proxy
-  - DOMAIN-SUFFIX,sqexcdn.com,Proxy
 
   # =====================================================
   # Proton
