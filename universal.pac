@@ -104,6 +104,7 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("scontent") !== -1) return PROXY();
   if (url.indexOf("metaverse") !== -1) return PROXY();
   if (url.indexOf("lifehacker") !== -1) return PROXY();
+  if (dnsDomainIs(host, "desec.io")) return PROXY();
   if (dnsDomainIs(host, "notion.so")) return PROXY();
   if (dnsDomainIs(host, "notion.site")) return PROXY();
   if (dnsDomainIs(host, "notion-static.com")) return PROXY();

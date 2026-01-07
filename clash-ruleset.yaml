@@ -108,6 +108,7 @@ payload:
 - IP-CIDR,185.60.216.0/22,Proxy,no-resolve
 - IP-CIDR,204.15.20.0/22,Proxy,no-resolve
 - DOMAIN-KEYWORD,lifehacker,Proxy
+- DOMAIN-SUFFIX,desec.io,Proxy
 - DOMAIN-SUFFIX,notion.so,Proxy
 - DOMAIN-SUFFIX,notion.site,Proxy
 - DOMAIN-SUFFIX,notion-static.com,Proxy
