@@ -162,6 +162,7 @@ rules:
   # Lifehacker
   # =====================================================
   - DOMAIN-KEYWORD,lifehacker,Proxy
+  - DOMAIN-SUFFIX,desec.io,Proxy
 
 
   # =====================================================
