@@ -61,6 +61,7 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "ffxiv.com")) return PROXY();
   if (dnsDomainIs(host, "square-enix.com")) return PROXY();
   if (dnsDomainIs(host, "sqexcdn.com")) return PROXY();
+  if (dnsDomainIs(host, "ffxivteamcraft.com")) return PROXY();
   if (dnsDomainIs(host, "openai.com")) return PROXY();
   if (dnsDomainIs(host, "chatgpt.com")) return PROXY();
   if (dnsDomainIs(host, "ai.com")) return PROXY();
