@@ -92,7 +92,8 @@ rules:
   - DOMAIN-SUFFIX,ffxiv.com,Proxy
   - DOMAIN-SUFFIX,square-enix.com,Proxy
   - DOMAIN-SUFFIX,sqexcdn.com,Proxy
-
+  - DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
+  
   
   # =====================================================
   # ChatGPT / OpenAI
