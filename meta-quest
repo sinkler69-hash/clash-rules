@@ -1,51 +1,15 @@
 function FindProxyForURL(url, host) {
   host = (host || "").toLowerCase();
-  url  = (url  || "").toLowerCase();
 
-  function PROXY() { return "PROXY 192.168.50.135:7897"; }
-  function DIRECT() { return "DIRECT"; }
-
-  // =====================================================
-  // Meta Quest / Oculus / Horizon
-  // =====================================================
-  if (
-    dnsDomainIs(host, "meta.com") || shExpMatch(host, "*.meta.com") ||
-    dnsDomainIs(host, "oculus.com") || shExpMatch(host, "*.oculus.com") ||
-    dnsDomainIs(host, "oculuscdn.com") || shExpMatch(host, "*.oculuscdn.com") ||
-    dnsDomainIs(host, "oculusvr.com") || shExpMatch(host, "*.oculusvr.com") ||
-
-    dnsDomainIs(host, "graph.meta.com") || shExpMatch(host, "*.graph.meta.com") ||
-    dnsDomainIs(host, "horizon.meta.com") || shExpMatch(host, "*.horizon.meta.com") ||
-    dnsDomainIs(host, "horizon.oculus.com") || shExpMatch(host, "*.horizon.oculus.com") ||
-    dnsDomainIs(host, "graph.oculus.com") || shExpMatch(host, "*.graph.oculus.com") ||
-    dnsDomainIs(host, "secure.oculus.com") || shExpMatch(host, "*.secure.oculus.com") ||
-    dnsDomainIs(host, "edge.oculus.com") || shExpMatch(host, "*.edge.oculus.com") ||
-
-    dnsDomainIs(host, "mqtt.meta.com") || shExpMatch(host, "*.mqtt.meta.com") ||
-    dnsDomainIs(host, "mqtt-mini.meta.com") || shExpMatch(host, "*.mqtt-mini.meta.com") ||
-    dnsDomainIs(host, "edge-mqtt.meta.com") || shExpMatch(host, "*.edge-mqtt.meta.com") ||
-
-    shExpMatch(host, "*oculus*") ||
-    shExpMatch(host, "*quest*") ||
-    shExpMatch(host, "*horizon*")
-  ) {
-    return PROXY();
+  // Локальные адреса и домены — напрямую
+  if (isPlainHostName(host) ||
+      shExpMatch(host, "*.local") ||
+      isInNet(dnsResolve(host), "10.0.0.0", "255.0.0.0") ||
+      isInNet(dnsResolve(host), "172.16.0.0", "255.240.0.0") ||
+      isInNet(dnsResolve(host), "192.168.0.0", "255.255.0.0")) {
+    return "DIRECT";
   }
 
-  // =====================================================
-  // YouTube (TEST MARKER)
-  // =====================================================
-  if (
-    dnsDomainIs(host, "youtube.com") || shExpMatch(host, "*.youtube.com") ||
-    dnsDomainIs(host, "youtu.be") ||
-    dnsDomainIs(host, "googlevideo.com") || shExpMatch(host, "*.googlevideo.com") ||
-    dnsDomainIs(host, "ytimg.com") || shExpMatch(host, "*.ytimg.com") ||
-    dnsDomainIs(host, "ggpht.com") || shExpMatch(host, "*.ggpht.com") ||
-    shExpMatch(url, "*youtube*") ||
-    shExpMatch(url, "*googlevideo*")
-  ) {
-    return PROXY();
-  }
-
-  return DIRECT();
+  // Всё остальное — через прокси
+  return "PROXY 192.168.50.135:7897";
 }
