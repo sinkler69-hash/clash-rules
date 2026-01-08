@@ -234,7 +234,7 @@ rules:
 
 
   # =====================================================
-  # Radarr / Sonarr / Lidarr / Jackett
+  # Radarr / Sonarr / Lidarr / Jackett / Bazarr
   # =====================================================
   - DOMAIN-SUFFIX,radarr.video,Proxy
   - DOMAIN-SUFFIX,api.radarr.video,Proxy
@@ -247,6 +247,19 @@ rules:
   - DOMAIN-SUFFIX,tmdb.org,Proxy
   - DOMAIN-SUFFIX,themoviedb.org,Proxy
 
+  # =====================================================
+  # Bazarr / Subtitle providers
+  # =====================================================
+  - DOMAIN-SUFFIX,opensubtitles.org,Proxy
+  - DOMAIN-SUFFIX,opensubtitles.com,Proxy
+  - DOMAIN-SUFFIX,opensubtitles.vip,Proxy
+  - DOMAIN-SUFFIX,api.opensubtitles.com,Proxy
+
+  - DOMAIN-SUFFIX,subscene.com,Proxy
+  - DOMAIN-SUFFIX,yifysubtitles.org,Proxy
+  - DOMAIN-SUFFIX,yts.mx,Proxy
+  - DOMAIN-SUFFIX,addic7ed.com,Proxy
+  - DOMAIN-SUFFIX,podnapisi.net,Proxy
 
   # =====================================================
   # Lidarr metadata
@@ -262,7 +275,6 @@ rules:
   - DOMAIN-SUFFIX,acousticbrainz.org,Proxy
   - DOMAIN-SUFFIX,brainz.org,Proxy
   - DOMAIN-SUFFIX,musicbrainzpicard.live,Proxy
-
 
   # =====================================================
   # Default
