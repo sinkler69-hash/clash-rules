@@ -93,6 +93,8 @@ rules:
   - DOMAIN-SUFFIX,square-enix.com,Proxy
   - DOMAIN-SUFFIX,sqexcdn.com,Proxy
   - DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
+  - DOMAIN-SUFFIX,fflogs.com,Proxy
+  - DOMAIN-SUFFIX,xivanalysis.com,Proxy
   
   
   # =====================================================
