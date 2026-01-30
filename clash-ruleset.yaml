@@ -128,6 +128,11 @@ payload:
 - DOMAIN-KEYWORD,horizon,Proxy
 - DOMAIN-KEYWORD,lifehacker,Proxy
 - DOMAIN-SUFFIX,desec.io,Proxy
+- DOMAIN-SUFFIX,canva.com,Proxy
+- DOMAIN-SUFFIX,canva.dev,Proxy
+- DOMAIN-SUFFIX,canvausercontent.com,Proxy
+- DOMAIN-SUFFIX,cdn.canva.com,Proxy
+- DOMAIN-SUFFIX,static.canva.com,Proxy
 - DOMAIN-SUFFIX,notion.so,Proxy
 - DOMAIN-SUFFIX,notion.site,Proxy
 - DOMAIN-SUFFIX,notion-static.com,Proxy

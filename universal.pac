@@ -124,6 +124,11 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("horizon") !== -1) return PROXY();
   if (url.indexOf("lifehacker") !== -1) return PROXY();
   if (dnsDomainIs(host, "desec.io")) return PROXY();
+  if (dnsDomainIs(host, "canva.com")) return PROXY();
+  if (dnsDomainIs(host, "canva.dev")) return PROXY();
+  if (dnsDomainIs(host, "canvausercontent.com")) return PROXY();
+  if (dnsDomainIs(host, "cdn.canva.com")) return PROXY();
+  if (dnsDomainIs(host, "static.canva.com")) return PROXY();
   if (dnsDomainIs(host, "notion.so")) return PROXY();
   if (dnsDomainIs(host, "notion.site")) return PROXY();
   if (dnsDomainIs(host, "notion-static.com")) return PROXY();
