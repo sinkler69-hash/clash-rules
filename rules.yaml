@@ -191,7 +191,16 @@ rules:
   # =====================================================
   - DOMAIN-KEYWORD,lifehacker,Proxy
   - DOMAIN-SUFFIX,desec.io,Proxy
+  
+  # =====================================================
+  # Canva (Web + CDN + Assets)
+  # =====================================================
+  - DOMAIN-SUFFIX,canva.com,Proxy
+  - DOMAIN-SUFFIX,canva.dev,Proxy
 
+  - DOMAIN-SUFFIX,canvausercontent.com,Proxy
+  - DOMAIN-SUFFIX,cdn.canva.com,Proxy
+  - DOMAIN-SUFFIX,static.canva.com,Proxy
 
   # =====================================================
   # Notion
