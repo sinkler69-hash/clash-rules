@@ -4,9 +4,10 @@ rules:
   # =====================================================
   # =====================================================
   - PROCESS-NAME,Prowlarr.Console.exe,DIRECT
+  - DOMAIN,localhost,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
-  - DOMAIN,localhost,DIRECT
+  - DST-PORT,8191,DIRECT
   
   # =====================================================
   # Brave Browser — FULL VPN + KILL SWITCH
