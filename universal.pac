@@ -5,6 +5,7 @@ function FindProxyForURL(url, host) {
   function PROXY() { return "PROXY 192.168.50.135:7897"; }
   function DIRECT_CONN() { return "DIRECT"; }
 
+  if (host === "localhost") return PROXY();
   if (dnsDomainIs(host, "youtube.com")) return PROXY();
   if (dnsDomainIs(host, "www.youtube.com")) return PROXY();
   if (dnsDomainIs(host, "m.youtube.com")) return PROXY();
