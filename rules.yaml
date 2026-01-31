@@ -2,6 +2,8 @@ rules:
   # =====================================================
   # LOCAL / LOOPBACK — MUST BE DIRECT
   # =====================================================
+  # =====================================================
+  - PROCESS-NAME,Prowlarr.exe,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
   - DOMAIN,localhost,DIRECT
