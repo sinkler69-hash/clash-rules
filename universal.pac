@@ -179,6 +179,7 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("yts") !== -1) return PROXY();
   if (url.indexOf("nyaa") !== -1) return PROXY();
   if (url.indexOf("animetosho") !== -1) return PROXY();
+  if (dnsDomainIs(host, "servarr.com")) return PROXY();
   if (dnsDomainIs(host, "radarr.video")) return PROXY();
   if (dnsDomainIs(host, "api.radarr.video")) return PROXY();
   if (dnsDomainIs(host, "sonarr.tv")) return PROXY();

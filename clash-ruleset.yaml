@@ -187,6 +187,7 @@ payload:
 - DOMAIN-KEYWORD,yts,Proxy
 - DOMAIN-KEYWORD,nyaa,Proxy
 - DOMAIN-KEYWORD,animetosho,Proxy
+- DOMAIN-SUFFIX,servarr.com,Proxy
 - DOMAIN-SUFFIX,radarr.video,Proxy
 - DOMAIN-SUFFIX,api.radarr.video,Proxy
 - DOMAIN-SUFFIX,sonarr.tv,Proxy
