@@ -163,6 +163,7 @@ payload:
 - DOMAIN-SUFFIX,ds1cdn.com,Proxy
 - DOMAIN-SUFFIX,cloudflarestream.com,Proxy
 - DOMAIN-KEYWORD,rutracker,Proxy
+- DOMAIN-KEYWORD,rutor,Proxy
 - DOMAIN-KEYWORD,tfile,Proxy
 - DOMAIN-KEYWORD,nnmclub,Proxy
 - DOMAIN-KEYWORD,torrent,Proxy

@@ -159,6 +159,7 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "ds1cdn.com")) return PROXY();
   if (dnsDomainIs(host, "cloudflarestream.com")) return PROXY();
   if (url.indexOf("rutracker") !== -1) return PROXY();
+  if (url.indexOf("rutor") !== -1) return PROXY();
   if (url.indexOf("tfile") !== -1) return PROXY();
   if (url.indexOf("nnmclub") !== -1) return PROXY();
   if (url.indexOf("torrent") !== -1) return PROXY();
