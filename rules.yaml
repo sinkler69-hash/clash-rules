@@ -1,5 +1,12 @@
 rules:
   # =====================================================
+  # LOCAL / LOOPBACK — MUST BE DIRECT
+  # =====================================================
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+  - DOMAIN,localhost,DIRECT
+  
+  # =====================================================
   # Brave Browser — FULL VPN + KILL SWITCH
   # =====================================================
   - PROCESS-NAME,brave.exe,BRAVE_ONLY
