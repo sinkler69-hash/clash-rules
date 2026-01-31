@@ -283,6 +283,7 @@ rules:
   # =====================================================
   # Radarr / Sonarr / Lidarr / Jackett / Bazarr
   # =====================================================
+  - DOMAIN-SUFFIX,servarr.com,Proxy
   - DOMAIN-SUFFIX,radarr.video,Proxy
   - DOMAIN-SUFFIX,api.radarr.video,Proxy
   - DOMAIN-SUFFIX,sonarr.tv,Proxy
