@@ -6,6 +6,8 @@ function FindProxyForURL(url, host) {
   function DIRECT_CONN() { return "DIRECT"; }
 
   if (host === "localhost") return PROXY();
+  if (dnsDomainIs(host, "servarr.com")) return PROXY();
+  if (host === "radarr.servarr.com") return PROXY();
   if (dnsDomainIs(host, "youtube.com")) return PROXY();
   if (dnsDomainIs(host, "www.youtube.com")) return PROXY();
   if (dnsDomainIs(host, "m.youtube.com")) return PROXY();
