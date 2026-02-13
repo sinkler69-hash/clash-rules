@@ -2,12 +2,17 @@ rules:
   # =====================================================
   # LOCAL / LOOPBACK — MUST BE DIRECT
   # =====================================================
-  # =====================================================
   - PROCESS-NAME,Prowlarr.Console.exe,DIRECT
   - DOMAIN,localhost,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
   - DST-PORT,8191,DIRECT
+
+  # =====================================================
+  # Servarr (Radarr / Sonarr / Prowlarr ping & updates)
+  # =====================================================
+  - DOMAIN-SUFFIX,servarr.com,Proxy
+  - DOMAIN,radarr.servarr.com,Proxy
 
   # =====================================================
   # Telegram Desktop — FULL PROXY
@@ -26,19 +31,15 @@ rules:
   - DOMAIN-SUFFIX,www.youtube.com,Proxy
   - DOMAIN-SUFFIX,m.youtube.com,Proxy
   - DOMAIN-SUFFIX,youtu.be,Proxy
-
   - DOMAIN-SUFFIX,youtube.googleapis.com,Proxy
   - DOMAIN-SUFFIX,youtubei.googleapis.com,Proxy
   - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,Proxy
-
   - DOMAIN-SUFFIX,googlevideo.com,Proxy
   - DOMAIN-SUFFIX,ytimg.com,Proxy
   - DOMAIN-SUFFIX,s.ytimg.com,Proxy
   - DOMAIN-SUFFIX,i.ytimg.com,Proxy
-
   - DOMAIN-SUFFIX,ggpht.com,Proxy
   - DOMAIN-SUFFIX,googleusercontent.com,Proxy
-
   - DOMAIN-KEYWORD,youtube,Proxy
   - DOMAIN-KEYWORD,googlevideo,Proxy
   - DOMAIN-KEYWORD,ytimg,Proxy
@@ -51,7 +52,6 @@ rules:
   - IP-CIDR,172.217.0.0/16,Proxy,no-resolve
   - IP-CIDR,216.58.0.0/15,Proxy,no-resolve
 
-
   # =====================================================
   # Discord (Mobile + Desktop + Voice + CDN)
   # =====================================================
@@ -59,7 +59,6 @@ rules:
   - DOMAIN-SUFFIX,discord.gg,Proxy
   - DOMAIN-SUFFIX,discordapp.com,Proxy
   - DOMAIN-SUFFIX,discordapp.net,Proxy
-
   - DOMAIN-SUFFIX,discordcdn.com,Proxy
   - DOMAIN-SUFFIX,cdn.discordapp.com,Proxy
   - DOMAIN-SUFFIX,media.discordapp.net,Proxy
@@ -67,42 +66,38 @@ rules:
   - DOMAIN-SUFFIX,images-ext-2.discordapp.net,Proxy
   - DOMAIN-SUFFIX,status.discord.com,Proxy
   - DOMAIN-SUFFIX,discord.media,Proxy
-
   - DOMAIN-SUFFIX,gateway.discord.gg,Proxy
   - DOMAIN-SUFFIX,voice.discord.gg,Proxy
   - DOMAIN-SUFFIX,clientconfig.discord.com,Proxy
   - DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com,Proxy
-
   - DOMAIN-KEYWORD,rpc,Proxy
   - DOMAIN-KEYWORD,discord-media,Proxy
   - DOMAIN-KEYWORD,discord-gateway,Proxy
   - DOMAIN-KEYWORD,discord,Proxy
 
   # =====================================================
-  # Reddit (Web + API + Media) — FIXED
+  # Reddit (Web + API + Media)
   # =====================================================
   - DOMAIN,reddit.com,Proxy
   - DOMAIN,www.reddit.com,Proxy
   - DOMAIN,oauth.reddit.com,Proxy
   - DOMAIN,gateway.reddit.com,Proxy
   - DOMAIN,events.reddit.com,Proxy
-
   - DOMAIN-SUFFIX,redd.it,Proxy
   - DOMAIN-SUFFIX,redditstatic.com,Proxy
   - DOMAIN-SUFFIX,redditmedia.com,Proxy
   - DOMAIN-SUFFIX,reddituploads.com,Proxy
-
   - DOMAIN,i.redd.it,Proxy
   - DOMAIN,preview.redd.it,Proxy
   - DOMAIN,v.redd.it,Proxy
 
+  # =====================================================
   # FFXIV tools
   # =====================================================
   - DOMAIN-SUFFIX,garlandtools.org,Proxy
   - DOMAIN-SUFFIX,universalis.app,Proxy
   - DOMAIN-SUFFIX,xivgear.app,Proxy
   - DOMAIN-SUFFIX,raidplan.io,Proxy
-  
   - DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
   - DOMAIN-SUFFIX,ffxiv.com,Proxy
   - DOMAIN-SUFFIX,square-enix.com,Proxy
@@ -110,8 +105,7 @@ rules:
   - DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
   - DOMAIN-SUFFIX,fflogs.com,Proxy
   - DOMAIN-SUFFIX,xivanalysis.com,Proxy
-  
-  
+
   # =====================================================
   # ChatGPT / OpenAI
   # =====================================================
@@ -124,7 +118,6 @@ rules:
   - DOMAIN-SUFFIX,oaiusercontent.com,Proxy
   - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
   - DOMAIN-SUFFIX,openaicom-api.akamaized.net,Proxy
-
 
   # =====================================================
   # Instagram / Meta
@@ -157,13 +150,11 @@ rules:
   - DOMAIN-SUFFIX,instagram.c10r.facebook.com,Proxy
   - DOMAIN-SUFFIX,whatsapp.com,Proxy
   - DOMAIN-SUFFIX,whatsapp.net,Proxy
-
   - DOMAIN-KEYWORD,instagram,Proxy
   - DOMAIN-KEYWORD,fbcdn,Proxy
   - DOMAIN-KEYWORD,facebook,Proxy
   - DOMAIN-KEYWORD,scontent,Proxy
   - DOMAIN-KEYWORD,metaverse,Proxy
-
 
   # =====================================================
   # Meta IP ranges
