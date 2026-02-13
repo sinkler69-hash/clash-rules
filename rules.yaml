@@ -10,6 +10,11 @@ rules:
   - DST-PORT,8191,DIRECT
   
   # =====================================================
+  # Telegram Desktop — FULL PROXY
+  # =====================================================
+  - PROCESS-NAME,Telegram.exe,Proxy
+
+  # =====================================================
   # Brave Browser — FULL VPN + KILL SWITCH
   # =====================================================
   - PROCESS-NAME,brave.exe,BRAVE_ONLY
