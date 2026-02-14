@@ -7,7 +7,12 @@ rules:
   - DOMAIN,localhost,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
-  - DST-PORT,8191,DIRECT
+  - DST-PORT,8191,DIRECT  
+
+  # FFXIV — ALWAYS DIRECT
+  # =====================================================
+  - PROCESS-NAME,ffxiv_dx11.exe,DIRECT
+  - PROCESS-NAME,ffxiv.exe,DIRECT
   
   # =====================================================
   # Telegram Desktop — FULL PROXY
