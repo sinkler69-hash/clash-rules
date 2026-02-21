@@ -207,11 +207,12 @@ rules:
   - DOMAIN-KEYWORD,horizon,Proxy
 
   # =====================================================
-  # Lifehacker
+  # Lifehacker and some others site
   # =====================================================
   - DOMAIN-KEYWORD,lifehacker,Proxy
   - DOMAIN-SUFFIX,desec.io,Proxy
-  
+  - DOMAIN-SUFFIX,patreon.com,PROXY
+  - DOMAIN-KEYWORD,patreon,PROXY
   # =====================================================
   # Canva (Web + CDN + Assets)
   # =====================================================
