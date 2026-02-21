@@ -125,6 +125,8 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("horizon") !== -1) return PROXY();
   if (url.indexOf("lifehacker") !== -1) return PROXY();
   if (dnsDomainIs(host, "desec.io")) return PROXY();
+  if (dnsDomainIs(host, "patreon.com")) return PROXY();
+  if (url.indexOf("patreon") !== -1) return PROXY();
   if (dnsDomainIs(host, "canva.com")) return PROXY();
   if (dnsDomainIs(host, "canva.dev")) return PROXY();
   if (dnsDomainIs(host, "canvausercontent.com")) return PROXY();

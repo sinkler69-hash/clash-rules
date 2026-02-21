@@ -136,6 +136,8 @@ payload:
 - DOMAIN-KEYWORD,horizon,Proxy
 - DOMAIN-KEYWORD,lifehacker,Proxy
 - DOMAIN-SUFFIX,desec.io,Proxy
+- DOMAIN-SUFFIX,patreon.com,PROXY
+- DOMAIN-KEYWORD,patreon,PROXY
 - DOMAIN-SUFFIX,canva.com,Proxy
 - DOMAIN-SUFFIX,canva.dev,Proxy
 - DOMAIN-SUFFIX,canvausercontent.com,Proxy
