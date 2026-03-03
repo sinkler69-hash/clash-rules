@@ -55,6 +55,8 @@ rules:
   # =====================================================
   # Discord (Mobile + Desktop + Voice + CDN)
   # =====================================================
+  - PROCESS-NAME,Discord.exe,PROXY
+  - PROCESS-NAME,Update.exe,PROXY
   - DOMAIN-SUFFIX,discord.com,Proxy
   - DOMAIN-SUFFIX,discord.gg,Proxy
   - DOMAIN-SUFFIX,discordapp.com,Proxy
