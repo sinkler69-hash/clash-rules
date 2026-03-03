@@ -26,6 +26,8 @@ payload:
 - IP-CIDR,142.250.0.0/15,Proxy,no-resolve
 - IP-CIDR,172.217.0.0/16,Proxy,no-resolve
 - IP-CIDR,216.58.0.0/15,Proxy,no-resolve
+- PROCESS-NAME,Discord.exe,PROXY
+- PROCESS-NAME,Update.exe,PROXY
 - DOMAIN-SUFFIX,discord.com,Proxy
 - DOMAIN-SUFFIX,discord.gg,Proxy
 - DOMAIN-SUFFIX,discordapp.com,Proxy
