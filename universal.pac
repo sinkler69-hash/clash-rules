@@ -74,6 +74,9 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "oaiusercontent.com")) return PROXY();
   if (dnsDomainIs(host, "openaicom.imgix.net")) return PROXY();
   if (dnsDomainIs(host, "openaicom-api.akamaized.net")) return PROXY();
+  if (dnsDomainIs(host, "threads.com")) return PROXY();
+  if (dnsDomainIs(host, "threads.net")) return PROXY();
+  if (url.indexOf("threads") !== -1) return PROXY();
   if (dnsDomainIs(host, "instagram.com")) return PROXY();
   if (dnsDomainIs(host, "i.instagram.com")) return PROXY();
   if (dnsDomainIs(host, "api.instagram.com")) return PROXY();
@@ -83,6 +86,7 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "static.cdninstagram.com")) return PROXY();
   if (dnsDomainIs(host, "scontent.cdninstagram.com")) return PROXY();
   if (dnsDomainIs(host, "igcdn.net")) return PROXY();
+  if (dnsDomainIs(host, "instagram.c10r.facebook.com")) return PROXY();
   if (dnsDomainIs(host, "facebook.com")) return PROXY();
   if (dnsDomainIs(host, "facebook.net")) return PROXY();
   if (dnsDomainIs(host, "fb.com")) return PROXY();
@@ -99,7 +103,6 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "video.xx.fbcdn.net")) return PROXY();
   if (dnsDomainIs(host, "scontent.xx.fbcdn.net")) return PROXY();
   if (dnsDomainIs(host, "static.xx.fbcdn.net")) return PROXY();
-  if (dnsDomainIs(host, "instagram.c10r.facebook.com")) return PROXY();
   if (dnsDomainIs(host, "whatsapp.com")) return PROXY();
   if (dnsDomainIs(host, "whatsapp.net")) return PROXY();
   if (url.indexOf("instagram") !== -1) return PROXY();
