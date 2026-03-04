@@ -129,8 +129,15 @@ rules:
 
 
   # =====================================================
-  # Instagram / Meta
+  # Instagram / Meta / Threads
   # =====================================================
+
+  # Threads
+  - DOMAIN-SUFFIX,threads.com,Proxy
+  - DOMAIN-SUFFIX,threads.net,Proxy
+  - DOMAIN-KEYWORD,threads,Proxy
+
+  # Instagram
   - DOMAIN-SUFFIX,instagram.com,Proxy
   - DOMAIN-SUFFIX,i.instagram.com,Proxy
   - DOMAIN-SUFFIX,api.instagram.com,Proxy
@@ -140,6 +147,9 @@ rules:
   - DOMAIN-SUFFIX,static.cdninstagram.com,Proxy
   - DOMAIN-SUFFIX,scontent.cdninstagram.com,Proxy
   - DOMAIN-SUFFIX,igcdn.net,Proxy
+  - DOMAIN-SUFFIX,instagram.c10r.facebook.com,Proxy
+
+  # Facebook / Meta
   - DOMAIN-SUFFIX,facebook.com,Proxy
   - DOMAIN-SUFFIX,facebook.net,Proxy
   - DOMAIN-SUFFIX,fb.com,Proxy
@@ -156,10 +166,12 @@ rules:
   - DOMAIN-SUFFIX,video.xx.fbcdn.net,Proxy
   - DOMAIN-SUFFIX,scontent.xx.fbcdn.net,Proxy
   - DOMAIN-SUFFIX,static.xx.fbcdn.net,Proxy
-  - DOMAIN-SUFFIX,instagram.c10r.facebook.com,Proxy
+
+  # WhatsApp
   - DOMAIN-SUFFIX,whatsapp.com,Proxy
   - DOMAIN-SUFFIX,whatsapp.net,Proxy
 
+  # Keywords
   - DOMAIN-KEYWORD,instagram,Proxy
   - DOMAIN-KEYWORD,fbcdn,Proxy
   - DOMAIN-KEYWORD,facebook,Proxy
