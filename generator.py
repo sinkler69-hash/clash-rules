@@ -55,6 +55,23 @@ def clash_bucket(rule: dict) -> str | None:
     return "PROXY"
 
 
+def provider_rule_text(rule: dict) -> str:
+    """
+    Для rule-provider нужно убирать target-группу из правила.
+    Было: DOMAIN-KEYWORD,rutracker,Proxy
+    Должно стать: DOMAIN-KEYWORD,rutracker
+    """
+    kind = rule["kind"]
+    value = rule["value"]
+    extras = rule["extras"]
+
+    parts = [kind, value]
+    if extras:
+        parts.extend(extras)
+
+    return ",".join(parts)
+
+
 with open("rules.yaml", "r", encoding="utf-8") as f:
     data = yaml.safe_load(f)
 
@@ -151,7 +168,7 @@ for raw_rule in rules:
     if not bucket:
         continue
 
-    group_payloads[bucket].append(rule["raw"])
+    group_payloads[bucket].append(provider_rule_text(rule))
 
 
 output_files = {
