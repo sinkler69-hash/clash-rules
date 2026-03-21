@@ -1,0 +1,21 @@
+payload:
+- DOMAIN-SUFFIX,garlandtools.org,Proxy
+- DOMAIN-SUFFIX,universalis.app,Proxy
+- DOMAIN-SUFFIX,xivgear.app,Proxy
+- DOMAIN-SUFFIX,raidplan.io,Proxy
+- DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
+- DOMAIN-SUFFIX,ffxiv.com,Proxy
+- DOMAIN-SUFFIX,square-enix.com,Proxy
+- DOMAIN-SUFFIX,sqexcdn.com,Proxy
+- DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
+- DOMAIN-SUFFIX,fflogs.com,Proxy
+- DOMAIN-SUFFIX,xivanalysis.com,Proxy
+- DOMAIN-KEYWORD,lifehacker,Proxy
+- DOMAIN-SUFFIX,desec.io,Proxy
+- DOMAIN-SUFFIX,patreon.com,Proxy
+- DOMAIN-KEYWORD,patreon,Proxy
+- DOMAIN-SUFFIX,canva.com,Proxy
+- DOMAIN-SUFFIX,canva.dev,Proxy
+- DOMAIN-SUFFIX,canvausercontent.com,Proxy
+- DOMAIN-SUFFIX,cdn.canva.com,Proxy
+- DOMAIN-SUFFIX,static.canva.com,Proxy

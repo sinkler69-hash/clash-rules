@@ -1,0 +1,21 @@
+payload:
+- DOMAIN-SUFFIX,youtube.com,MEDIA
+- DOMAIN-SUFFIX,www.youtube.com,MEDIA
+- DOMAIN-SUFFIX,m.youtube.com,MEDIA
+- DOMAIN-SUFFIX,youtu.be,MEDIA
+- DOMAIN-SUFFIX,youtube.googleapis.com,MEDIA
+- DOMAIN-SUFFIX,youtubei.googleapis.com,MEDIA
+- DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,MEDIA
+- DOMAIN-SUFFIX,googlevideo.com,MEDIA
+- DOMAIN-SUFFIX,ytimg.com,MEDIA
+- DOMAIN-SUFFIX,s.ytimg.com,MEDIA
+- DOMAIN-SUFFIX,i.ytimg.com,MEDIA
+- DOMAIN-SUFFIX,ggpht.com,MEDIA
+- DOMAIN-SUFFIX,googleusercontent.com,MEDIA
+- DOMAIN-KEYWORD,youtube,MEDIA
+- DOMAIN-KEYWORD,googlevideo,MEDIA
+- DOMAIN-KEYWORD,ytimg,MEDIA
+- DOMAIN-KEYWORD,ggpht,MEDIA
+- IP-CIDR,142.250.0.0/15,MEDIA,no-resolve
+- IP-CIDR,172.217.0.0/16,MEDIA,no-resolve
+- IP-CIDR,216.58.0.0/15,MEDIA,no-resolve
