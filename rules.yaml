@@ -190,4 +190,101 @@ rules:
   - DOMAIN-SUFFIX,cdn.canva.com,Proxy
   - DOMAIN-SUFFIX,static.canva.com,Proxy
 
-  # adult / torrents / subtitles / media ecosystem оставлены как Proxy
+  # =====================================================
+  # Adult
+  # =====================================================
+  - DOMAIN-KEYWORD,hentaihaven,Proxy
+  - DOMAIN-KEYWORD,hentai,Proxy
+  - DOMAIN-KEYWORD,pornhub,Proxy
+  - DOMAIN-KEYWORD,phncdn,Proxy
+  - DOMAIN-KEYWORD,pornolab,Proxy
+  - DOMAIN-KEYWORD,eporner,Proxy
+  - DOMAIN-KEYWORD,xvideos,Proxy
+  - DOMAIN-KEYWORD,xnxx,Proxy
+  - DOMAIN-KEYWORD,youporn,Proxy
+  - DOMAIN-KEYWORD,redtube,Proxy
+  - DOMAIN-SUFFIX,hanime.tv,Proxy
+  - DOMAIN-SUFFIX,hanime-cdn.com,Proxy
+  - DOMAIN-SUFFIX,highwinds-cdn.com,Proxy
+  - DOMAIN-KEYWORD,hydaelyn,Proxy
+  - DOMAIN,omni-player.hanime.tv,Proxy
+  - DOMAIN-SUFFIX,hhcdn.net,Proxy
+  - DOMAIN-SUFFIX,hentaicdn.com,Proxy
+  - DOMAIN-SUFFIX,hanime1.me,Proxy
+  - DOMAIN-SUFFIX,dirtyship.com,Proxy
+  - DOMAIN-SUFFIX,ds-cdn.com,Proxy
+  - DOMAIN-SUFFIX,ds1cdn.com,Proxy
+  - DOMAIN-SUFFIX,cloudflarestream.com,Proxy
+
+  # =====================================================
+  # Torrents
+  # =====================================================
+  - DOMAIN-KEYWORD,rutracker,Proxy
+  - DOMAIN-KEYWORD,rutor,Proxy
+  - DOMAIN-KEYWORD,tfile,Proxy
+  - DOMAIN-KEYWORD,nnmclub,Proxy
+  - DOMAIN-KEYWORD,torrent,Proxy
+  - DOMAIN-KEYWORD,1337x,Proxy
+  - DOMAIN-KEYWORD,torlock,Proxy
+  - DOMAIN-KEYWORD,rarbg,Proxy
+  - DOMAIN-KEYWORD,torrentgalaxy,Proxy
+  - DOMAIN-KEYWORD,limetorrents,Proxy
+  - DOMAIN-KEYWORD,piratebay,Proxy
+  - DOMAIN-KEYWORD,seedpeer,Proxy
+  - DOMAIN-KEYWORD,bitsearch,Proxy
+  - DOMAIN-KEYWORD,magnetdl,Proxy
+  - DOMAIN-KEYWORD,torrends,Proxy
+  - DOMAIN-KEYWORD,glotorrents,Proxy
+  - DOMAIN-KEYWORD,ettv,Proxy
+  - DOMAIN-KEYWORD,yts,Proxy
+  - DOMAIN-KEYWORD,nyaa,Proxy
+  - DOMAIN-KEYWORD,animetosho,Proxy
+
+  # =====================================================
+  # Radarr / Sonarr / Lidarr / Jackett / Bazarr
+  # =====================================================
+  - DOMAIN-SUFFIX,servarr.com,Proxy
+  - DOMAIN-SUFFIX,radarr.video,Proxy
+  - DOMAIN-SUFFIX,api.radarr.video,Proxy
+  - DOMAIN-SUFFIX,sonarr.tv,Proxy
+  - DOMAIN-SUFFIX,lidarr.audio,Proxy
+  - DOMAIN-SUFFIX,api.lidarr.audio,Proxy
+  - DOMAIN-SUFFIX,jackett.dev,Proxy
+  - DOMAIN-KEYWORD,jackett,Proxy
+  - DOMAIN-SUFFIX,flaresolverr,Proxy
+  - DOMAIN-SUFFIX,tmdb.org,Proxy
+  - DOMAIN-SUFFIX,themoviedb.org,Proxy
+
+  # =====================================================
+  # Bazarr / Subtitle providers
+  # =====================================================
+  - DOMAIN-SUFFIX,opensubtitles.com,Proxy
+  - DOMAIN-SUFFIX,www.opensubtitles.com,Proxy
+  - DOMAIN-SUFFIX,api.opensubtitles.com,Proxy
+  - DOMAIN-SUFFIX,opensubtitles.org,Proxy
+  - DOMAIN-SUFFIX,opensubtitles.vip,Proxy
+
+  - DOMAIN-SUFFIX,podnapisi.net,Proxy
+  - DOMAIN-SUFFIX,www.podnapisi.net,Proxy
+
+  - DOMAIN-SUFFIX,yifysubtitles.ch,Proxy
+  - DOMAIN-SUFFIX,yifysubtitles.org,Proxy
+  - DOMAIN-SUFFIX,yts.mx,Proxy
+
+  - DOMAIN-SUFFIX,subscene.com,Proxy
+  - DOMAIN-SUFFIX,addic7ed.com,Proxy
+
+  # =====================================================
+  # Lidarr metadata
+  # =====================================================
+  - DOMAIN-SUFFIX,musicbrainz.org,Proxy
+  - DOMAIN-SUFFIX,metabrainz.org,Proxy
+  - DOMAIN-SUFFIX,coverartarchive.org,Proxy
+  - DOMAIN-SUFFIX,fanart.tv,Proxy
+  - DOMAIN-SUFFIX,theaudiodb.com,Proxy
+  - DOMAIN-SUFFIX,last.fm,Proxy
+  - DOMAIN-SUFFIX,discogs.com,Proxy
+  - DOMAIN-SUFFIX,acoustid.org,Proxy
+  - DOMAIN-SUFFIX,acousticbrainz.org,Proxy
+  - DOMAIN-SUFFIX,brainz.org,Proxy
+  - DOMAIN-SUFFIX,musicbrainzpicard.live,Proxy
