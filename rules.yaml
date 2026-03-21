@@ -11,8 +11,6 @@ rules:
   # PROCESS RULES (временно оставляем)
   # =====================================================
   - PROCESS-NAME,Prowlarr.Console.exe,DIRECT
-  - PROCESS-NAME,Telegram.exe,Proxy
-  - PROCESS-NAME,brave.exe,BRAVE_ONLY
 
   # =====================================================
   # YOUTUBE → MEDIA
