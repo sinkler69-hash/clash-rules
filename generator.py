@@ -2,9 +2,9 @@ import yaml
 
 PAC_PROXY = "PROXY 192.168.50.135:7897"
 
-CLASH_GROUPS = {"MEDIA", "STABLE", "PROXY"}
-PAC_PROXY_TARGETS = {"MEDIA", "STABLE", "PROXY", "BRAVE_ONLY", "TELEGRAM_STABLE"}
 DIRECT_TARGETS = {"DIRECT"}
+MEDIA_TARGETS = {"MEDIA"}
+STABLE_TARGETS = {"STABLE"}
 
 
 def normalize_rule(rule: str):
@@ -28,10 +28,30 @@ def normalize_rule(rule: str):
 
 
 def pac_action(target: str) -> str:
-    if not target:
+    if target and target.upper() in DIRECT_TARGETS:
         return "DIRECT"
-    if target.upper() in DIRECT_TARGETS:
-        return "DIRECT"
+    return "PROXY"
+
+
+def clash_bucket(rule: dict) -> str | None:
+    kind = rule["kind"]
+    target = rule["target"]
+
+    # В rule-provider это не тащим
+    if kind in {"MATCH", "PROCESS-NAME"}:
+        return None
+
+    # DIRECT в Clash держим локально в профиле
+    if target and target.upper() in DIRECT_TARGETS:
+        return None
+
+    if target and target.upper() in MEDIA_TARGETS:
+        return "MEDIA"
+
+    if target and target.upper() in STABLE_TARGETS:
+        return "STABLE"
+
+    # Всё остальное автоматически считаем Proxy
     return "PROXY"
 
 
@@ -127,19 +147,11 @@ for raw_rule in rules:
     if not rule:
         continue
 
-    kind = rule["kind"]
-    target = rule["target"]
-
-    if kind in {"MATCH", "PROCESS-NAME"}:
+    bucket = clash_bucket(rule)
+    if not bucket:
         continue
 
-    if not target:
-        continue
-
-    if target.upper() not in CLASH_GROUPS:
-        continue
-
-    group_payloads[target.upper()].append(rule["raw"])
+    group_payloads[bucket].append(rule["raw"])
 
 
 output_files = {
