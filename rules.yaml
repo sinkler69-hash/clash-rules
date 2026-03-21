@@ -2,109 +2,177 @@ rules:
   # =====================================================
   # LOCAL / LOOPBACK — MUST BE DIRECT
   # =====================================================
-  # =====================================================
-  - PROCESS-NAME,Prowlarr.Console.exe,DIRECT
   - DOMAIN,localhost,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
-  - DST-PORT,8191,DIRECT  
+  - DST-PORT,8191,DIRECT
 
   # =====================================================
-  # Telegram Desktop — FULL PROXY
+  # PROCESS RULES (временно оставляем)
   # =====================================================
+  - PROCESS-NAME,Prowlarr.Console.exe,DIRECT
   - PROCESS-NAME,Telegram.exe,Proxy
-
-  # =====================================================
-  # Brave Browser — FULL VPN + KILL SWITCH
-  # =====================================================
   - PROCESS-NAME,brave.exe,BRAVE_ONLY
 
   # =====================================================
-  # YouTube (Web + Mobile + Shorts + CDN)
+  # YOUTUBE → MEDIA
   # =====================================================
-  - DOMAIN-SUFFIX,youtube.com,Proxy
-  - DOMAIN-SUFFIX,www.youtube.com,Proxy
-  - DOMAIN-SUFFIX,m.youtube.com,Proxy
-  - DOMAIN-SUFFIX,youtu.be,Proxy
+  - DOMAIN-SUFFIX,youtube.com,MEDIA
+  - DOMAIN-SUFFIX,www.youtube.com,MEDIA
+  - DOMAIN-SUFFIX,m.youtube.com,MEDIA
+  - DOMAIN-SUFFIX,youtu.be,MEDIA
+  - DOMAIN-SUFFIX,youtube.googleapis.com,MEDIA
+  - DOMAIN-SUFFIX,youtubei.googleapis.com,MEDIA
+  - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,MEDIA
+  - DOMAIN-SUFFIX,googlevideo.com,MEDIA
+  - DOMAIN-SUFFIX,ytimg.com,MEDIA
+  - DOMAIN-SUFFIX,s.ytimg.com,MEDIA
+  - DOMAIN-SUFFIX,i.ytimg.com,MEDIA
+  - DOMAIN-SUFFIX,ggpht.com,MEDIA
+  - DOMAIN-SUFFIX,googleusercontent.com,MEDIA
+  - DOMAIN-KEYWORD,youtube,MEDIA
+  - DOMAIN-KEYWORD,googlevideo,MEDIA
+  - DOMAIN-KEYWORD,ytimg,MEDIA
+  - DOMAIN-KEYWORD,ggpht,MEDIA
 
-  - DOMAIN-SUFFIX,youtube.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,youtubei.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,Proxy
-
-  - DOMAIN-SUFFIX,googlevideo.com,Proxy
-  - DOMAIN-SUFFIX,ytimg.com,Proxy
-  - DOMAIN-SUFFIX,s.ytimg.com,Proxy
-  - DOMAIN-SUFFIX,i.ytimg.com,Proxy
-
-  - DOMAIN-SUFFIX,ggpht.com,Proxy
-  - DOMAIN-SUFFIX,googleusercontent.com,Proxy
-
-  - DOMAIN-KEYWORD,youtube,Proxy
-  - DOMAIN-KEYWORD,googlevideo,Proxy
-  - DOMAIN-KEYWORD,ytimg,Proxy
-  - DOMAIN-KEYWORD,ggpht,Proxy
-
-  # =====================================================
-  # YouTube / Google CDN IP ranges (fix Shorts infinite loading)
-  # =====================================================
-  - IP-CIDR,142.250.0.0/15,Proxy,no-resolve
-  - IP-CIDR,172.217.0.0/16,Proxy,no-resolve
-  - IP-CIDR,216.58.0.0/15,Proxy,no-resolve
-
+  - IP-CIDR,142.250.0.0/15,MEDIA,no-resolve
+  - IP-CIDR,172.217.0.0/16,MEDIA,no-resolve
+  - IP-CIDR,216.58.0.0/15,MEDIA,no-resolve
 
   # =====================================================
-  # Discord (Mobile + Desktop + Voice + CDN)
+  # STABLE — CRITICAL ACCESS
   # =====================================================
-  - PROCESS-NAME,Discord.exe,PROXY
-  - PROCESS-NAME,Update.exe,PROXY
-  - DOMAIN-SUFFIX,discord.com,Proxy
-  - DOMAIN-SUFFIX,discord.gg,Proxy
-  - DOMAIN-SUFFIX,discordapp.com,Proxy
-  - DOMAIN-SUFFIX,discordapp.net,Proxy
 
-  - DOMAIN-SUFFIX,discordcdn.com,Proxy
-  - DOMAIN-SUFFIX,cdn.discordapp.com,Proxy
-  - DOMAIN-SUFFIX,media.discordapp.net,Proxy
-  - DOMAIN-SUFFIX,images-ext-1.discordapp.net,Proxy
-  - DOMAIN-SUFFIX,images-ext-2.discordapp.net,Proxy
-  - DOMAIN-SUFFIX,status.discord.com,Proxy
-  - DOMAIN-SUFFIX,discord.media,Proxy
+  # Discord
+  - DOMAIN-SUFFIX,discord.com,STABLE
+  - DOMAIN-SUFFIX,discord.gg,STABLE
+  - DOMAIN-SUFFIX,discordapp.com,STABLE
+  - DOMAIN-SUFFIX,discordapp.net,STABLE
+  - DOMAIN-SUFFIX,discordcdn.com,STABLE
+  - DOMAIN-SUFFIX,cdn.discordapp.com,STABLE
+  - DOMAIN-SUFFIX,media.discordapp.net,STABLE
+  - DOMAIN-SUFFIX,images-ext-1.discordapp.net,STABLE
+  - DOMAIN-SUFFIX,images-ext-2.discordapp.net,STABLE
+  - DOMAIN-SUFFIX,status.discord.com,STABLE
+  - DOMAIN-SUFFIX,discord.media,STABLE
+  - DOMAIN-SUFFIX,gateway.discord.gg,STABLE
+  - DOMAIN-SUFFIX,voice.discord.gg,STABLE
+  - DOMAIN-SUFFIX,clientconfig.discord.com,STABLE
+  - DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com,STABLE
+  - DOMAIN-KEYWORD,rpc,STABLE
+  - DOMAIN-KEYWORD,discord-media,STABLE
+  - DOMAIN-KEYWORD,discord-gateway,STABLE
+  - DOMAIN-KEYWORD,discord,STABLE
 
-  - DOMAIN-SUFFIX,gateway.discord.gg,Proxy
-  - DOMAIN-SUFFIX,voice.discord.gg,Proxy
-  - DOMAIN-SUFFIX,clientconfig.discord.com,Proxy
-  - DOMAIN-SUFFIX,discord-attachments-uploads-prd.storage.googleapis.com,Proxy
+  # Reddit
+  - DOMAIN,reddit.com,STABLE
+  - DOMAIN,www.reddit.com,STABLE
+  - DOMAIN,oauth.reddit.com,STABLE
+  - DOMAIN,gateway.reddit.com,STABLE
+  - DOMAIN,events.reddit.com,STABLE
+  - DOMAIN-SUFFIX,redd.it,STABLE
+  - DOMAIN-SUFFIX,redditstatic.com,STABLE
+  - DOMAIN-SUFFIX,redditmedia.com,STABLE
+  - DOMAIN-SUFFIX,reddituploads.com,STABLE
+  - DOMAIN,i.redd.it,STABLE
+  - DOMAIN,preview.redd.it,STABLE
+  - DOMAIN,v.redd.it,STABLE
 
-  - DOMAIN-KEYWORD,rpc,Proxy
-  - DOMAIN-KEYWORD,discord-media,Proxy
-  - DOMAIN-KEYWORD,discord-gateway,Proxy
-  - DOMAIN-KEYWORD,discord,Proxy
+  # OpenAI / ChatGPT
+  - DOMAIN-SUFFIX,openai.com,STABLE
+  - DOMAIN-SUFFIX,chatgpt.com,STABLE
+  - DOMAIN-SUFFIX,ai.com,STABLE
+  - DOMAIN-SUFFIX,auth0.openai.com,STABLE
+  - DOMAIN-SUFFIX,chat.openai.com,STABLE
+  - DOMAIN-SUFFIX,cdn.openai.com,STABLE
+  - DOMAIN-SUFFIX,oaiusercontent.com,STABLE
+  - DOMAIN-SUFFIX,openaicom.imgix.net,STABLE
+  - DOMAIN-SUFFIX,openaicom-api.akamaized.net,STABLE
+
+  # Meta / Instagram / Threads / WhatsApp
+  - DOMAIN-SUFFIX,threads.com,STABLE
+  - DOMAIN-SUFFIX,threads.net,STABLE
+  - DOMAIN-KEYWORD,threads,STABLE
+
+  - DOMAIN-SUFFIX,instagram.com,STABLE
+  - DOMAIN-SUFFIX,i.instagram.com,STABLE
+  - DOMAIN-SUFFIX,api.instagram.com,STABLE
+  - DOMAIN-SUFFIX,graph.instagram.com,STABLE
+  - DOMAIN-SUFFIX,b-graph.instagram.com,STABLE
+  - DOMAIN-SUFFIX,cdninstagram.com,STABLE
+  - DOMAIN-SUFFIX,static.cdninstagram.com,STABLE
+  - DOMAIN-SUFFIX,scontent.cdninstagram.com,STABLE
+  - DOMAIN-SUFFIX,igcdn.net,STABLE
+  - DOMAIN-SUFFIX,instagram.c10r.facebook.com,STABLE
+
+  - DOMAIN-SUFFIX,facebook.com,STABLE
+  - DOMAIN-SUFFIX,facebook.net,STABLE
+  - DOMAIN-SUFFIX,fb.com,STABLE
+  - DOMAIN-SUFFIX,fbcdn.net,STABLE
+  - DOMAIN-SUFFIX,xx.fbcdn.net,STABLE
+  - DOMAIN-SUFFIX,tfbnw.net,STABLE
+  - DOMAIN-SUFFIX,connect.facebook.net,STABLE
+  - DOMAIN-SUFFIX,edge-chat.facebook.com,STABLE
+  - DOMAIN-SUFFIX,edge-mqtt.facebook.com,STABLE
+  - DOMAIN-SUFFIX,mqtt-mini.facebook.com,STABLE
+  - DOMAIN-SUFFIX,star.c10r.facebook.com,STABLE
+  - DOMAIN-SUFFIX,star-mini.c10r.facebook.com,STABLE
+  - DOMAIN-SUFFIX,graph.facebook.com,STABLE
+  - DOMAIN-SUFFIX,video.xx.fbcdn.net,STABLE
+  - DOMAIN-SUFFIX,scontent.xx.fbcdn.net,STABLE
+  - DOMAIN-SUFFIX,static.xx.fbcdn.net,STABLE
+
+  - DOMAIN-SUFFIX,whatsapp.com,STABLE
+  - DOMAIN-SUFFIX,whatsapp.net,STABLE
+
+  - DOMAIN-KEYWORD,instagram,STABLE
+  - DOMAIN-KEYWORD,fbcdn,STABLE
+  - DOMAIN-KEYWORD,facebook,STABLE
+  - DOMAIN-KEYWORD,scontent,STABLE
+  - DOMAIN-KEYWORD,metaverse,STABLE
+
+  - IP-CIDR,31.13.0.0/16,STABLE,no-resolve
+  - IP-CIDR,157.240.0.0/16,STABLE,no-resolve
+  - IP-CIDR,173.252.64.0/18,STABLE,no-resolve
+  - IP-CIDR,179.60.192.0/22,STABLE,no-resolve
+  - IP-CIDR,185.60.216.0/22,STABLE,no-resolve
+  - IP-CIDR,204.15.20.0/22,STABLE,no-resolve
+
+  - DOMAIN-SUFFIX,meta.com,STABLE
+  - DOMAIN-SUFFIX,graph.meta.com,STABLE
+  - DOMAIN-SUFFIX,horizon.meta.com,STABLE
+  - DOMAIN-SUFFIX,horizon.oculus.com,STABLE
+  - DOMAIN-SUFFIX,oculus.com,STABLE
+  - DOMAIN-SUFFIX,oculuscdn.com,STABLE
+  - DOMAIN-SUFFIX,oculusvr.com,STABLE
+  - DOMAIN-SUFFIX,graph.oculus.com,STABLE
+  - DOMAIN-SUFFIX,secure.oculus.com,STABLE
+  - DOMAIN-SUFFIX,edge.oculus.com,STABLE
+  - DOMAIN-SUFFIX,mqtt.meta.com,STABLE
+  - DOMAIN-SUFFIX,mqtt-mini.meta.com,STABLE
+  - DOMAIN-SUFFIX,edge-mqtt.meta.com,STABLE
+  - DOMAIN-KEYWORD,oculus,STABLE
+  - DOMAIN-KEYWORD,quest,STABLE
+  - DOMAIN-KEYWORD,horizon,STABLE
+
+  # Notion / Proton
+  - DOMAIN-SUFFIX,notion.so,STABLE
+  - DOMAIN-SUFFIX,notion.site,STABLE
+  - DOMAIN-SUFFIX,notion-static.com,STABLE
+
+  - DOMAIN-SUFFIX,proton.me,STABLE
+  - DOMAIN-SUFFIX,protonmail.com,STABLE
+  - DOMAIN-SUFFIX,protonvpn.com,STABLE
+  - DOMAIN-KEYWORD,proton,STABLE
 
   # =====================================================
-  # Reddit (Web + API + Media) — FIXED
-  # =====================================================
-  - DOMAIN,reddit.com,Proxy
-  - DOMAIN,www.reddit.com,Proxy
-  - DOMAIN,oauth.reddit.com,Proxy
-  - DOMAIN,gateway.reddit.com,Proxy
-  - DOMAIN,events.reddit.com,Proxy
-
-  - DOMAIN-SUFFIX,redd.it,Proxy
-  - DOMAIN-SUFFIX,redditstatic.com,Proxy
-  - DOMAIN-SUFFIX,redditmedia.com,Proxy
-  - DOMAIN-SUFFIX,reddituploads.com,Proxy
-
-  - DOMAIN,i.redd.it,Proxy
-  - DOMAIN,preview.redd.it,Proxy
-  - DOMAIN,v.redd.it,Proxy
-
-  # FFXIV tools
+  # PROXY — EVERYTHING ELSE
   # =====================================================
   - DOMAIN-SUFFIX,garlandtools.org,Proxy
   - DOMAIN-SUFFIX,universalis.app,Proxy
   - DOMAIN-SUFFIX,xivgear.app,Proxy
   - DOMAIN-SUFFIX,raidplan.io,Proxy
-  
+
   - DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
   - DOMAIN-SUFFIX,ffxiv.com,Proxy
   - DOMAIN-SUFFIX,square-enix.com,Proxy
@@ -112,251 +180,16 @@ rules:
   - DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
   - DOMAIN-SUFFIX,fflogs.com,Proxy
   - DOMAIN-SUFFIX,xivanalysis.com,Proxy
-  
-  
-  # =====================================================
-  # ChatGPT / OpenAI
-  # =====================================================
-  - DOMAIN-SUFFIX,openai.com,Proxy
-  - DOMAIN-SUFFIX,chatgpt.com,Proxy
-  - DOMAIN-SUFFIX,ai.com,Proxy
-  - DOMAIN-SUFFIX,auth0.openai.com,Proxy
-  - DOMAIN-SUFFIX,chat.openai.com,Proxy
-  - DOMAIN-SUFFIX,cdn.openai.com,Proxy
-  - DOMAIN-SUFFIX,oaiusercontent.com,Proxy
-  - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
-  - DOMAIN-SUFFIX,openaicom-api.akamaized.net,Proxy
 
-
-  # =====================================================
-  # Instagram / Meta / Threads
-  # =====================================================
-
-  # Threads
-  - DOMAIN-SUFFIX,threads.com,Proxy
-  - DOMAIN-SUFFIX,threads.net,Proxy
-  - DOMAIN-KEYWORD,threads,Proxy
-
-  # Instagram
-  - DOMAIN-SUFFIX,instagram.com,Proxy
-  - DOMAIN-SUFFIX,i.instagram.com,Proxy
-  - DOMAIN-SUFFIX,api.instagram.com,Proxy
-  - DOMAIN-SUFFIX,graph.instagram.com,Proxy
-  - DOMAIN-SUFFIX,b-graph.instagram.com,Proxy
-  - DOMAIN-SUFFIX,cdninstagram.com,Proxy
-  - DOMAIN-SUFFIX,static.cdninstagram.com,Proxy
-  - DOMAIN-SUFFIX,scontent.cdninstagram.com,Proxy
-  - DOMAIN-SUFFIX,igcdn.net,Proxy
-  - DOMAIN-SUFFIX,instagram.c10r.facebook.com,Proxy
-
-  # Facebook / Meta
-  - DOMAIN-SUFFIX,facebook.com,Proxy
-  - DOMAIN-SUFFIX,facebook.net,Proxy
-  - DOMAIN-SUFFIX,fb.com,Proxy
-  - DOMAIN-SUFFIX,fbcdn.net,Proxy
-  - DOMAIN-SUFFIX,xx.fbcdn.net,Proxy
-  - DOMAIN-SUFFIX,tfbnw.net,Proxy
-  - DOMAIN-SUFFIX,connect.facebook.net,Proxy
-  - DOMAIN-SUFFIX,edge-chat.facebook.com,Proxy
-  - DOMAIN-SUFFIX,edge-mqtt.facebook.com,Proxy
-  - DOMAIN-SUFFIX,mqtt-mini.facebook.com,Proxy
-  - DOMAIN-SUFFIX,star.c10r.facebook.com,Proxy
-  - DOMAIN-SUFFIX,star-mini.c10r.facebook.com,Proxy
-  - DOMAIN-SUFFIX,graph.facebook.com,Proxy
-  - DOMAIN-SUFFIX,video.xx.fbcdn.net,Proxy
-  - DOMAIN-SUFFIX,scontent.xx.fbcdn.net,Proxy
-  - DOMAIN-SUFFIX,static.xx.fbcdn.net,Proxy
-
-  # WhatsApp
-  - DOMAIN-SUFFIX,whatsapp.com,Proxy
-  - DOMAIN-SUFFIX,whatsapp.net,Proxy
-
-  # Keywords
-  - DOMAIN-KEYWORD,instagram,Proxy
-  - DOMAIN-KEYWORD,fbcdn,Proxy
-  - DOMAIN-KEYWORD,facebook,Proxy
-  - DOMAIN-KEYWORD,scontent,Proxy
-  - DOMAIN-KEYWORD,metaverse,Proxy
-
-
-  # =====================================================
-  # Meta IP ranges
-  # =====================================================
-  - IP-CIDR,31.13.0.0/16,Proxy,no-resolve
-  - IP-CIDR,157.240.0.0/16,Proxy,no-resolve
-  - IP-CIDR,173.252.64.0/18,Proxy,no-resolve
-  - IP-CIDR,179.60.192.0/22,Proxy,no-resolve
-  - IP-CIDR,185.60.216.0/22,Proxy,no-resolve
-  - IP-CIDR,204.15.20.0/22,Proxy,no-resolve
-
-  # =====================================================
-  # Meta Quest / Oculus / Horizon (FIX)
-  # =====================================================
-  - DOMAIN-SUFFIX,meta.com,Proxy
-  - DOMAIN-SUFFIX,graph.meta.com,Proxy
-  - DOMAIN-SUFFIX,horizon.meta.com,Proxy
-  - DOMAIN-SUFFIX,horizon.oculus.com,Proxy
-
-  - DOMAIN-SUFFIX,oculus.com,Proxy
-  - DOMAIN-SUFFIX,oculuscdn.com,Proxy
-  - DOMAIN-SUFFIX,oculusvr.com,Proxy
-
-  - DOMAIN-SUFFIX,graph.oculus.com,Proxy
-  - DOMAIN-SUFFIX,secure.oculus.com,Proxy
-  - DOMAIN-SUFFIX,edge.oculus.com,Proxy
-
-  # Presence / MQTT (Quest online status)
-  - DOMAIN-SUFFIX,mqtt.meta.com,Proxy
-  - DOMAIN-SUFFIX,mqtt-mini.meta.com,Proxy
-  - DOMAIN-SUFFIX,edge-mqtt.meta.com,Proxy
-
-  # Telemetry / device state
-  - DOMAIN-KEYWORD,oculus,Proxy
-  - DOMAIN-KEYWORD,quest,Proxy
-  - DOMAIN-KEYWORD,horizon,Proxy
-
-  # =====================================================
-  # Lifehacker and some others site
-  # =====================================================
   - DOMAIN-KEYWORD,lifehacker,Proxy
   - DOMAIN-SUFFIX,desec.io,Proxy
-  - DOMAIN-SUFFIX,patreon.com,PROXY
-  - DOMAIN-KEYWORD,patreon,PROXY
-  # =====================================================
-  # Canva (Web + CDN + Assets)
-  # =====================================================
+  - DOMAIN-SUFFIX,patreon.com,Proxy
+  - DOMAIN-KEYWORD,patreon,Proxy
+
   - DOMAIN-SUFFIX,canva.com,Proxy
   - DOMAIN-SUFFIX,canva.dev,Proxy
-
   - DOMAIN-SUFFIX,canvausercontent.com,Proxy
   - DOMAIN-SUFFIX,cdn.canva.com,Proxy
   - DOMAIN-SUFFIX,static.canva.com,Proxy
 
-  # =====================================================
-  # Notion
-  # =====================================================
-  - DOMAIN-SUFFIX,notion.so,Proxy
-  - DOMAIN-SUFFIX,notion.site,Proxy
-  - DOMAIN-SUFFIX,notion-static.com,Proxy
-
-  # =====================================================
-  # Proton
-  # =====================================================
-  - DOMAIN-SUFFIX,proton.me,Proxy
-  - DOMAIN-SUFFIX,protonmail.com,Proxy
-  - DOMAIN-SUFFIX,protonvpn.com,Proxy
-  - DOMAIN-KEYWORD,proton,Proxy
-
-
-  # =====================================================
-  # Adult
-  # =====================================================
-  - DOMAIN-KEYWORD,hentaihaven,Proxy
-  - DOMAIN-KEYWORD,hentai,Proxy
-  - DOMAIN-KEYWORD,pornhub,Proxy
-  - DOMAIN-KEYWORD,phncdn,Proxy
-  - DOMAIN-KEYWORD,pornolab,Proxy
-  - DOMAIN-KEYWORD,eporner,Proxy
-  - DOMAIN-KEYWORD,xvideos,Proxy
-  - DOMAIN-KEYWORD,xnxx,Proxy
-  - DOMAIN-KEYWORD,youporn,Proxy
-  - DOMAIN-KEYWORD,redtube,Proxy
-  - DOMAIN-SUFFIX,hanime.tv,Proxy
-  - DOMAIN-SUFFIX,hanime-cdn.com,Proxy
-  - DOMAIN-SUFFIX,highwinds-cdn.com,Proxy
-  - DOMAIN-KEYWORD,hydaelyn,Proxy
-  - DOMAIN,omni-player.hanime.tv,Proxy
-  - DOMAIN-SUFFIX,hhcdn.net,Proxy
-  - DOMAIN-SUFFIX,hentaicdn.com,Proxy
-  - DOMAIN-SUFFIX,hanime1.me,Proxy
-  - DOMAIN-SUFFIX,dirtyship.com,Proxy
-  - DOMAIN-SUFFIX,ds-cdn.com,Proxy
-  - DOMAIN-SUFFIX,ds1cdn.com,Proxy
-  - DOMAIN-SUFFIX,cloudflarestream.com,Proxy
-
-
-  # =====================================================
-  # Torrents
-  # =====================================================
-  - DOMAIN-KEYWORD,rutracker,Proxy
-  - DOMAIN-KEYWORD,rutor,Proxy
-  - DOMAIN-KEYWORD,tfile,Proxy
-  - DOMAIN-KEYWORD,nnmclub,Proxy
-  - DOMAIN-KEYWORD,torrent,Proxy
-  - DOMAIN-KEYWORD,1337x,Proxy
-  - DOMAIN-KEYWORD,torlock,Proxy
-  - DOMAIN-KEYWORD,rarbg,Proxy
-  - DOMAIN-KEYWORD,torrentgalaxy,Proxy
-  - DOMAIN-KEYWORD,limetorrents,Proxy
-  - DOMAIN-KEYWORD,piratebay,Proxy
-  - DOMAIN-KEYWORD,seedpeer,Proxy
-  - DOMAIN-KEYWORD,bitsearch,Proxy
-  - DOMAIN-KEYWORD,magnetdl,Proxy
-  - DOMAIN-KEYWORD,torrends,Proxy
-  - DOMAIN-KEYWORD,glotorrents,Proxy
-  - DOMAIN-KEYWORD,ettv,Proxy
-  - DOMAIN-KEYWORD,yts,Proxy
-  - DOMAIN-KEYWORD,nyaa,Proxy
-  - DOMAIN-KEYWORD,animetosho,Proxy
-
-
-  # =====================================================
-  # Radarr / Sonarr / Lidarr / Jackett / Bazarr
-  # =====================================================
-  - DOMAIN-SUFFIX,servarr.com,Proxy
-  - DOMAIN-SUFFIX,radarr.video,Proxy
-  - DOMAIN-SUFFIX,api.radarr.video,Proxy
-  - DOMAIN-SUFFIX,sonarr.tv,Proxy
-  - DOMAIN-SUFFIX,lidarr.audio,Proxy
-  - DOMAIN-SUFFIX,api.lidarr.audio,Proxy
-  - DOMAIN-SUFFIX,jackett.dev,Proxy
-  - DOMAIN-KEYWORD,jackett,Proxy
-  - DOMAIN-SUFFIX,flaresolverr,Proxy
-  - DOMAIN-SUFFIX,tmdb.org,Proxy
-  - DOMAIN-SUFFIX,themoviedb.org,Proxy
-
-
-  # =====================================================
-  # Bazarr / Subtitle providers (FIXED)
-  # =====================================================
-  # OpenSubtitles (API + web)
-  - DOMAIN-SUFFIX,opensubtitles.com,Proxy
-  - DOMAIN-SUFFIX,www.opensubtitles.com,Proxy
-  - DOMAIN-SUFFIX,api.opensubtitles.com,Proxy
-  - DOMAIN-SUFFIX,opensubtitles.org,Proxy
-  - DOMAIN-SUFFIX,opensubtitles.vip,Proxy
-
-  # Podnapisi
-  - DOMAIN-SUFFIX,podnapisi.net,Proxy
-  - DOMAIN-SUFFIX,www.podnapisi.net,Proxy
-
-  # YIFY / YTS subtitles
-  - DOMAIN-SUFFIX,yifysubtitles.ch,Proxy
-  - DOMAIN-SUFFIX,yifysubtitles.org,Proxy
-  - DOMAIN-SUFFIX,yts.mx,Proxy
-
-  # Other providers
-  - DOMAIN-SUFFIX,subscene.com,Proxy
-  - DOMAIN-SUFFIX,addic7ed.com,Proxy
-
-
-  # =====================================================
-  # Lidarr metadata
-  # =====================================================
-  - DOMAIN-SUFFIX,musicbrainz.org,Proxy
-  - DOMAIN-SUFFIX,metabrainz.org,Proxy
-  - DOMAIN-SUFFIX,coverartarchive.org,Proxy
-  - DOMAIN-SUFFIX,fanart.tv,Proxy
-  - DOMAIN-SUFFIX,theaudiodb.com,Proxy
-  - DOMAIN-SUFFIX,last.fm,Proxy
-  - DOMAIN-SUFFIX,discogs.com,Proxy
-  - DOMAIN-SUFFIX,acoustid.org,Proxy
-  - DOMAIN-SUFFIX,acousticbrainz.org,Proxy
-  - DOMAIN-SUFFIX,brainz.org,Proxy
-  - DOMAIN-SUFFIX,musicbrainzpicard.live,Proxy
-
-
-  # =====================================================
-  # Default
-  # =====================================================
-  - MATCH,DIRECT
+  # adult / torrents / subtitles / media ecosystem оставлены как Proxy
