@@ -2,7 +2,8 @@ import yaml
 
 PAC_PROXY = "PROXY 192.168.50.135:7897"
 
-PROXY_TARGETS = {"PROXY", "MEDIA", "STABLE", "BRAVE_ONLY", "TELEGRAM_STABLE"}
+CLASH_GROUPS = {"MEDIA", "STABLE", "PROXY"}
+PAC_PROXY_TARGETS = {"MEDIA", "STABLE", "PROXY", "BRAVE_ONLY", "TELEGRAM_STABLE"}
 DIRECT_TARGETS = {"DIRECT"}
 
 
@@ -13,14 +14,8 @@ def normalize_rule(rule: str):
 
     kind = parts[0].upper()
     value = parts[1]
-
-    target = None
-    extras = []
-
-    if len(parts) >= 3:
-        target = parts[2].upper()
-    if len(parts) >= 4:
-        extras = parts[3:]
+    target = parts[2].upper() if len(parts) >= 3 else None
+    extras = parts[3:] if len(parts) >= 4 else []
 
     return {
         "raw": rule.strip(),
@@ -63,7 +58,6 @@ add(f'  function PROXY_CONN() {{ return "{PAC_PROXY}"; }}')
 add('  function DIRECT_CONN() { return "DIRECT"; }')
 add("")
 
-# локалка в PAC всегда напрямую
 add("  if (isPlainHostName(host) ||")
 add('      shExpMatch(host, "*.local") ||')
 add('      shExpMatch(host, "*.lan")) {')
@@ -84,20 +78,7 @@ for raw_rule in rules:
     target = rule["target"]
     action = pac_action(target)
 
-    # PROCESS-NAME PAC не понимает
-    if kind == "PROCESS-NAME":
-        continue
-
-    # MATCH оставляем на самый конец, но тут не используем
-    if kind == "MATCH":
-        continue
-
-    # IP-CIDR в PAC не поддерживаем
-    if kind == "IP-CIDR":
-        continue
-
-    # DST-PORT тоже PAC не поддерживает
-    if kind == "DST-PORT":
+    if kind in {"PROCESS-NAME", "MATCH", "IP-CIDR", "DST-PORT"}:
         continue
 
     if kind == "DOMAIN-SUFFIX":
@@ -120,7 +101,6 @@ for raw_rule in rules:
         else:
             add(f'  if (host === "{domain}") return PROXY_CONN();')
 
-# дефолт в PAC
 add("  return DIRECT_CONN();")
 add("}")
 
@@ -129,10 +109,15 @@ with open("universal.pac", "w", encoding="utf-8") as f:
 
 print("Generated universal.pac")
 
+
 # =========================
 # Clash ruleset generation
 # =========================
-payload = []
+group_payloads = {
+    "MEDIA": [],
+    "STABLE": [],
+    "PROXY": [],
+}
 
 for raw_rule in rules:
     if not isinstance(raw_rule, str):
@@ -142,14 +127,29 @@ for raw_rule in rules:
     if not rule:
         continue
 
-    if rule["kind"] == "MATCH":
+    kind = rule["kind"]
+    target = rule["target"]
+
+    if kind in {"MATCH", "PROCESS-NAME"}:
         continue
 
-    payload.append(rule["raw"])
+    if not target:
+        continue
 
-ruleset_obj = {"payload": payload}
+    if target.upper() not in CLASH_GROUPS:
+        continue
 
-with open("clash-ruleset.yaml", "w", encoding="utf-8") as f:
-    yaml.safe_dump(ruleset_obj, f, allow_unicode=True, sort_keys=False)
+    group_payloads[target.upper()].append(rule["raw"])
 
-print("Generated clash-ruleset.yaml")
+
+output_files = {
+    "MEDIA": "media-ruleset.yaml",
+    "STABLE": "stable-ruleset.yaml",
+    "PROXY": "proxy-ruleset.yaml",
+}
+
+for group, filename in output_files.items():
+    ruleset_obj = {"payload": group_payloads[group]}
+    with open(filename, "w", encoding="utf-8") as f:
+        yaml.safe_dump(ruleset_obj, f, allow_unicode=True, sort_keys=False)
+    print(f"Generated {filename}")
