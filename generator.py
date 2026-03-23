@@ -37,11 +37,9 @@ def clash_bucket(rule: dict) -> str | None:
     kind = rule["kind"]
     target = rule["target"]
 
-    # В rule-provider это не тащим
     if kind in {"MATCH", "PROCESS-NAME"}:
         return None
 
-    # DIRECT в Clash держим локально в профиле
     if target and target.upper() in DIRECT_TARGETS:
         return None
 
@@ -51,21 +49,46 @@ def clash_bucket(rule: dict) -> str | None:
     if target and target.upper() in STABLE_TARGETS:
         return "STABLE"
 
-    # Всё остальное автоматически считаем Proxy
     return "PROXY"
 
 
 def provider_rule_text(rule: dict) -> str:
     """
-    Для rule-provider нужно убирать target-группу из правила.
+    Для multi-provider rulesets убираем target.
     Было: DOMAIN-KEYWORD,rutracker,Proxy
-    Должно стать: DOMAIN-KEYWORD,rutracker
+    Стало: DOMAIN-KEYWORD,rutracker
     """
     kind = rule["kind"]
     value = rule["value"]
     extras = rule["extras"]
 
     parts = [kind, value]
+    if extras:
+        parts.extend(extras)
+
+    return ",".join(parts)
+
+
+def legacy_rule_text(rule: dict) -> str | None:
+    """
+    Для legacy clash-ruleset.yaml:
+    - DIRECT сохраняем как DIRECT
+    - всё остальное делаем Proxy
+    - PROCESS-NAME и MATCH не тащим
+    """
+    kind = rule["kind"]
+    value = rule["value"]
+    target = rule["target"]
+    extras = rule["extras"]
+
+    if kind in {"MATCH", "PROCESS-NAME"}:
+        return None
+
+    if target and target.upper() in DIRECT_TARGETS:
+        parts = [kind, value, "DIRECT"]
+    else:
+        parts = [kind, value, "Proxy"]
+
     if extras:
         parts.extend(extras)
 
@@ -146,9 +169,8 @@ with open("universal.pac", "w", encoding="utf-8") as f:
 
 print("Generated universal.pac")
 
-
 # =========================
-# Clash ruleset generation
+# Multi-provider Clash rulesets
 # =========================
 group_payloads = {
     "MEDIA": [],
@@ -170,7 +192,6 @@ for raw_rule in rules:
 
     group_payloads[bucket].append(provider_rule_text(rule))
 
-
 output_files = {
     "MEDIA": "media-ruleset.yaml",
     "STABLE": "stable-ruleset.yaml",
@@ -182,3 +203,27 @@ for group, filename in output_files.items():
     with open(filename, "w", encoding="utf-8") as f:
         yaml.safe_dump(ruleset_obj, f, allow_unicode=True, sort_keys=False)
     print(f"Generated {filename}")
+
+# =========================
+# Legacy Clash ruleset for simple profile
+# =========================
+legacy_payload = []
+
+for raw_rule in rules:
+    if not isinstance(raw_rule, str):
+        continue
+
+    rule = normalize_rule(raw_rule)
+    if not rule:
+        continue
+
+    text = legacy_rule_text(rule)
+    if text:
+        legacy_payload.append(text)
+
+legacy_ruleset_obj = {"payload": legacy_payload}
+
+with open("clash-ruleset.yaml", "w", encoding="utf-8") as f:
+    yaml.safe_dump(legacy_ruleset_obj, f, allow_unicode=True, sort_keys=False)
+
+print("Generated clash-ruleset.yaml")
