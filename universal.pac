@@ -154,6 +154,7 @@ function FindProxyForURL(url, host) {
   if (url.indexOf("phncdn") !== -1 || host.indexOf("phncdn") !== -1) return PROXY_CONN();
   if (url.indexOf("pornolab") !== -1 || host.indexOf("pornolab") !== -1) return PROXY_CONN();
   if (url.indexOf("eporner") !== -1 || host.indexOf("eporner") !== -1) return PROXY_CONN();
+  if (url.indexOf("celebjihad") !== -1 || host.indexOf("celebjihad") !== -1) return PROXY_CONN();
   if (url.indexOf("xvideos") !== -1 || host.indexOf("xvideos") !== -1) return PROXY_CONN();
   if (url.indexOf("xnxx") !== -1 || host.indexOf("xnxx") !== -1) return PROXY_CONN();
   if (url.indexOf("youporn") !== -1 || host.indexOf("youporn") !== -1) return PROXY_CONN();
