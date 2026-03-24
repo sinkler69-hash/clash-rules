@@ -1,5 +1,25 @@
 rules:
   # =====================================================
+  # iOS / SYSTEM CONNECTIVITY — MUST BE DIRECT
+  # =====================================================
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,captive.apple.com,DIRECT
+  - DOMAIN-SUFFIX,gstatic.com,DIRECT
+
+  # =====================================================
+  # LOCAL SERVICES (Yandex / Ozon) — MUST BE DIRECT
+  # =====================================================
+  - DOMAIN-SUFFIX,yandex.ru,DIRECT
+  - DOMAIN-SUFFIX,yandex.net,DIRECT
+  - DOMAIN-SUFFIX,yandex.com,DIRECT
+  - DOMAIN-SUFFIX,quasar.yandex.net,DIRECT
+
+  - DOMAIN-SUFFIX,ozon.ru,DIRECT
+  - DOMAIN-SUFFIX,ozoncdn.ru,DIRECT
+  - DOMAIN-SUFFIX,ozone.ru,DIRECT
+
+  # =====================================================
   # LOCAL / LOOPBACK — MUST BE DIRECT
   # =====================================================
   - DOMAIN,localhost,DIRECT
@@ -165,7 +185,6 @@ rules:
   - DOMAIN-SUFFIX,universalis.app,Proxy
   - DOMAIN-SUFFIX,xivgear.app,Proxy
   - DOMAIN-SUFFIX,raidplan.io,Proxy
-
   - DOMAIN-SUFFIX,finalfantasyxiv.com,Proxy
   - DOMAIN-SUFFIX,ffxiv.com,Proxy
   - DOMAIN-SUFFIX,square-enix.com,Proxy
@@ -173,12 +192,10 @@ rules:
   - DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
   - DOMAIN-SUFFIX,fflogs.com,Proxy
   - DOMAIN-SUFFIX,xivanalysis.com,Proxy
-
   - DOMAIN-KEYWORD,lifehacker,Proxy
   - DOMAIN-SUFFIX,desec.io,Proxy
   - DOMAIN-SUFFIX,patreon.com,Proxy
   - DOMAIN-KEYWORD,patreon,Proxy
-
   - DOMAIN-SUFFIX,canva.com,Proxy
   - DOMAIN-SUFFIX,canva.dev,Proxy
   - DOMAIN-SUFFIX,canvausercontent.com,Proxy
@@ -259,14 +276,11 @@ rules:
   - DOMAIN-SUFFIX,api.opensubtitles.com,Proxy
   - DOMAIN-SUFFIX,opensubtitles.org,Proxy
   - DOMAIN-SUFFIX,opensubtitles.vip,Proxy
-
   - DOMAIN-SUFFIX,podnapisi.net,Proxy
   - DOMAIN-SUFFIX,www.podnapisi.net,Proxy
-
   - DOMAIN-SUFFIX,yifysubtitles.ch,Proxy
   - DOMAIN-SUFFIX,yifysubtitles.org,Proxy
   - DOMAIN-SUFFIX,yts.mx,Proxy
-
   - DOMAIN-SUFFIX,subscene.com,Proxy
   - DOMAIN-SUFFIX,addic7ed.com,Proxy
 
