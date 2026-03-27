@@ -177,6 +177,9 @@ rules:
   - DOMAIN-SUFFIX,protonmail.com,STABLE
   - DOMAIN-SUFFIX,protonvpn.com,STABLE
   - DOMAIN-KEYWORD,proton,STABLE
+  
+  # Notion / Proton
+  - DOMAIN-KEYWORD,telegram,Proxy
 
   # =====================================================
   # PROXY — EVERYTHING ELSE
