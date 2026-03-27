@@ -139,6 +139,7 @@ function FindProxyForURL(url, host) {
   if (dnsDomainIs(host, "protonmail.com")) return PROXY_CONN();
   if (dnsDomainIs(host, "protonvpn.com")) return PROXY_CONN();
   if (url.indexOf("proton") !== -1 || host.indexOf("proton") !== -1) return PROXY_CONN();
+  if (url.indexOf("telegram") !== -1 || host.indexOf("telegram") !== -1) return PROXY_CONN();
   if (dnsDomainIs(host, "garlandtools.org")) return PROXY_CONN();
   if (dnsDomainIs(host, "universalis.app")) return PROXY_CONN();
   if (dnsDomainIs(host, "xivgear.app")) return PROXY_CONN();

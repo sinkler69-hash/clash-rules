@@ -139,6 +139,7 @@ payload:
 - DOMAIN-SUFFIX,protonmail.com,Proxy
 - DOMAIN-SUFFIX,protonvpn.com,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
+- DOMAIN-KEYWORD,telegram,Proxy
 - DOMAIN-SUFFIX,garlandtools.org,Proxy
 - DOMAIN-SUFFIX,universalis.app,Proxy
 - DOMAIN-SUFFIX,xivgear.app,Proxy
