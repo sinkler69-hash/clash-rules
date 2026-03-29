@@ -95,6 +95,28 @@ def legacy_rule_text(rule: dict) -> str | None:
     return ",".join(parts)
 
 
+def js_escape(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"').lower()
+
+
+def emit_pac_domain_suffix(add, value: str, action: str):
+    v = js_escape(value)
+    ret = "DIRECT_CONN()" if action == "DIRECT" else "PROXY_CONN()"
+    add(f'  if (host === "{v}" || shExpMatch(host, "*.{v}")) return {ret};')
+
+
+def emit_pac_domain(add, value: str, action: str):
+    v = js_escape(value)
+    ret = "DIRECT_CONN()" if action == "DIRECT" else "PROXY_CONN()"
+    add(f'  if (host === "{v}") return {ret};')
+
+
+def emit_pac_domain_keyword(add, value: str, action: str):
+    v = js_escape(value)
+    ret = "DIRECT_CONN()" if action == "DIRECT" else "PROXY_CONN()"
+    add(f'  if (host.indexOf("{v}") !== -1) return {ret};')
+
+
 with open("rules.yaml", "r", encoding="utf-8") as f:
     data = yaml.safe_load(f)
 
@@ -118,10 +140,23 @@ add(f'  function PROXY_CONN() {{ return "{PAC_PROXY}"; }}')
 add('  function DIRECT_CONN() { return "DIRECT"; }')
 add("")
 
+# Local names always DIRECT
 add("  if (isPlainHostName(host) ||")
 add('      shExpMatch(host, "*.local") ||')
 add('      shExpMatch(host, "*.lan")) {')
 add("    return DIRECT_CONN();")
+add("  }")
+add("")
+
+# RFC1918 / loopback always DIRECT
+add("  var resolved = dnsResolve(host);")
+add("  if (resolved) {")
+add('    if (isInNet(resolved, "127.0.0.0", "255.0.0.0") ||')
+add('        isInNet(resolved, "10.0.0.0", "255.0.0.0") ||')
+add('        isInNet(resolved, "172.16.0.0", "255.240.0.0") ||')
+add('        isInNet(resolved, "192.168.0.0", "255.255.0.0")) {')
+add("      return DIRECT_CONN();")
+add("    }")
 add("  }")
 add("")
 
@@ -138,34 +173,24 @@ for raw_rule in rules:
     target = rule["target"]
     action = pac_action(target)
 
+    # Эти типы не имеют смысла для PAC
     if kind in {"PROCESS-NAME", "MATCH", "IP-CIDR", "DST-PORT"}:
         continue
 
     if kind == "DOMAIN-SUFFIX":
-        if action == "DIRECT":
-            add(f'  if (dnsDomainIs(host, "{value}")) return DIRECT_CONN();')
-        else:
-            add(f'  if (dnsDomainIs(host, "{value}")) return PROXY_CONN();')
+        emit_pac_domain_suffix(add, value, action)
 
     elif kind == "DOMAIN-KEYWORD":
-        needle = value.lower()
-        if action == "DIRECT":
-            add(f'  if (url.indexOf("{needle}") !== -1 || host.indexOf("{needle}") !== -1) return DIRECT_CONN();')
-        else:
-            add(f'  if (url.indexOf("{needle}") !== -1 || host.indexOf("{needle}") !== -1) return PROXY_CONN();')
+        emit_pac_domain_keyword(add, value, action)
 
     elif kind == "DOMAIN":
-        domain = value.lower()
-        if action == "DIRECT":
-            add(f'  if (host === "{domain}") return DIRECT_CONN();')
-        else:
-            add(f'  if (host === "{domain}") return PROXY_CONN();')
+        emit_pac_domain(add, value, action)
 
 add("  return DIRECT_CONN();")
 add("}")
 
 with open("universal.pac", "w", encoding="utf-8") as f:
-    f.write("\n".join(pac_lines))
+    f.write("\n".join(pac_lines) + "\n")
 
 print("Generated universal.pac")
 
