@@ -1,25 +1,5 @@
 rules:
   # =====================================================
-  # iOS / SYSTEM CONNECTIVITY — MUST BE DIRECT
-  # =====================================================
-  - DOMAIN-SUFFIX,apple.com,DIRECT
-  - DOMAIN-SUFFIX,icloud.com,DIRECT
-  - DOMAIN-SUFFIX,captive.apple.com,DIRECT
-  - DOMAIN-SUFFIX,gstatic.com,DIRECT
-
-  # =====================================================
-  # LOCAL SERVICES (Yandex / Ozon) — MUST BE DIRECT
-  # =====================================================
-  - DOMAIN-SUFFIX,yandex.ru,DIRECT
-  - DOMAIN-SUFFIX,yandex.net,DIRECT
-  - DOMAIN-SUFFIX,yandex.com,DIRECT
-  - DOMAIN-SUFFIX,quasar.yandex.net,DIRECT
-
-  - DOMAIN-SUFFIX,ozon.ru,DIRECT
-  - DOMAIN-SUFFIX,ozoncdn.ru,DIRECT
-  - DOMAIN-SUFFIX,ozone.ru,DIRECT
-
-  # =====================================================
   # LOCAL / LOOPBACK — MUST BE DIRECT
   # =====================================================
   - DOMAIN,localhost,DIRECT
