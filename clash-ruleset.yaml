@@ -1,15 +1,4 @@
 payload:
-- DOMAIN-SUFFIX,apple.com,DIRECT
-- DOMAIN-SUFFIX,icloud.com,DIRECT
-- DOMAIN-SUFFIX,captive.apple.com,DIRECT
-- DOMAIN-SUFFIX,gstatic.com,DIRECT
-- DOMAIN-SUFFIX,yandex.ru,DIRECT
-- DOMAIN-SUFFIX,yandex.net,DIRECT
-- DOMAIN-SUFFIX,yandex.com,DIRECT
-- DOMAIN-SUFFIX,quasar.yandex.net,DIRECT
-- DOMAIN-SUFFIX,ozon.ru,DIRECT
-- DOMAIN-SUFFIX,ozoncdn.ru,DIRECT
-- DOMAIN-SUFFIX,ozone.ru,DIRECT
 - DOMAIN,localhost,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve

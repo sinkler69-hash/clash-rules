@@ -11,17 +11,6 @@ function FindProxyForURL(url, host) {
     return DIRECT_CONN();
   }
 
-  if (dnsDomainIs(host, "apple.com")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "icloud.com")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "captive.apple.com")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "gstatic.com")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "yandex.ru")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "yandex.net")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "yandex.com")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "quasar.yandex.net")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "ozon.ru")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "ozoncdn.ru")) return DIRECT_CONN();
-  if (dnsDomainIs(host, "ozone.ru")) return DIRECT_CONN();
   if (host === "localhost") return DIRECT_CONN();
   if (dnsDomainIs(host, "youtube.com")) return PROXY_CONN();
   if (dnsDomainIs(host, "www.youtube.com")) return PROXY_CONN();
