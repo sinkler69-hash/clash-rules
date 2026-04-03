@@ -1,5 +1,6 @@
 payload:
 - DOMAIN-KEYWORD,telegram
+- DOMAIN-KEYWORD,t.me
 - DOMAIN-SUFFIX,garlandtools.org
 - DOMAIN-SUFFIX,universalis.app
 - DOMAIN-SUFFIX,xivgear.app
