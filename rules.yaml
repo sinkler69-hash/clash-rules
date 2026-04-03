@@ -185,6 +185,7 @@ rules:
   - DOMAIN-SUFFIX,canvausercontent.com,Proxy
   - DOMAIN-SUFFIX,cdn.canva.com,Proxy
   - DOMAIN-SUFFIX,static.canva.com,Proxy
+  - DOMAIN-SUFFIX,curseforge.com,Proxy
 
   # =====================================================
   # Adult
