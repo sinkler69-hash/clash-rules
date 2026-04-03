@@ -160,6 +160,7 @@ function FindProxyForURL(url, host) {
   if (host === "canvausercontent.com" || shExpMatch(host, "*.canvausercontent.com")) return PROXY_CONN();
   if (host === "cdn.canva.com" || shExpMatch(host, "*.cdn.canva.com")) return PROXY_CONN();
   if (host === "static.canva.com" || shExpMatch(host, "*.static.canva.com")) return PROXY_CONN();
+  if (host === "curseforge.com" || shExpMatch(host, "*.curseforge.com")) return PROXY_CONN();
   if (host.indexOf("hentaihaven") !== -1) return PROXY_CONN();
   if (host.indexOf("hentai") !== -1) return PROXY_CONN();
   if (host.indexOf("pornhub") !== -1) return PROXY_CONN();
