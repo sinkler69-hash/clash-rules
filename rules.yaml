@@ -160,6 +160,7 @@ rules:
   
   # Notion / Proton
   - DOMAIN-KEYWORD,telegram,Proxy
+  - DOMAIN-KEYWORD,t.me,Proxy
 
   # =====================================================
   # PROXY — EVERYTHING ELSE
