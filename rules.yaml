@@ -186,6 +186,7 @@ rules:
   - DOMAIN-SUFFIX,cdn.canva.com,Proxy
   - DOMAIN-SUFFIX,static.canva.com,Proxy
   - DOMAIN-SUFFIX,curseforge.com,Proxy
+  - DOMAIN-SUFFIX,ipleak.net,Proxy
 
   # =====================================================
   # Adult
