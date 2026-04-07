@@ -1,6 +1,20 @@
 payload:
 - DOMAIN,api.telegram.org
 - DOMAIN-SUFFIX,t.me
+- DOMAIN-SUFFIX,telegram.org
+- DOMAIN-SUFFIX,telegram.me
+- DOMAIN-SUFFIX,telegram.dog
+- DOMAIN-SUFFIX,telesco.pe
+- DOMAIN-SUFFIX,cdn-telegram.org
+- DOMAIN-SUFFIX,telegram-cdn.org
+- DOMAIN-SUFFIX,telegra.ph
+- DOMAIN-SUFFIX,graph.org
+- IP-CIDR,91.108.4.0/22,no-resolve
+- IP-CIDR,91.108.8.0/22,no-resolve
+- IP-CIDR,91.108.12.0/22,no-resolve
+- IP-CIDR,91.108.16.0/22,no-resolve
+- IP-CIDR,91.108.56.0/22,no-resolve
+- IP-CIDR,149.154.160.0/20,no-resolve
 - DOMAIN-SUFFIX,garlandtools.org
 - DOMAIN-SUFFIX,universalis.app
 - DOMAIN-SUFFIX,xivgear.app

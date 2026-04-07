@@ -140,6 +140,14 @@ function FindProxyForURL(url, host) {
   if (host.indexOf("proton") !== -1) return PROXY_CONN();
   if (host === "api.telegram.org") return PROXY_CONN();
   if (host === "t.me" || shExpMatch(host, "*.t.me")) return PROXY_CONN();
+  if (host === "telegram.org" || shExpMatch(host, "*.telegram.org")) return PROXY_CONN();
+  if (host === "telegram.me" || shExpMatch(host, "*.telegram.me")) return PROXY_CONN();
+  if (host === "telegram.dog" || shExpMatch(host, "*.telegram.dog")) return PROXY_CONN();
+  if (host === "telesco.pe" || shExpMatch(host, "*.telesco.pe")) return PROXY_CONN();
+  if (host === "cdn-telegram.org" || shExpMatch(host, "*.cdn-telegram.org")) return PROXY_CONN();
+  if (host === "telegram-cdn.org" || shExpMatch(host, "*.telegram-cdn.org")) return PROXY_CONN();
+  if (host === "telegra.ph" || shExpMatch(host, "*.telegra.ph")) return PROXY_CONN();
+  if (host === "graph.org" || shExpMatch(host, "*.graph.org")) return PROXY_CONN();
   if (host === "garlandtools.org" || shExpMatch(host, "*.garlandtools.org")) return PROXY_CONN();
   if (host === "universalis.app" || shExpMatch(host, "*.universalis.app")) return PROXY_CONN();
   if (host === "xivgear.app" || shExpMatch(host, "*.xivgear.app")) return PROXY_CONN();
