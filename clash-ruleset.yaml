@@ -128,7 +128,7 @@ payload:
 - DOMAIN-SUFFIX,protonmail.com,Proxy
 - DOMAIN-SUFFIX,protonvpn.com,Proxy
 - DOMAIN-KEYWORD,proton,Proxy
-- DOMAIN,api.telegram.org,DIRECT
+- DOMAIN,api.telegram.org,Proxy
 - DOMAIN-KEYWORD,t.me,Proxy
 - DOMAIN-SUFFIX,garlandtools.org,Proxy
 - DOMAIN-SUFFIX,universalis.app,Proxy
