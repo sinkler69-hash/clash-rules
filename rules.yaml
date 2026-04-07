@@ -161,6 +161,7 @@ rules:
   # Notion / Proton
   - DOMAIN,api.telegram.org,Proxy
   - DOMAIN-KEYWORD,t.me,Proxy
+  - DOMAIN-SUFFIX,telegram.org,Proxy
 
   # =====================================================
   # PROXY — EVERYTHING ELSE
