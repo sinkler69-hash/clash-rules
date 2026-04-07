@@ -130,6 +130,7 @@ payload:
 - DOMAIN-KEYWORD,proton,Proxy
 - DOMAIN,api.telegram.org,Proxy
 - DOMAIN-KEYWORD,t.me,Proxy
+- DOMAIN-SUFFIX,telegram.org,Proxy
 - DOMAIN-SUFFIX,garlandtools.org,Proxy
 - DOMAIN-SUFFIX,universalis.app,Proxy
 - DOMAIN-SUFFIX,xivgear.app,Proxy
