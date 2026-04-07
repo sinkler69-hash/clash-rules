@@ -159,7 +159,7 @@ rules:
   - DOMAIN-KEYWORD,proton,STABLE
   
   # Notion / Proton
-  - DOMAIN,api.telegram.org,DIRECT
+  - DOMAIN,api.telegram.org,Proxy
   - DOMAIN-KEYWORD,t.me,Proxy
 
   # =====================================================
