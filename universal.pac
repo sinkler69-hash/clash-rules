@@ -139,7 +139,7 @@ function FindProxyForURL(url, host) {
   if (host === "protonvpn.com" || shExpMatch(host, "*.protonvpn.com")) return PROXY_CONN();
   if (host.indexOf("proton") !== -1) return PROXY_CONN();
   if (host === "api.telegram.org") return PROXY_CONN();
-  if (host.indexOf("t.me") !== -1) return PROXY_CONN();
+  if (host === "t.me" || shExpMatch(host, "*.t.me")) return PROXY_CONN();
   if (host === "garlandtools.org" || shExpMatch(host, "*.garlandtools.org")) return PROXY_CONN();
   if (host === "universalis.app" || shExpMatch(host, "*.universalis.app")) return PROXY_CONN();
   if (host === "xivgear.app" || shExpMatch(host, "*.xivgear.app")) return PROXY_CONN();
