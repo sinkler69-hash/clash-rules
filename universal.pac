@@ -138,7 +138,7 @@ function FindProxyForURL(url, host) {
   if (host === "protonmail.com" || shExpMatch(host, "*.protonmail.com")) return PROXY_CONN();
   if (host === "protonvpn.com" || shExpMatch(host, "*.protonvpn.com")) return PROXY_CONN();
   if (host.indexOf("proton") !== -1) return PROXY_CONN();
-  if (host.indexOf("telegram") !== -1) return PROXY_CONN();
+  if (host === "api.telegram.org") return DIRECT_CONN();
   if (host.indexOf("t.me") !== -1) return PROXY_CONN();
   if (host === "garlandtools.org" || shExpMatch(host, "*.garlandtools.org")) return PROXY_CONN();
   if (host === "universalis.app" || shExpMatch(host, "*.universalis.app")) return PROXY_CONN();
