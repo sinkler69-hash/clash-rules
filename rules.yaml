@@ -158,9 +158,11 @@ rules:
   - DOMAIN-SUFFIX,protonvpn.com,STABLE
   - DOMAIN-KEYWORD,proton,STABLE
   
-  # Telegram / Api, Links
+  # Telegram API (Sonarr)
   - DOMAIN,api.telegram.org,Proxy
-  - DOMAIN-KEYWORD,t.me,Proxy
+
+  # Telegram links
+  - DOMAIN-SUFFIX,t.me,Proxy
 
   # =====================================================
   # PROXY — EVERYTHING ELSE
