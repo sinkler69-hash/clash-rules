@@ -72,14 +72,14 @@ rules:
   - DOMAIN,v.redd.it,STABLE
 
   # Reddit CDN / media fallback
-  - DOMAIN-SUFFIX,fastly.net,STABLE
-  - DOMAIN-SUFFIX,fastlylb.net,STABLE
-  - DOMAIN-SUFFIX,cloudfront.net,STABLE
-  - DOMAIN-SUFFIX,akamaized.net,STABLE
+  - DOMAIN-SUFFIX,fastly.net,Proxy
+  - DOMAIN-SUFFIX,fastlylb.net,Proxy
+  - DOMAIN-SUFFIX,cloudfront.net,Proxy
+  - DOMAIN-SUFFIX,akamaized.net,Proxy
 
   # Reddit CDN IP fallback
-  - IP-CIDR,151.101.0.0/16,STABLE,no-resolve
-  - IP-CIDR,13.32.0.0/15,STABLE,no-resolve
+  - IP-CIDR,151.101.0.0/16,Proxy,no-resolve
+  - IP-CIDR,13.32.0.0/15,Proxy,no-resolve
 
   # OpenAI / ChatGPT
   - DOMAIN-SUFFIX,openai.com,STABLE
