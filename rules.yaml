@@ -71,6 +71,16 @@ rules:
   - DOMAIN,preview.redd.it,STABLE
   - DOMAIN,v.redd.it,STABLE
 
+  # Reddit CDN / media fallback
+  - DOMAIN-SUFFIX,fastly.net,STABLE
+  - DOMAIN-SUFFIX,fastlylb.net,STABLE
+  - DOMAIN-SUFFIX,cloudfront.net,STABLE
+  - DOMAIN-SUFFIX,akamaized.net,STABLE
+
+  # Reddit CDN IP fallback
+  - IP-CIDR,151.101.0.0/16,STABLE,no-resolve
+  - IP-CIDR,13.32.0.0/15,STABLE,no-resolve
+
   # OpenAI / ChatGPT
   - DOMAIN-SUFFIX,openai.com,STABLE
   - DOMAIN-SUFFIX,chatgpt.com,STABLE
