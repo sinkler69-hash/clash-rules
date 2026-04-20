@@ -54,6 +54,12 @@ payload:
 - DOMAIN,i.redd.it,Proxy
 - DOMAIN,preview.redd.it,Proxy
 - DOMAIN,v.redd.it,Proxy
+- DOMAIN-SUFFIX,fastly.net,Proxy
+- DOMAIN-SUFFIX,fastlylb.net,Proxy
+- DOMAIN-SUFFIX,cloudfront.net,Proxy
+- DOMAIN-SUFFIX,akamaized.net,Proxy
+- IP-CIDR,151.101.0.0/16,Proxy,no-resolve
+- IP-CIDR,13.32.0.0/15,Proxy,no-resolve
 - DOMAIN-SUFFIX,openai.com,Proxy
 - DOMAIN-SUFFIX,chatgpt.com,Proxy
 - DOMAIN-SUFFIX,ai.com,Proxy

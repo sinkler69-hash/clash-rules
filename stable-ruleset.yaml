@@ -30,6 +30,12 @@ payload:
 - DOMAIN,i.redd.it
 - DOMAIN,preview.redd.it
 - DOMAIN,v.redd.it
+- DOMAIN-SUFFIX,fastly.net
+- DOMAIN-SUFFIX,fastlylb.net
+- DOMAIN-SUFFIX,cloudfront.net
+- DOMAIN-SUFFIX,akamaized.net
+- IP-CIDR,151.101.0.0/16,no-resolve
+- IP-CIDR,13.32.0.0/15,no-resolve
 - DOMAIN-SUFFIX,openai.com
 - DOMAIN-SUFFIX,chatgpt.com
 - DOMAIN-SUFFIX,ai.com
