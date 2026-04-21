@@ -70,10 +70,6 @@ function FindProxyForURL(url, host) {
   if (host === "i.redd.it") return PROXY_CONN();
   if (host === "preview.redd.it") return PROXY_CONN();
   if (host === "v.redd.it") return PROXY_CONN();
-  if (host === "fastly.net" || shExpMatch(host, "*.fastly.net")) return PROXY_CONN();
-  if (host === "fastlylb.net" || shExpMatch(host, "*.fastlylb.net")) return PROXY_CONN();
-  if (host === "cloudfront.net" || shExpMatch(host, "*.cloudfront.net")) return PROXY_CONN();
-  if (host === "akamaized.net" || shExpMatch(host, "*.akamaized.net")) return PROXY_CONN();
   if (host === "openai.com" || shExpMatch(host, "*.openai.com")) return PROXY_CONN();
   if (host === "chatgpt.com" || shExpMatch(host, "*.chatgpt.com")) return PROXY_CONN();
   if (host === "ai.com" || shExpMatch(host, "*.ai.com")) return PROXY_CONN();
