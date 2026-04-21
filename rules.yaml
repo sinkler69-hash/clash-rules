@@ -72,10 +72,10 @@ rules:
   - DOMAIN,v.redd.it,STABLE
 
   # Reddit CDN / media fallback
-  - DOMAIN-SUFFIX,fastly.net,Proxy
-  - DOMAIN-SUFFIX,fastlylb.net,Proxy
-  - DOMAIN-SUFFIX,cloudfront.net,Proxy
-  - DOMAIN-SUFFIX,akamaized.net,Proxy
+  #- DOMAIN-SUFFIX,fastly.net,Proxy
+  #- DOMAIN-SUFFIX,fastlylb.net,Proxy
+  #- DOMAIN-SUFFIX,cloudfront.net,Proxy
+  #- DOMAIN-SUFFIX,akamaized.net,Proxy
 
   # Reddit CDN IP fallback
   - IP-CIDR,151.101.0.0/16,Proxy,no-resolve
