@@ -65,6 +65,11 @@ payload:
 - DOMAIN-SUFFIX,oaiusercontent.com,Proxy
 - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
 - DOMAIN-SUFFIX,openaicom-api.akamaized.net,Proxy
+- DOMAIN-SUFFIX,play.google.com,Proxy
+- DOMAIN-SUFFIX,play.googleapis.com,Proxy
+- DOMAIN-SUFFIX,android.clients.google.com,Proxy
+- DOMAIN-SUFFIX,clients3.google.com,Proxy
+- DOMAIN-SUFFIX,clients4.google.com,Proxy
 - DOMAIN-SUFFIX,threads.com,Proxy
 - DOMAIN-SUFFIX,threads.net,Proxy
 - DOMAIN-KEYWORD,threads,Proxy
