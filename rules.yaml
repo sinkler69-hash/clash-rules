@@ -91,6 +91,13 @@ rules:
   - DOMAIN-SUFFIX,oaiusercontent.com,STABLE
   - DOMAIN-SUFFIX,openaicom.imgix.net,STABLE
   - DOMAIN-SUFFIX,openaicom-api.akamaized.net,STABLE
+  
+  # Google Play
+  - DOMAIN-SUFFIX,play.google.com,Proxy
+  - DOMAIN-SUFFIX,play.googleapis.com,Proxy
+  - DOMAIN-SUFFIX,android.clients.google.com,Proxy
+  - DOMAIN-SUFFIX,clients3.google.com,Proxy
+  - DOMAIN-SUFFIX,clients4.google.com,Proxy
 
   # Meta / Instagram / Threads / WhatsApp
   - DOMAIN-SUFFIX,threads.com,STABLE
