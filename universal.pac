@@ -80,10 +80,11 @@ function FindProxyForURL(url, host) {
   if (host === "openaicom.imgix.net" || shExpMatch(host, "*.openaicom.imgix.net")) return PROXY_CONN();
   if (host === "openaicom-api.akamaized.net" || shExpMatch(host, "*.openaicom-api.akamaized.net")) return PROXY_CONN();
   if (host === "play.google.com" || shExpMatch(host, "*.play.google.com")) return PROXY_CONN();
-  if (host === "play.googleapis.com" || shExpMatch(host, "*.play.googleapis.com")) return PROXY_CONN();
-  if (host === "android.clients.google.com" || shExpMatch(host, "*.android.clients.google.com")) return PROXY_CONN();
-  if (host === "clients3.google.com" || shExpMatch(host, "*.clients3.google.com")) return PROXY_CONN();
-  if (host === "clients4.google.com" || shExpMatch(host, "*.clients4.google.com")) return PROXY_CONN();
+  if (host === "accounts.google.com" || shExpMatch(host, "*.accounts.google.com")) return PROXY_CONN();
+  if (host === "apis.google.com" || shExpMatch(host, "*.apis.google.com")) return PROXY_CONN();
+  if (host === "googleapis.com" || shExpMatch(host, "*.googleapis.com")) return PROXY_CONN();
+  if (host === "gstatic.com" || shExpMatch(host, "*.gstatic.com")) return PROXY_CONN();
+  if (host === "ssl.gstatic.com" || shExpMatch(host, "*.ssl.gstatic.com")) return PROXY_CONN();
   if (host === "threads.com" || shExpMatch(host, "*.threads.com")) return PROXY_CONN();
   if (host === "threads.net" || shExpMatch(host, "*.threads.net")) return PROXY_CONN();
   if (host.indexOf("threads") !== -1) return PROXY_CONN();
