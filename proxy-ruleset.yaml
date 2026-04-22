@@ -3,10 +3,9 @@ payload:
 - IP-CIDR,13.32.0.0/15,no-resolve
 - DOMAIN-SUFFIX,play.google.com
 - DOMAIN-SUFFIX,accounts.google.com
-- DOMAIN-SUFFIX,apis.google.com
 - DOMAIN-SUFFIX,googleapis.com
 - DOMAIN-SUFFIX,gstatic.com
-- DOMAIN-SUFFIX,ssl.gstatic.com
+- DOMAIN-SUFFIX,apis.google.com
 - DOMAIN,api.telegram.org
 - DOMAIN-SUFFIX,t.me
 - DOMAIN-SUFFIX,telegram.org
