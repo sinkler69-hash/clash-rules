@@ -213,6 +213,8 @@ rules:
   - DOMAIN-SUFFIX,ffxivteamcraft.com,Proxy
   - DOMAIN-SUFFIX,fflogs.com,Proxy
   - DOMAIN-SUFFIX,xivanalysis.com,Proxy
+  - DOMAIN-SUFFIX,consolegameswiki.com,Proxy
+  - DOMAIN-SUFFIX,ffxiv.consolegameswiki.com,Proxy
   - DOMAIN-KEYWORD,lifehacker,Proxy
   - DOMAIN-SUFFIX,desec.io,Proxy
   - DOMAIN-SUFFIX,patreon.com,Proxy
