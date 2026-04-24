@@ -33,6 +33,8 @@ payload:
 - DOMAIN-SUFFIX,ffxivteamcraft.com
 - DOMAIN-SUFFIX,fflogs.com
 - DOMAIN-SUFFIX,xivanalysis.com
+- DOMAIN-SUFFIX,consolegameswiki.com
+- DOMAIN-SUFFIX,ffxiv.consolegameswiki.com
 - DOMAIN-KEYWORD,lifehacker
 - DOMAIN-SUFFIX,desec.io
 - DOMAIN-SUFFIX,patreon.com

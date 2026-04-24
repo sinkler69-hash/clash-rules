@@ -164,6 +164,8 @@ function FindProxyForURL(url, host) {
   if (host === "ffxivteamcraft.com" || shExpMatch(host, "*.ffxivteamcraft.com")) return PROXY_CONN();
   if (host === "fflogs.com" || shExpMatch(host, "*.fflogs.com")) return PROXY_CONN();
   if (host === "xivanalysis.com" || shExpMatch(host, "*.xivanalysis.com")) return PROXY_CONN();
+  if (host === "consolegameswiki.com" || shExpMatch(host, "*.consolegameswiki.com")) return PROXY_CONN();
+  if (host === "ffxiv.consolegameswiki.com" || shExpMatch(host, "*.ffxiv.consolegameswiki.com")) return PROXY_CONN();
   if (host.indexOf("lifehacker") !== -1) return PROXY_CONN();
   if (host === "desec.io" || shExpMatch(host, "*.desec.io")) return PROXY_CONN();
   if (host === "patreon.com" || shExpMatch(host, "*.patreon.com")) return PROXY_CONN();
