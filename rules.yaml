@@ -227,7 +227,7 @@ rules:
   - DOMAIN-SUFFIX,curseforge.com,Proxy
   - DOMAIN-SUFFIX,ipleak.net,Proxy
   - DOMAIN-SUFFIX,4kwallpapers.com,Proxy
-  - DOMAIN-SUFFIX,unraid.net,Proxy
+  - DOMAIN-KEYWORD,unraid,Proxy
 
 
 
