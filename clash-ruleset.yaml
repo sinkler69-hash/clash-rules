@@ -175,6 +175,7 @@ payload:
 - DOMAIN-SUFFIX,static.canva.com,Proxy
 - DOMAIN-SUFFIX,curseforge.com,Proxy
 - DOMAIN-SUFFIX,ipleak.net,Proxy
+- DOMAIN-SUFFIX,4kwallpapers.com,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
 - DOMAIN-KEYWORD,pornhub,Proxy

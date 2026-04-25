@@ -177,6 +177,7 @@ function FindProxyForURL(url, host) {
   if (host === "static.canva.com" || shExpMatch(host, "*.static.canva.com")) return PROXY_CONN();
   if (host === "curseforge.com" || shExpMatch(host, "*.curseforge.com")) return PROXY_CONN();
   if (host === "ipleak.net" || shExpMatch(host, "*.ipleak.net")) return PROXY_CONN();
+  if (host === "4kwallpapers.com" || shExpMatch(host, "*.4kwallpapers.com")) return PROXY_CONN();
   if (host.indexOf("hentaihaven") !== -1) return PROXY_CONN();
   if (host.indexOf("hentai") !== -1) return PROXY_CONN();
   if (host.indexOf("pornhub") !== -1) return PROXY_CONN();
