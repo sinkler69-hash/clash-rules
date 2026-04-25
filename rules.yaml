@@ -226,6 +226,7 @@ rules:
   - DOMAIN-SUFFIX,static.canva.com,Proxy
   - DOMAIN-SUFFIX,curseforge.com,Proxy
   - DOMAIN-SUFFIX,ipleak.net,Proxy
+  - DOMAIN-SUFFIX,4kwallpapers.com,Proxy
 
   # =====================================================
   # Adult
