@@ -47,7 +47,9 @@ payload:
 - DOMAIN-SUFFIX,curseforge.com
 - DOMAIN-SUFFIX,ipleak.net
 - DOMAIN-SUFFIX,4kwallpapers.com
-- DOMAIN-KEYWORD,unraid
+- DOMAIN-SUFFIX,unraid.net
+- DOMAIN-SUFFIX,craft.cloud
+- DOMAIN-SUFFIX,beehiiv.com
 - DOMAIN-KEYWORD,hentaihaven
 - DOMAIN-KEYWORD,hentai
 - DOMAIN-KEYWORD,pornhub

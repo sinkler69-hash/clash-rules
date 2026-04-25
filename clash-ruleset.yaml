@@ -176,7 +176,9 @@ payload:
 - DOMAIN-SUFFIX,curseforge.com,Proxy
 - DOMAIN-SUFFIX,ipleak.net,Proxy
 - DOMAIN-SUFFIX,4kwallpapers.com,Proxy
-- DOMAIN-KEYWORD,unraid,Proxy
+- DOMAIN-SUFFIX,unraid.net,Proxy
+- DOMAIN-SUFFIX,craft.cloud,Proxy
+- DOMAIN-SUFFIX,beehiiv.com,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
 - DOMAIN-KEYWORD,pornhub,Proxy
