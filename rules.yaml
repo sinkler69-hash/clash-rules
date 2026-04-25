@@ -254,6 +254,7 @@ rules:
   - DOMAIN-SUFFIX,ds-cdn.com,Proxy
   - DOMAIN-SUFFIX,ds1cdn.com,Proxy
   - DOMAIN-SUFFIX,cloudflarestream.com,Proxy
+  - DOMAIN-SUFFIX,fastpic.org,Proxy
 
   # =====================================================
   # Torrents
