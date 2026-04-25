@@ -49,7 +49,11 @@ payload:
 - DOMAIN-SUFFIX,4kwallpapers.com
 - DOMAIN-SUFFIX,unraid.net
 - DOMAIN-SUFFIX,craft.cloud
+- DOMAIN-SUFFIX,cdn.craft.cloud
 - DOMAIN-SUFFIX,beehiiv.com
+- DOMAIN-SUFFIX,googletagmanager.com
+- DOMAIN-SUFFIX,doubleclick.net
+- DOMAIN-SUFFIX,googleadservices.com
 - DOMAIN-KEYWORD,hentaihaven
 - DOMAIN-KEYWORD,hentai
 - DOMAIN-KEYWORD,pornhub

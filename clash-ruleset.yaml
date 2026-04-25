@@ -178,7 +178,11 @@ payload:
 - DOMAIN-SUFFIX,4kwallpapers.com,Proxy
 - DOMAIN-SUFFIX,unraid.net,Proxy
 - DOMAIN-SUFFIX,craft.cloud,Proxy
+- DOMAIN-SUFFIX,cdn.craft.cloud,Proxy
 - DOMAIN-SUFFIX,beehiiv.com,Proxy
+- DOMAIN-SUFFIX,googletagmanager.com,Proxy
+- DOMAIN-SUFFIX,doubleclick.net,Proxy
+- DOMAIN-SUFFIX,googleadservices.com,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
 - DOMAIN-KEYWORD,pornhub,Proxy

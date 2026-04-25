@@ -180,7 +180,11 @@ function FindProxyForURL(url, host) {
   if (host === "4kwallpapers.com" || shExpMatch(host, "*.4kwallpapers.com")) return PROXY_CONN();
   if (host === "unraid.net" || shExpMatch(host, "*.unraid.net")) return PROXY_CONN();
   if (host === "craft.cloud" || shExpMatch(host, "*.craft.cloud")) return PROXY_CONN();
+  if (host === "cdn.craft.cloud" || shExpMatch(host, "*.cdn.craft.cloud")) return PROXY_CONN();
   if (host === "beehiiv.com" || shExpMatch(host, "*.beehiiv.com")) return PROXY_CONN();
+  if (host === "googletagmanager.com" || shExpMatch(host, "*.googletagmanager.com")) return PROXY_CONN();
+  if (host === "doubleclick.net" || shExpMatch(host, "*.doubleclick.net")) return PROXY_CONN();
+  if (host === "googleadservices.com" || shExpMatch(host, "*.googleadservices.com")) return PROXY_CONN();
   if (host.indexOf("hentaihaven") !== -1) return PROXY_CONN();
   if (host.indexOf("hentai") !== -1) return PROXY_CONN();
   if (host.indexOf("pornhub") !== -1) return PROXY_CONN();
