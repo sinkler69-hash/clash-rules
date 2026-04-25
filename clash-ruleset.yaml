@@ -199,6 +199,7 @@ payload:
 - DOMAIN-SUFFIX,ds-cdn.com,Proxy
 - DOMAIN-SUFFIX,ds1cdn.com,Proxy
 - DOMAIN-SUFFIX,cloudflarestream.com,Proxy
+- DOMAIN-SUFFIX,fastpic.org,Proxy
 - DOMAIN-KEYWORD,rutracker,Proxy
 - DOMAIN-KEYWORD,rutor,Proxy
 - DOMAIN-KEYWORD,tfile,Proxy

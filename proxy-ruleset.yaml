@@ -70,6 +70,7 @@ payload:
 - DOMAIN-SUFFIX,ds-cdn.com
 - DOMAIN-SUFFIX,ds1cdn.com
 - DOMAIN-SUFFIX,cloudflarestream.com
+- DOMAIN-SUFFIX,fastpic.org
 - DOMAIN-KEYWORD,rutracker
 - DOMAIN-KEYWORD,rutor
 - DOMAIN-KEYWORD,tfile

@@ -201,6 +201,7 @@ function FindProxyForURL(url, host) {
   if (host === "ds-cdn.com" || shExpMatch(host, "*.ds-cdn.com")) return PROXY_CONN();
   if (host === "ds1cdn.com" || shExpMatch(host, "*.ds1cdn.com")) return PROXY_CONN();
   if (host === "cloudflarestream.com" || shExpMatch(host, "*.cloudflarestream.com")) return PROXY_CONN();
+  if (host === "fastpic.org" || shExpMatch(host, "*.fastpic.org")) return PROXY_CONN();
   if (host.indexOf("rutracker") !== -1) return PROXY_CONN();
   if (host.indexOf("rutor") !== -1) return PROXY_CONN();
   if (host.indexOf("tfile") !== -1) return PROXY_CONN();
