@@ -184,6 +184,8 @@ payload:
 - DOMAIN-SUFFIX,doubleclick.net,Proxy
 - DOMAIN-SUFFIX,googleadservices.com,Proxy
 - DOMAIN-SUFFIX,itch.io,Proxy
+- DOMAIN,html-classic.itch.zone,Proxy
+- DOMAIN-SUFFIX,itch.zone,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
 - DOMAIN-KEYWORD,pornhub,Proxy

@@ -55,6 +55,8 @@ payload:
 - DOMAIN-SUFFIX,doubleclick.net
 - DOMAIN-SUFFIX,googleadservices.com
 - DOMAIN-SUFFIX,itch.io
+- DOMAIN,html-classic.itch.zone
+- DOMAIN-SUFFIX,itch.zone
 - DOMAIN-KEYWORD,hentaihaven
 - DOMAIN-KEYWORD,hentai
 - DOMAIN-KEYWORD,pornhub
