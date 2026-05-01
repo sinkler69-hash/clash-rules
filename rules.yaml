@@ -234,6 +234,7 @@ rules:
   - DOMAIN-SUFFIX,googletagmanager.com,Proxy
   - DOMAIN-SUFFIX,doubleclick.net,Proxy
   - DOMAIN-SUFFIX,googleadservices.com,Proxy
+  - DOMAIN-SUFFIX,itch.io,Proxy
 
   # =====================================================
   # Adult
