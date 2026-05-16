@@ -21,6 +21,18 @@ function FindProxyForURL(url, host) {
     }
   }
 
+  if (host === "apple.com" || shExpMatch(host, "*.apple.com")) return DIRECT_CONN();
+  if (host === "icloud.com" || shExpMatch(host, "*.icloud.com")) return DIRECT_CONN();
+  if (host === "itunes.com" || shExpMatch(host, "*.itunes.com")) return DIRECT_CONN();
+  if (host === "mzstatic.com" || shExpMatch(host, "*.mzstatic.com")) return DIRECT_CONN();
+  if (host === "cdn-apple.com" || shExpMatch(host, "*.cdn-apple.com")) return DIRECT_CONN();
+  if (host === "aaplimg.com" || shExpMatch(host, "*.aaplimg.com")) return DIRECT_CONN();
+  if (host === "apple-dns.net" || shExpMatch(host, "*.apple-dns.net")) return DIRECT_CONN();
+  if (host === "apple-cloudkit.com" || shExpMatch(host, "*.apple-cloudkit.com")) return DIRECT_CONN();
+  if (host === "apps.apple.com" || shExpMatch(host, "*.apps.apple.com")) return DIRECT_CONN();
+  if (host === "appstoreconnect.apple.com" || shExpMatch(host, "*.appstoreconnect.apple.com")) return DIRECT_CONN();
+  if (host === "akadns.net" || shExpMatch(host, "*.akadns.net")) return DIRECT_CONN();
+  if (host === "app-attest.apple.com" || shExpMatch(host, "*.app-attest.apple.com")) return DIRECT_CONN();
   if (host === "localhost") return DIRECT_CONN();
   if (host === "youtube.com" || shExpMatch(host, "*.youtube.com")) return PROXY_CONN();
   if (host === "www.youtube.com" || shExpMatch(host, "*.www.youtube.com")) return PROXY_CONN();
