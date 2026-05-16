@@ -6,6 +6,25 @@ DIRECT_TARGETS = {"DIRECT"}
 MEDIA_TARGETS = {"MEDIA"}
 STABLE_TARGETS = {"STABLE"}
 
+# Apple-сервисы на iOS через PAC/HTTP proxy часто ломают App Store,
+# iCloud, обновления и авторизацию. Держим их hardcoded DIRECT
+# внутри генератора, чтобы это не зависело от rules.yaml и всегда
+# попадало в начало universal.pac до dnsResolve() и proxy-правил.
+APPLE_DIRECT_DOMAINS = [
+    "apple.com",
+    "icloud.com",
+    "itunes.com",
+    "mzstatic.com",
+    "cdn-apple.com",
+    "aaplimg.com",
+    "apple-dns.net",
+    "apple-cloudkit.com",
+    "apps.apple.com",
+    "appstoreconnect.apple.com",
+    "app-attest.apple.com",
+    "akadns.net",
+]
+
 
 def normalize_rule(rule: str):
     parts = [p.strip() for p in rule.split(",")]
@@ -140,6 +159,14 @@ add(f'  function PROXY_CONN() {{ return "{PAC_PROXY}"; }}')
 add('  function DIRECT_CONN() { return "DIRECT"; }')
 add("")
 
+# Apple / App Store / iCloud always DIRECT for iOS PAC.
+# Важно: этот блок стоит ДО dnsResolve(), чтобы iOS не подвисал
+# и не отправлял Apple CDN через explicit proxy.
+add("  // Apple / App Store / iCloud — always DIRECT")
+for domain in APPLE_DIRECT_DOMAINS:
+    emit_pac_domain_suffix(add, domain, "DIRECT")
+add("")
+
 # Local names always DIRECT
 add("  if (isPlainHostName(host) ||")
 add('      shExpMatch(host, "*.local") ||')
@@ -172,6 +199,11 @@ for raw_rule in rules:
     value = rule["value"]
     target = rule["target"]
     action = pac_action(target)
+
+    # Apple уже добавлен отдельным hardcoded DIRECT-блоком выше.
+    # Пропускаем дубли из rules.yaml, чтобы PAC был чище.
+    if kind in {"DOMAIN-SUFFIX", "DOMAIN"} and value.lower() in APPLE_DIRECT_DOMAINS:
+        continue
 
     # Эти типы не имеют смысла для PAC
     if kind in {"PROCESS-NAME", "MATCH", "IP-CIDR", "DST-PORT"}:
