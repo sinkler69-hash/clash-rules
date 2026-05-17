@@ -39,6 +39,7 @@ payload:
 - DOMAIN-SUFFIX,desec.io
 - DOMAIN-SUFFIX,patreon.com
 - DOMAIN-KEYWORD,patreon
+- DOMAIN-SUFFIX,ahrefs.com
 - DOMAIN-SUFFIX,canva.com
 - DOMAIN-SUFFIX,canva.dev
 - DOMAIN-SUFFIX,canvausercontent.com
