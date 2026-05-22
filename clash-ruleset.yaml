@@ -1,16 +1,4 @@
 payload:
-- DOMAIN-SUFFIX,apple.com,DIRECT
-- DOMAIN-SUFFIX,icloud.com,DIRECT
-- DOMAIN-SUFFIX,itunes.com,DIRECT
-- DOMAIN-SUFFIX,mzstatic.com,DIRECT
-- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
-- DOMAIN-SUFFIX,aaplimg.com,DIRECT
-- DOMAIN-SUFFIX,apple-dns.net,DIRECT
-- DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
-- DOMAIN-SUFFIX,apps.apple.com,DIRECT
-- DOMAIN-SUFFIX,appstoreconnect.apple.com,DIRECT
-- DOMAIN-SUFFIX,akadns.net,DIRECT
-- DOMAIN-SUFFIX,app-attest.apple.com,DIRECT
 - DOMAIN,localhost,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
