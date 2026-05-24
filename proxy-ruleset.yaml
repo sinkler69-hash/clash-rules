@@ -82,6 +82,8 @@ payload:
 - DOMAIN-SUFFIX,ds1cdn.com
 - DOMAIN-SUFFIX,cloudflarestream.com
 - DOMAIN-SUFFIX,fastpic.org
+- DOMAIN-SUFFIX,rutracker.org
+- DOMAIN-SUFFIX,t-ru.org
 - DOMAIN-KEYWORD,rutracker
 - DOMAIN-KEYWORD,rutor
 - DOMAIN-KEYWORD,tfile

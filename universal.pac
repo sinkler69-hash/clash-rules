@@ -227,6 +227,8 @@ function FindProxyForURL(url, host) {
   if (host === "ds1cdn.com" || shExpMatch(host, "*.ds1cdn.com")) return PROXY_CONN();
   if (host === "cloudflarestream.com" || shExpMatch(host, "*.cloudflarestream.com")) return PROXY_CONN();
   if (host === "fastpic.org" || shExpMatch(host, "*.fastpic.org")) return PROXY_CONN();
+  if (host === "rutracker.org" || shExpMatch(host, "*.rutracker.org")) return PROXY_CONN();
+  if (host === "t-ru.org" || shExpMatch(host, "*.t-ru.org")) return PROXY_CONN();
   if (host.indexOf("rutracker") !== -1) return PROXY_CONN();
   if (host.indexOf("rutor") !== -1) return PROXY_CONN();
   if (host.indexOf("tfile") !== -1) return PROXY_CONN();
