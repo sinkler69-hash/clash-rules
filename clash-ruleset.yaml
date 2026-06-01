@@ -187,6 +187,7 @@ payload:
 - DOMAIN-SUFFIX,itch.io,Proxy
 - DOMAIN,html-classic.itch.zone,Proxy
 - DOMAIN-SUFFIX,itch.zone,Proxy
+- DOMAIN-SUFFIX,tipworker.com,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
 - DOMAIN-KEYWORD,pornhub,Proxy

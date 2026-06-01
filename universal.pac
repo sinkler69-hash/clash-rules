@@ -203,6 +203,7 @@ function FindProxyForURL(url, host) {
   if (host === "itch.io" || shExpMatch(host, "*.itch.io")) return PROXY_CONN();
   if (host === "html-classic.itch.zone") return PROXY_CONN();
   if (host === "itch.zone" || shExpMatch(host, "*.itch.zone")) return PROXY_CONN();
+  if (host === "tipworker.com" || shExpMatch(host, "*.tipworker.com")) return PROXY_CONN();
   if (host.indexOf("hentaihaven") !== -1) return PROXY_CONN();
   if (host.indexOf("hentai") !== -1) return PROXY_CONN();
   if (host.indexOf("pornhub") !== -1) return PROXY_CONN();
