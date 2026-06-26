@@ -235,7 +235,6 @@ function FindProxyForURL(url, host) {
   if (host.indexOf("rutor") !== -1) return PROXY_CONN();
   if (host.indexOf("tfile") !== -1) return PROXY_CONN();
   if (host.indexOf("nnmclub") !== -1) return PROXY_CONN();
-  if (host.indexOf("torrent") !== -1) return PROXY_CONN();
   if (host.indexOf("1337x") !== -1) return PROXY_CONN();
   if (host.indexOf("torlock") !== -1) return PROXY_CONN();
   if (host.indexOf("rarbg") !== -1) return PROXY_CONN();
