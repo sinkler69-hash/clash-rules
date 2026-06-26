@@ -295,7 +295,6 @@ rules:
   - DOMAIN-KEYWORD,rutor,Proxy
   - DOMAIN-KEYWORD,tfile,Proxy
   - DOMAIN-KEYWORD,nnmclub,Proxy
-  - DOMAIN-KEYWORD,torrent,Proxy
   - DOMAIN-KEYWORD,1337x,Proxy
   - DOMAIN-KEYWORD,torlock,Proxy
   - DOMAIN-KEYWORD,rarbg,Proxy
