@@ -208,6 +208,7 @@ function FindProxyForURL(url, host) {
   if (host.indexOf("hentaihaven") !== -1) return PROXY_CONN();
   if (host.indexOf("hentai") !== -1) return PROXY_CONN();
   if (host === "htv-zurvan.com" || shExpMatch(host, "*.htv-zurvan.com")) return PROXY_CONN();
+  if (host === "htv-garuda.com" || shExpMatch(host, "*.htv-garuda.com")) return PROXY_CONN();
   if (host.indexOf("pornhub") !== -1) return PROXY_CONN();
   if (host.indexOf("phncdn") !== -1) return PROXY_CONN();
   if (host.indexOf("pornolab") !== -1) return PROXY_CONN();
