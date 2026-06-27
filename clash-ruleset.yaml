@@ -191,6 +191,7 @@ payload:
 - DOMAIN-SUFFIX,zen-browser.app,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
+- DOMAIN-SUFFIX,htv-zurvan.com,Proxy
 - DOMAIN-KEYWORD,pornhub,Proxy
 - DOMAIN-KEYWORD,phncdn,Proxy
 - DOMAIN-KEYWORD,pornolab,Proxy
