@@ -186,6 +186,7 @@ function FindProxyForURL(url, host) {
   if (host.indexOf("patreon") !== -1) return PROXY_CONN();
   if (host === "ahrefs.com" || shExpMatch(host, "*.ahrefs.com")) return PROXY_CONN();
   if (host === "linkedin.com" || shExpMatch(host, "*.linkedin.com")) return PROXY_CONN();
+  if (host === "licdn.com" || shExpMatch(host, "*.licdn.com")) return PROXY_CONN();
   if (host === "canva.com" || shExpMatch(host, "*.canva.com")) return PROXY_CONN();
   if (host === "canva.dev" || shExpMatch(host, "*.canva.dev")) return PROXY_CONN();
   if (host === "canvausercontent.com" || shExpMatch(host, "*.canvausercontent.com")) return PROXY_CONN();

@@ -41,6 +41,7 @@ payload:
 - DOMAIN-KEYWORD,patreon
 - DOMAIN-SUFFIX,ahrefs.com
 - DOMAIN-SUFFIX,linkedin.com
+- DOMAIN-SUFFIX,licdn.com
 - DOMAIN-SUFFIX,canva.com
 - DOMAIN-SUFFIX,canva.dev
 - DOMAIN-SUFFIX,canvausercontent.com
