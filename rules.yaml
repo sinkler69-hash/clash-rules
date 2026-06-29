@@ -237,6 +237,7 @@ rules:
   - DOMAIN-KEYWORD,patreon,Proxy
   - DOMAIN-SUFFIX,ahrefs.com,Proxy
   - DOMAIN-SUFFIX,linkedin.com,Proxy
+  - DOMAIN-SUFFIX,licdn.com,Proxy
   - DOMAIN-SUFFIX,canva.com,Proxy
   - DOMAIN-SUFFIX,canva.dev,Proxy
   - DOMAIN-SUFFIX,canvausercontent.com,Proxy
