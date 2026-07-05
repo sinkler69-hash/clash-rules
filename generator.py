@@ -1,4 +1,5 @@
 import yaml
+from pathlib import Path
 
 PAC_PROXY = "PROXY 192.168.50.135:7897"
 
@@ -6,10 +7,11 @@ DIRECT_TARGETS = {"DIRECT"}
 MEDIA_TARGETS = {"MEDIA"}
 STABLE_TARGETS = {"STABLE"}
 
-# Apple-сервисы на iOS через PAC/HTTP proxy часто ломают App Store,
-# iCloud, обновления и авторизацию. Держим их hardcoded DIRECT
-# внутри генератора, чтобы это не зависело от rules.yaml и всегда
-# попадало в начало universal.pac до dnsResolve() и proxy-правил.
+SHADOWROCKET_PROXY_TARGET = "PROXY"
+SHADOWROCKET_TEMPLATE = "iphone-template.conf"
+SHADOWROCKET_OUTPUT = "iphone-hysteria-rules.conf"
+SHADOWROCKET_MARKER = "__GENERATED_RULES__"
+
 APPLE_DIRECT_DOMAINS = [
     "apple.com",
     "icloud.com",
@@ -72,11 +74,6 @@ def clash_bucket(rule: dict) -> str | None:
 
 
 def provider_rule_text(rule: dict) -> str:
-    """
-    Для multi-provider rulesets убираем target.
-    Было: DOMAIN-KEYWORD,rutracker,Proxy
-    Стало: DOMAIN-KEYWORD,rutracker
-    """
     kind = rule["kind"]
     value = rule["value"]
     extras = rule["extras"]
@@ -89,12 +86,6 @@ def provider_rule_text(rule: dict) -> str:
 
 
 def legacy_rule_text(rule: dict) -> str | None:
-    """
-    Для legacy clash-ruleset.yaml:
-    - DIRECT сохраняем как DIRECT
-    - всё остальное делаем Proxy
-    - PROCESS-NAME и MATCH не тащим
-    """
     kind = rule["kind"]
     value = rule["value"]
     target = rule["target"]
@@ -114,38 +105,7 @@ def legacy_rule_text(rule: dict) -> str | None:
     return ",".join(parts)
 
 
-SHADOWROCKET_HEADER = """# Shadowrocket generated config
-# Source: rules.yaml
-# Non-DIRECT targets are mapped to PROXY, FINAL is DIRECT.
-
-[General]
-bypass-system = true
-skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, captive.apple.com
-tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32, 239.255.255.250/32
-dns-server = system
-fallback-dns-server = system
-ipv6 = true
-prefer-ipv6 = false
-dns-direct-system = false
-icmp-auto-reply = true
-always-reject-url-rewrite = false
-private-ip-answer = true
-dns-direct-fallback-proxy = false
-udp-policy-not-supported-behaviour = REJECT
-
-[Rule]
-"""
-
-
 def shadowrocket_rule_text(rule: dict) -> str | None:
-    """
-    Для Shadowrocket:
-    - DIRECT сохраняем как DIRECT
-    - любые proxy-группы из rules.yaml (MEDIA/STABLE/GOOGLE/TELEGRAM_STABLE/Proxy и т.д.)
-      маппим в универсальную политику PROXY
-    - PROCESS-NAME не тащим, так как на iOS это ненадежно/не нужно
-    - MATCH заменяем отдельным FINAL,DIRECT в конце файла
-    """
     kind = rule["kind"]
     value = rule["value"]
     target = rule["target"]
@@ -154,13 +114,13 @@ def shadowrocket_rule_text(rule: dict) -> str | None:
     if kind in {"MATCH", "PROCESS-NAME"}:
         return None
 
-    # В Shadowrocket используется DEST-PORT, а в Clash/Mihomo часто пишут DST-PORT.
-    if kind == "DST-PORT":
-        kind = "DEST-PORT"
+    if target and target.upper() in DIRECT_TARGETS:
+        shadow_target = "DIRECT"
+    else:
+        shadow_target = SHADOWROCKET_PROXY_TARGET
 
-    policy = "DIRECT" if target and target.upper() in DIRECT_TARGETS else "PROXY"
+    parts = [kind, value, shadow_target]
 
-    parts = [kind, value, policy]
     if extras:
         parts.extend(extras)
 
@@ -212,15 +172,11 @@ add(f'  function PROXY_CONN() {{ return "{PAC_PROXY}"; }}')
 add('  function DIRECT_CONN() { return "DIRECT"; }')
 add("")
 
-# Apple / App Store / iCloud always DIRECT for iOS PAC.
-# Важно: этот блок стоит ДО dnsResolve(), чтобы iOS не подвисал
-# и не отправлял Apple CDN через explicit proxy.
 add("  // Apple / App Store / iCloud — always DIRECT")
 for domain in APPLE_DIRECT_DOMAINS:
     emit_pac_domain_suffix(add, domain, "DIRECT")
 add("")
 
-# Local names always DIRECT
 add("  if (isPlainHostName(host) ||")
 add('      shExpMatch(host, "*.local") ||')
 add('      shExpMatch(host, "*.lan")) {')
@@ -228,7 +184,6 @@ add("    return DIRECT_CONN();")
 add("  }")
 add("")
 
-# RFC1918 / loopback always DIRECT
 add("  var resolved = dnsResolve(host);")
 add("  if (resolved) {")
 add('    if (isInNet(resolved, "127.0.0.0", "255.0.0.0") ||')
@@ -253,12 +208,9 @@ for raw_rule in rules:
     target = rule["target"]
     action = pac_action(target)
 
-    # Apple уже добавлен отдельным hardcoded DIRECT-блоком выше.
-    # Пропускаем дубли из rules.yaml, чтобы PAC был чище.
     if kind in {"DOMAIN-SUFFIX", "DOMAIN"} and value.lower() in APPLE_DIRECT_DOMAINS:
         continue
 
-    # Эти типы не имеют смысла для PAC
     if kind in {"PROCESS-NAME", "MATCH", "IP-CIDR", "DST-PORT"}:
         continue
 
@@ -339,9 +291,9 @@ with open("clash-ruleset.yaml", "w", encoding="utf-8") as f:
 print("Generated clash-ruleset.yaml")
 
 # =========================
-# Shadowrocket config
+# Shadowrocket full config from template
 # =========================
-shadowrocket_lines = [line.rstrip() for line in SHADOWROCKET_HEADER.strip().splitlines()]
+shadowrocket_rules = []
 
 for raw_rule in rules:
     if not isinstance(raw_rule, str):
@@ -353,11 +305,26 @@ for raw_rule in rules:
 
     text = shadowrocket_rule_text(rule)
     if text:
-        shadowrocket_lines.append(text)
+        shadowrocket_rules.append(text)
 
-shadowrocket_lines.append("FINAL,DIRECT")
+shadowrocket_rules.append("FINAL,DIRECT")
 
-with open("shadowrocket.conf", "w", encoding="utf-8") as f:
-    f.write("\n".join(shadowrocket_lines) + "\n")
+template_path = Path(SHADOWROCKET_TEMPLATE)
 
-print("Generated shadowrocket.conf")
+if template_path.exists():
+    template = template_path.read_text(encoding="utf-8")
+
+    if SHADOWROCKET_MARKER not in template:
+        raise RuntimeError(
+            f"Marker {SHADOWROCKET_MARKER} not found in {SHADOWROCKET_TEMPLATE}"
+        )
+
+    output = template.replace(
+        SHADOWROCKET_MARKER,
+        "\n".join(shadowrocket_rules),
+    )
+
+    Path(SHADOWROCKET_OUTPUT).write_text(output, encoding="utf-8")
+    print(f"Generated {SHADOWROCKET_OUTPUT}")
+else:
+    print(f"Skipped {SHADOWROCKET_OUTPUT}: {SHADOWROCKET_TEMPLATE} not found")
