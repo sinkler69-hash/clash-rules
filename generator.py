@@ -11,6 +11,11 @@ SHADOWROCKET_PROXY_TARGET = "PROXY"
 SHADOWROCKET_TEMPLATE = "iphone-template.conf"
 SHADOWROCKET_OUTPUT = "iphone-hysteria-rules.conf"
 SHADOWROCKET_MARKER = "__GENERATED_RULES__"
+SHADOWROCKET_UPDATE_URL = (
+    "https://raw.githubusercontent.com/"
+    "sinkler69-hash/clash-rules/refs/heads/main/"
+    "iphone-hysteria-rules.conf"
+)
 
 APPLE_DIRECT_DOMAINS = [
     "apple.com",
@@ -324,7 +329,18 @@ if template_path.exists():
         "\n".join(shadowrocket_rules),
     )
 
-    Path(SHADOWROCKET_OUTPUT).write_text(output, encoding="utf-8")
+    if "update-url" not in output:
+        output = output.replace(
+            "[General]\n",
+            "[General]\n"
+            f"update-url = {SHADOWROCKET_UPDATE_URL}\n",
+            1,
+        )
+
+    Path(SHADOWROCKET_OUTPUT).write_text(
+        output,
+        encoding="utf-8",
+    )
     print(f"Generated {SHADOWROCKET_OUTPUT}")
 else:
     print(f"Skipped {SHADOWROCKET_OUTPUT}: {SHADOWROCKET_TEMPLATE} not found")
