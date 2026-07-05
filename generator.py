@@ -114,6 +114,59 @@ def legacy_rule_text(rule: dict) -> str | None:
     return ",".join(parts)
 
 
+SHADOWROCKET_HEADER = """# Shadowrocket generated config
+# Source: rules.yaml
+# Non-DIRECT targets are mapped to PROXY, FINAL is DIRECT.
+
+[General]
+bypass-system = true
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, captive.apple.com
+tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32, 239.255.255.250/32
+dns-server = system
+fallback-dns-server = system
+ipv6 = true
+prefer-ipv6 = false
+dns-direct-system = false
+icmp-auto-reply = true
+always-reject-url-rewrite = false
+private-ip-answer = true
+dns-direct-fallback-proxy = false
+udp-policy-not-supported-behaviour = REJECT
+
+[Rule]
+"""
+
+
+def shadowrocket_rule_text(rule: dict) -> str | None:
+    """
+    Для Shadowrocket:
+    - DIRECT сохраняем как DIRECT
+    - любые proxy-группы из rules.yaml (MEDIA/STABLE/GOOGLE/TELEGRAM_STABLE/Proxy и т.д.)
+      маппим в универсальную политику PROXY
+    - PROCESS-NAME не тащим, так как на iOS это ненадежно/не нужно
+    - MATCH заменяем отдельным FINAL,DIRECT в конце файла
+    """
+    kind = rule["kind"]
+    value = rule["value"]
+    target = rule["target"]
+    extras = rule["extras"]
+
+    if kind in {"MATCH", "PROCESS-NAME"}:
+        return None
+
+    # В Shadowrocket используется DEST-PORT, а в Clash/Mihomo часто пишут DST-PORT.
+    if kind == "DST-PORT":
+        kind = "DEST-PORT"
+
+    policy = "DIRECT" if target and target.upper() in DIRECT_TARGETS else "PROXY"
+
+    parts = [kind, value, policy]
+    if extras:
+        parts.extend(extras)
+
+    return ",".join(parts)
+
+
 def js_escape(value: str) -> str:
     return value.replace("\\", "\\\\").replace('"', '\\"').lower()
 
@@ -284,3 +337,27 @@ with open("clash-ruleset.yaml", "w", encoding="utf-8") as f:
     yaml.safe_dump(legacy_ruleset_obj, f, allow_unicode=True, sort_keys=False)
 
 print("Generated clash-ruleset.yaml")
+
+# =========================
+# Shadowrocket config
+# =========================
+shadowrocket_lines = [line.rstrip() for line in SHADOWROCKET_HEADER.strip().splitlines()]
+
+for raw_rule in rules:
+    if not isinstance(raw_rule, str):
+        continue
+
+    rule = normalize_rule(raw_rule)
+    if not rule:
+        continue
+
+    text = shadowrocket_rule_text(rule)
+    if text:
+        shadowrocket_lines.append(text)
+
+shadowrocket_lines.append("FINAL,DIRECT")
+
+with open("shadowrocket.conf", "w", encoding="utf-8") as f:
+    f.write("\n".join(shadowrocket_lines) + "\n")
+
+print("Generated shadowrocket.conf")
