@@ -258,6 +258,19 @@ rules:
   - DOMAIN-SUFFIX,itch.zone,Proxy
   - DOMAIN-SUFFIX,tipworker.com,Proxy
   - DOMAIN-SUFFIX,zen-browser.app,PROXY
+
+
+  # =====================================================
+  # Claude
+  # =====================================================
+  - DOMAIN-SUFFIX,claude.ai,PROXY
+  - DOMAIN-SUFFIX,claude.com,PROXY
+  - DOMAIN-SUFFIX,anthropic.com,PROXY
+  - DOMAIN-SUFFIX,api.anthropic.com,PROXY
+  - DOMAIN-SUFFIX,support.claude.com,PROXY
+  - DOMAIN-SUFFIX,docs.anthropic.com,PROXY
+  - DOMAIN-SUFFIX,console.anthropic.com,PROXY
+  - DOMAIN-SUFFIX,platform.claude.com,PROXY
   
   # =====================================================
   # Adult
