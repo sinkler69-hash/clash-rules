@@ -191,6 +191,14 @@ payload:
 - DOMAIN-SUFFIX,itch.zone,Proxy
 - DOMAIN-SUFFIX,tipworker.com,Proxy
 - DOMAIN-SUFFIX,zen-browser.app,Proxy
+- DOMAIN-SUFFIX,claude.ai,Proxy
+- DOMAIN-SUFFIX,claude.com,Proxy
+- DOMAIN-SUFFIX,anthropic.com,Proxy
+- DOMAIN-SUFFIX,api.anthropic.com,Proxy
+- DOMAIN-SUFFIX,support.claude.com,Proxy
+- DOMAIN-SUFFIX,docs.anthropic.com,Proxy
+- DOMAIN-SUFFIX,console.anthropic.com,Proxy
+- DOMAIN-SUFFIX,platform.claude.com,Proxy
 - DOMAIN-KEYWORD,hentaihaven,Proxy
 - DOMAIN-KEYWORD,hentai,Proxy
 - DOMAIN-SUFFIX,htv-zurvan.com,Proxy

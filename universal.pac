@@ -207,6 +207,14 @@ function FindProxyForURL(url, host) {
   if (host === "itch.zone" || shExpMatch(host, "*.itch.zone")) return PROXY_CONN();
   if (host === "tipworker.com" || shExpMatch(host, "*.tipworker.com")) return PROXY_CONN();
   if (host === "zen-browser.app" || shExpMatch(host, "*.zen-browser.app")) return PROXY_CONN();
+  if (host === "claude.ai" || shExpMatch(host, "*.claude.ai")) return PROXY_CONN();
+  if (host === "claude.com" || shExpMatch(host, "*.claude.com")) return PROXY_CONN();
+  if (host === "anthropic.com" || shExpMatch(host, "*.anthropic.com")) return PROXY_CONN();
+  if (host === "api.anthropic.com" || shExpMatch(host, "*.api.anthropic.com")) return PROXY_CONN();
+  if (host === "support.claude.com" || shExpMatch(host, "*.support.claude.com")) return PROXY_CONN();
+  if (host === "docs.anthropic.com" || shExpMatch(host, "*.docs.anthropic.com")) return PROXY_CONN();
+  if (host === "console.anthropic.com" || shExpMatch(host, "*.console.anthropic.com")) return PROXY_CONN();
+  if (host === "platform.claude.com" || shExpMatch(host, "*.platform.claude.com")) return PROXY_CONN();
   if (host.indexOf("hentaihaven") !== -1) return PROXY_CONN();
   if (host.indexOf("hentai") !== -1) return PROXY_CONN();
   if (host === "htv-zurvan.com" || shExpMatch(host, "*.htv-zurvan.com")) return PROXY_CONN();

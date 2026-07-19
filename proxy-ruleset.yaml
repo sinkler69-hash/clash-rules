@@ -62,6 +62,14 @@ payload:
 - DOMAIN-SUFFIX,itch.zone
 - DOMAIN-SUFFIX,tipworker.com
 - DOMAIN-SUFFIX,zen-browser.app
+- DOMAIN-SUFFIX,claude.ai
+- DOMAIN-SUFFIX,claude.com
+- DOMAIN-SUFFIX,anthropic.com
+- DOMAIN-SUFFIX,api.anthropic.com
+- DOMAIN-SUFFIX,support.claude.com
+- DOMAIN-SUFFIX,docs.anthropic.com
+- DOMAIN-SUFFIX,console.anthropic.com
+- DOMAIN-SUFFIX,platform.claude.com
 - DOMAIN-KEYWORD,hentaihaven
 - DOMAIN-KEYWORD,hentai
 - DOMAIN-SUFFIX,htv-zurvan.com
