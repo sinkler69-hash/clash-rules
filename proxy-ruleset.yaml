@@ -1,6 +1,7 @@
 payload:
 - IP-CIDR,151.101.0.0/16,no-resolve
 - IP-CIDR,13.32.0.0/15,no-resolve
+- DOMAIN-SUFFIX,elevenlabs.io
 - DOMAIN-SUFFIX,play.google.com
 - DOMAIN-SUFFIX,accounts.google.com
 - DOMAIN-SUFFIX,googleapis.com

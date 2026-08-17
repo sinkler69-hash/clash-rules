@@ -93,6 +93,7 @@ function FindProxyForURL(url, host) {
   if (host === "oaiusercontent.com" || shExpMatch(host, "*.oaiusercontent.com")) return PROXY_CONN();
   if (host === "openaicom.imgix.net" || shExpMatch(host, "*.openaicom.imgix.net")) return PROXY_CONN();
   if (host === "openaicom-api.akamaized.net" || shExpMatch(host, "*.openaicom-api.akamaized.net")) return PROXY_CONN();
+  if (host === "elevenlabs.io" || shExpMatch(host, "*.elevenlabs.io")) return PROXY_CONN();
   if (host === "play.google.com" || shExpMatch(host, "*.play.google.com")) return PROXY_CONN();
   if (host === "accounts.google.com" || shExpMatch(host, "*.accounts.google.com")) return PROXY_CONN();
   if (host === "googleapis.com" || shExpMatch(host, "*.googleapis.com")) return PROXY_CONN();
