@@ -219,6 +219,9 @@ rules:
   # =====================================================
   # PROXY — EVERYTHING ELSE
   # =====================================================
+  # Speedtest by Ookla
+  - DOMAIN-SUFFIX,speedtest.net,Proxy
+
   - DOMAIN-SUFFIX,garlandtools.org,Proxy
   - DOMAIN-SUFFIX,universalis.app,Proxy
   - DOMAIN-SUFFIX,xivgear.app,Proxy
