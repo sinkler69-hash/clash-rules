@@ -168,6 +168,7 @@ function FindProxyForURL(url, host) {
   if (host === "telegram-cdn.org" || shExpMatch(host, "*.telegram-cdn.org")) return PROXY_CONN();
   if (host === "telegra.ph" || shExpMatch(host, "*.telegra.ph")) return PROXY_CONN();
   if (host === "graph.org" || shExpMatch(host, "*.graph.org")) return PROXY_CONN();
+  if (host === "speedtest.net" || shExpMatch(host, "*.speedtest.net")) return PROXY_CONN();
   if (host === "garlandtools.org" || shExpMatch(host, "*.garlandtools.org")) return PROXY_CONN();
   if (host === "universalis.app" || shExpMatch(host, "*.universalis.app")) return PROXY_CONN();
   if (host === "xivgear.app" || shExpMatch(host, "*.xivgear.app")) return PROXY_CONN();
