@@ -104,3 +104,4 @@ payload:
 - DOMAIN-SUFFIX,protonmail.com
 - DOMAIN-SUFFIX,protonvpn.com
 - DOMAIN-KEYWORD,proton
+- DOMAIN-SUFFIX,virustotal.com
