@@ -65,6 +65,8 @@ payload:
 - DOMAIN-SUFFIX,oaiusercontent.com,Proxy
 - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
 - DOMAIN-SUFFIX,openaicom-api.akamaized.net,Proxy
+- DOMAIN-SUFFIX,grok.com,Proxy
+- DOMAIN-SUFFIX,virustotal.com,Proxy
 - DOMAIN-SUFFIX,elevenlabs.io,Proxy
 - DOMAIN-SUFFIX,play.google.com,Proxy
 - DOMAIN-SUFFIX,accounts.google.com,Proxy

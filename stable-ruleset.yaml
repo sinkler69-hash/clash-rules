@@ -39,6 +39,8 @@ payload:
 - DOMAIN-SUFFIX,oaiusercontent.com
 - DOMAIN-SUFFIX,openaicom.imgix.net
 - DOMAIN-SUFFIX,openaicom-api.akamaized.net
+- DOMAIN-SUFFIX,grok.com
+- DOMAIN-SUFFIX,virustotal.com
 - DOMAIN-SUFFIX,threads.com
 - DOMAIN-SUFFIX,threads.net
 - DOMAIN-KEYWORD,threads
@@ -104,4 +106,3 @@ payload:
 - DOMAIN-SUFFIX,protonmail.com
 - DOMAIN-SUFFIX,protonvpn.com
 - DOMAIN-KEYWORD,proton
-- DOMAIN-SUFFIX,virustotal.com

@@ -107,6 +107,12 @@ rules:
   - DOMAIN-SUFFIX,oaiusercontent.com,STABLE
   - DOMAIN-SUFFIX,openaicom.imgix.net,STABLE
   - DOMAIN-SUFFIX,openaicom-api.akamaized.net,STABLE
+
+  # Grok
+  - DOMAIN-SUFFIX,grok.com,STABLE
+
+  # Preserve existing stable provider rule during regeneration
+  - DOMAIN-SUFFIX,virustotal.com,STABLE
   - DOMAIN-SUFFIX,elevenlabs.io,PROXY
   
   # Google Play
