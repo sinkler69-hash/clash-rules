@@ -111,6 +111,9 @@ rules:
   # Grok
   - DOMAIN-SUFFIX,grok.com,STABLE
 
+  # ExtraVM hosting and billing
+  - DOMAIN-SUFFIX,extravm.com,STABLE
+
   # Preserve existing stable provider rule during regeneration
   - DOMAIN-SUFFIX,virustotal.com,STABLE
   - DOMAIN-SUFFIX,elevenlabs.io,PROXY

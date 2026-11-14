@@ -40,6 +40,7 @@ payload:
 - DOMAIN-SUFFIX,openaicom.imgix.net
 - DOMAIN-SUFFIX,openaicom-api.akamaized.net
 - DOMAIN-SUFFIX,grok.com
+- DOMAIN-SUFFIX,extravm.com
 - DOMAIN-SUFFIX,virustotal.com
 - DOMAIN-SUFFIX,threads.com
 - DOMAIN-SUFFIX,threads.net
