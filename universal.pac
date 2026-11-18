@@ -95,6 +95,7 @@ function FindProxyForURL(url, host) {
   if (host === "openaicom-api.akamaized.net" || shExpMatch(host, "*.openaicom-api.akamaized.net")) return PROXY_CONN();
   if (host === "grok.com" || shExpMatch(host, "*.grok.com")) return PROXY_CONN();
   if (host === "extravm.com" || shExpMatch(host, "*.extravm.com")) return PROXY_CONN();
+  if (host === "hostbrr.com" || shExpMatch(host, "*.hostbrr.com")) return PROXY_CONN();
   if (host === "virustotal.com" || shExpMatch(host, "*.virustotal.com")) return PROXY_CONN();
   if (host === "elevenlabs.io" || shExpMatch(host, "*.elevenlabs.io")) return PROXY_CONN();
   if (host === "play.google.com" || shExpMatch(host, "*.play.google.com")) return PROXY_CONN();

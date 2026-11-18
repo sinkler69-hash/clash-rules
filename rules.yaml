@@ -114,6 +114,9 @@ rules:
   # ExtraVM hosting and billing
   - DOMAIN-SUFFIX,extravm.com,STABLE
 
+  # HostBrr hosting and billing (direct path stalls from home ISP)
+  - DOMAIN-SUFFIX,hostbrr.com,STABLE
+
   # Preserve existing stable provider rule during regeneration
   - DOMAIN-SUFFIX,virustotal.com,STABLE
   - DOMAIN-SUFFIX,elevenlabs.io,PROXY
